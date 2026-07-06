@@ -1,0 +1,30 @@
+# Sensitive configuration
+.env
+.env.backup
+.agents/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Large log files
+*.log
+*.txt
+logs/
+arbitrage_log.txt
+arbitrage_log_okx.txt
+spread_data.log
+
+# Temporary/Cache JSON data files
+*.json
+!*.json.example
+!package.json
+!tsconfig.json
+
+# IDE folders
+.vscode/
+.idea/
+.claude/
+.gemini/

@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Bot Portfolio Performance Dashboard</title>
+    <!-- Google Fonts & Tailwind-like CSS variables (Vanilla CSS Customization - Light Theme) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #f8fafc; /* Light slate background */
+            --bg-card: rgba(255, 255, 255, 0.7); /* White glassmorphism card */
+            --bg-card-hover: rgba(255, 255, 255, 0.95);
+            --border-card: rgba(0, 0, 0, 0.08);
+            --text-primary: #0f172a; /* Dark slate text */
+            --text-secondary: #64748b; /* Medium slate text */
+            --color-purple: #4f46e5; /* Indigo */
+            --color-cyan: #06b6d4; /* Teal/Cyan */
+            --color-pink: #db2777; /* Deep Pink */
+            --color-green: #10b981; /* Emerald Green */
+            --color-yellow: #b45309; /* Amber Yellow */
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-main);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2.5rem;
+            background-image: radial-gradient(circle at 5% 10%, rgba(79, 70, 229, 0.04) 0%, transparent 40%),
+                              radial-gradient(circle at 95% 90%, rgba(6, 182, 212, 0.04) 0%, transparent 40%);
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        /* Header Setup */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            backdrop-filter: blur(25px);
+            padding: 1.5rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.03);
+        }
+
+        .header-left h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.03em;
+        }
+
+        .header-left p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .header-right span {
+            color: var(--color-purple);
+            font-weight: 700;
+        }
+
+        /* Portfolio Summary Banner */
+        .portfolio-banner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .portfolio-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 28px;
+            position: relative;
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card.overall::before {
+            background: linear-gradient(to bottom, var(--color-yellow), var(--color-pink));
+        }
+
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--color-purple), var(--color-cyan));
+            border-radius: 4px 0 0 4px;
+        }
+
+        .card-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-val {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-val.glowing {
+            background: linear-gradient(135deg, var(--text-primary) 0%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-sub {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .card-sub span {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Plans Grid */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .plan-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.02);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            background: var(--bg-card-hover);
+            border-color: rgba(0, 0, 0, 0.12);
+            box-shadow: 0 14px 35px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .plan-card.plan-a-border { border-top: 4px solid var(--color-purple); }
+        .plan-card.plan-b-border { border-top: 4px solid var(--color-cyan); }
+        .plan-card.plan-c-border { border-top: 4px solid var(--color-pink); }
+
+        .plan-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .plan-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .plan-tag.a { background: rgba(79, 70, 229, 0.08); color: var(--color-purple); border: 1px solid rgba(79, 70, 229, 0.2); }
+        .plan-tag.b { background: rgba(6, 182, 212, 0.08); color: var(--color-cyan); border: 1px solid rgba(6, 182, 212, 0.2); }
+        .plan-tag.c { background: rgba(219, 39, 119, 0.08); color: var(--color-pink); border: 1px solid rgba(219, 39, 119, 0.2); }
+
+        .plan-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .plan-sub-card {
+            background: rgba(0, 0, 0, 0.02);
+            padding: 1rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .plan-sub-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .plan-sub-val {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        /* Bot Status Dot Styles */
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: 6px;
+            position: relative;
+            top: -1px;
+        }
+        .status-dot.running {
+            background-color: var(--color-green);
+            box-shadow: 0 0 8px var(--color-green);
+            animation: pulse-green 2s infinite;
+        }
+        .status-dot.stopped {
+            background-color: #ef4444; /* Red */
+            box-shadow: 0 0 8px #ef4444;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--text-primary) 0%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Charts Layout */
+        .charts-grid-combined {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .charts-grid-individual {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .charts-grid-combined {
+                grid-template-columns: 1fr;
+            }
+            .charts-grid-individual {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .chart-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            backdrop-filter: blur(25px);
+            padding: 2rem;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.02);
+            min-height: 380px;
+        }
+
+        .chart-card.small {
+            min-height: 320px;
+            padding: 1.5rem;
+        }
+
+        .chart-card h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        /* Table Card */
+        .table-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            backdrop-filter: blur(25px);
+            padding: 2rem;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.02);
+        }
+
+        .table-card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            max-height: 450px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            padding: 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border-bottom: 1px solid var(--border-card);
+        }
+
+        td {
+            padding: 1.2rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        tr:hover td {
+            background: rgba(0, 0, 0, 0.01);
+        }
+
+        .badge {
+            padding: 0.25rem 0.6rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge.target-met {
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--color-green);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .badge.target-below {
+            background: rgba(100, 116, 139, 0.08);
+            color: var(--text-secondary);
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .text-green { color: var(--color-green); }
+        .text-pink { color: var(--color-pink); }
+        .text-cyan { color: var(--color-cyan); }
+        .text-purple { color: var(--color-purple); }
+        .text-secondary { color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Dashboard Header -->
+        <header>
+            <div class="header-left">
+                <h1>PORTFOLIO ASSET PERFORMANCE DASHBOARD</h1>
+                <p>빗썸 ARB &middot; 코인원 ARB &middot; 폴리마켓 카피봇 실시간 통합 자산 관리 시스템</p>
+            </div>
+            <div class="header-right">
+                실시간 환율: <span id="usd-krw-rate">1,530.00 KRW</span><br>
+                목표 일수익률: <span>1.00%</span>
+            </div>
+        </header>
+
+        <!-- Portfolio Banner (Top Level Summary) -->
+        <div class="portfolio-banner">
+            <div class="portfolio-card overall">
+                <div class="card-label">포트폴리오 총 평가 자산</div>
+                <div class="card-val glowing" id="total-asset-krw">0 KRW</div>
+                <div class="card-sub" id="total-asset-usd">자금 원금: <span>0 KRW</span></div>
+            </div>
+            <div class="portfolio-card">
+                <div class="card-label">포트폴리오 합산 누적 수익</div>
+                <div class="card-val text-green" id="total-profit-krw">+0 KRW</div>
+                <div class="card-sub" id="total-profit-usd">누적 달러: <span>$0.00 USD</span></div>
+            </div>
+            <div class="portfolio-card">
+                <div class="card-label">통합 일평균 수익률 (Yield)</div>
+                <div class="card-val text-cyan" id="avg-daily-yield">0.00%</div>
+                <div class="card-sub" id="target-achievement">일평균 목표(1.0%) 대비 <span>0.0%</span> 달성</div>
+            </div>
+            <div class="portfolio-card">
+                <div class="card-label">30일 추정 월간 수익금</div>
+                <div class="card-val text-yellow" id="projected-monthly-yield">0.00%</div>
+                <div class="card-sub" id="projected-monthly-krw">예상 월 수익: <span>0 KRW</span></div>
+            </div>
+        </div>
+
+        <!-- Plans Grid -->
+        <div class="plans-grid">
+            <!-- 빗썸 ARB -->
+            <div class="plan-card plan-a-border">
+                <div class="plan-title">
+                    <span>빗썸 ARB <span class="status-dot stopped" id="status-bithumb" title="중지됨 (Stopped)"></span></span>
+                    <span class="plan-tag a">Bithumb</span>
+                </div>
+                <div class="plan-metrics">
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">운영 자산 / 원금 (KRW)</div>
+                        <div class="plan-sub-val text-purple" id="asset-a">0원</div>
+                        <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:2px;">원금: <span id="seed-a" style="font-weight:700;">0원</span></div>
+                        <div id="asset-a-detail" style="font-size:0.75rem; color:var(--text-secondary); margin-top:4px; line-height:1.4;">조회 중...</div>
+                    </div>
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">누적 수익금</div>
+                        <div class="plan-sub-val text-green" id="profit-a">+0원</div>
+                    </div>
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">전체 수익률</div>
+                        <div class="plan-sub-val" id="yield-a">0.00%</div>
+                    </div>
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">일평균 수익률</div>
+                        <div class="plan-sub-val" id="avg-yield-a">0.00%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 코인원 ARB -->
+            <div class="plan-card plan-b-border">
+                <div class="plan-title">
+                    <span>코인원 ARB <span class="status-dot stopped" id="status-coinone" title="중지됨 (Stopped)"></span></span>
+                    <span class="plan-tag b">Coinone</span>
+                </div>
+                <div class="plan-metrics">
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">운영 자산 / 원금 (KRW)</div>
+                        <div class="plan-sub-val text-cyan" id="asset-b">0원</div>
+                        <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:2px;">원금: <span id="seed-b" style="font-weight:700;">0원</span></div>
+                    </div>
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">누적 수익금</div>
+                        <div class="plan-sub-val text-green" id="profit-b">+0원</div>
+                    </div>
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">전체 수익률</div>
+                        <div class="plan-sub-val" id="yield-b">0.00%</div>
+                    </div>
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">일평균 수익률</div>
+                        <div class="plan-sub-val" id="avg-yield-b">0.00%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 폴리마켓 카피봇 -->
+            <div class="plan-card plan-c-border">
+                <div class="plan-title">
+                    <span>폴리마켓 카피봇 <span class="status-dot stopped" id="status-polymarket" title="중지됨 (Stopped)"></span></span>
+                    <span class="plan-tag c">Polymarket</span>
+                </div>
+                <div class="plan-metrics">
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">운영 자산 / 원금 (USD)</div>
+                        <div class="plan-sub-val text-pink" id="asset-c">$0.00</div>
+                        <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:2px;">원금: <span id="seed-c" style="font-weight:700;">$0.00</span></div>
+                    </div>
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">누적 수익금</div>
+                        <div class="plan-sub-val text-green" id="profit-c">+$0.00</div>
+                    </div>
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">전체 수익률</div>
+                        <div class="plan-sub-val" id="yield-c">0.00%</div>
+                    </div>
+                    <div class="plan-sub-card">
+                        <div class="plan-sub-label">일평균 수익률</div>
+                        <div class="plan-sub-val" id="avg-yield-c">0.00%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Combined Portfolio Performance Charts -->
+        <h2 class="section-title">통합 포트폴리오 자산 추이</h2>
+        <div class="charts-grid-combined">
+            <div class="chart-card">
+                <h2>포트폴리오 합산 누적 수익금 성장 추이</h2>
+                <div style="position: relative; height: 320px; width: 100%;">
+                    <canvas id="portfolio-growth-chart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h2>엔진별 누적 수익 기여도 비중</h2>
+                <div style="position: relative; height: 320px; width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <canvas id="plan-pie-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Individual Bot Performance Charts (Dual Y-Axis) -->
+        <h2 class="section-title">봇별 개별 자금 증감 및 수익률 추이</h2>
+        <div class="charts-grid-individual">
+            <!-- 빗썸 ARB 개별 그래프 -->
+            <div class="chart-card small">
+                <h2>빗썸 ARB (Bithumb ARB)</h2>
+                <div style="position: relative; height: 260px; width: 100%;">
+                    <canvas id="chart-bot-bithumb"></canvas>
+                </div>
+            </div>
+            <!-- 코인원 ARB 개별 그래프 -->
+            <div class="chart-card small">
+                <h2>코인원 ARB (Coinone ARB)</h2>
+                <div style="position: relative; height: 260px; width: 100%;">
+                    <canvas id="chart-bot-coinone"></canvas>
+                </div>
+            </div>
+            <!-- 폴리마켓 카피봇 개별 그래프 -->
+            <div class="chart-card small">
+                <h2>폴리마켓 카피봇 (Polymarket Copy)</h2>
+                <div style="position: relative; height: 260px; width: 100%;">
+                    <canvas id="chart-bot-polymarket"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table Card -->
+        <div class="table-card">
+            <h2>포트폴리오 일별 상세 거래 데이터 통계</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>일자 (KST)</th>
+                            <th>빗썸 ARB 수익</th>
+                            <th>코인원 ARB 수익</th>
+                            <th>폴리마켓 카피봇 수익</th>
+                            <th>합산 일일 수익</th>
+                            <th>일일 수익률</th>
+                            <th>목표 달성 상태</th>
+                            <th>총 평가 자산 (KRW)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="portfolio-table-body">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript Data -->
+    <script src="logs/pnl_data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof pnlData === 'undefined') {
+                console.error("logs/pnl_data.js not found or loaded.");
+                return;
+            }
+
+            const { usd_krw, seed_krw, seeds, balances, bot_status, summary, daily } = pnlData;
+
+            // 1. Update Header
+            document.getElementById("usd-krw-rate").textContent = `${usd_krw.toLocaleString('ko-KR', { minimumFractionDigits: 2 })} KRW`;
+
+            // 2. Overall Portfolio Summary
+            const totalAssetKrw = seed_krw + summary.total_profit_krw;
+            document.getElementById("total-asset-krw").textContent = `${Math.round(totalAssetKrw).toLocaleString('ko-KR')} KRW`;
+            document.getElementById("total-asset-usd").innerHTML = `자금 원금: <span>${Math.round(seed_krw).toLocaleString('ko-KR')} KRW</span>`;
+            
+            document.getElementById("total-profit-krw").textContent = `+${Math.round(summary.total_profit_krw).toLocaleString('ko-KR')} KRW`;
+            document.getElementById("total-profit-usd").innerHTML = `누적 달러: <span>$${summary.total_profit_usd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD</span>`;
+            
+            document.getElementById("avg-daily-yield").textContent = `${summary.avg_daily_yield.toFixed(2)}%`;
+            const achievementPct = (summary.avg_daily_yield / 1.0) * 100;
+            document.getElementById("target-achievement").innerHTML = `일평균 목표(1.0%) 대비 <span class="text-green">${achievementPct.toFixed(1)}%</span> 달성`;
+            
+            document.getElementById("projected-monthly-yield").textContent = `${summary.projected_monthly_yield.toFixed(2)}%`;
+            const projectedKrw = seed_krw * (summary.projected_monthly_yield / 100);
+            document.getElementById("projected-monthly-krw").innerHTML = `예상 월 수익: <span style="color:var(--text-primary); font-weight:700;">${Math.round(projectedKrw).toLocaleString('ko-KR')} KRW</span>`;
+
+            // 3. 빗썸 ARB Summary Metrics
+            const currentAssetA = seeds.a + summary.tot_a_krw;
+            document.getElementById("asset-a").textContent = `${Math.round(currentAssetA).toLocaleString('ko-KR')}원`;
+            document.getElementById("seed-a").textContent = `${Math.round(seeds.a).toLocaleString('ko-KR')}원`;
+            
+            if (balances && balances.bithumb_krw !== null) {
+                const b_krw = balances.bithumb_krw;
+                const o_usd = balances.okx_usd;
+                const o_krw = o_usd * usd_krw;
+                document.getElementById("asset-a-detail").innerHTML = `빗썸: ${Math.round(b_krw).toLocaleString('ko-KR')}원<br>OKX: $${o_usd.toFixed(2)} (${Math.round(o_krw).toLocaleString('ko-KR')}원)`;
+            } else {
+                document.getElementById("asset-a-detail").textContent = "잔고 조회 실패 (캐시 사용)";
+            }
+            
+            document.getElementById("profit-a").textContent = `+${Math.round(summary.tot_a_krw).toLocaleString('ko-KR')}원`;
+            document.getElementById("yield-a").textContent = `${summary.yield_a.toFixed(2)}%`;
+            document.getElementById("avg-yield-a").textContent = `${summary.avg_yield_a.toFixed(2)}%`;
+
+            // 4. 코인원 ARB Summary Metrics
+            const currentAssetB = seeds.b + summary.tot_b_krw;
+            document.getElementById("asset-b").textContent = `${Math.round(currentAssetB).toLocaleString('ko-KR')}원`;
+            document.getElementById("seed-b").textContent = `${Math.round(seeds.b).toLocaleString('ko-KR')}원`;
+            document.getElementById("profit-b").textContent = `+${Math.round(summary.tot_b_krw).toLocaleString('ko-KR')}원`;
+            document.getElementById("yield-b").textContent = `${summary.yield_b.toFixed(2)}%`;
+            document.getElementById("avg-yield-b").textContent = `${summary.avg_yield_b.toFixed(2)}%`;
+
+            // 5. 폴리마켓 카피봇 Summary Metrics
+            const tot_c_usd = summary.tot_c_usd;
+            const currentAssetCUsd = seeds.c_usd + tot_c_usd;
+            const currentAssetCKrw = currentAssetCUsd * usd_krw;
+            document.getElementById("asset-c").innerHTML = `$${currentAssetCUsd.toLocaleString('en-US', { minimumFractionDigits: 2 })} <span style="font-size:0.8rem; color:var(--text-secondary);">(${Math.round(currentAssetCKrw).toLocaleString('ko-KR')}원)</span>`;
+            document.getElementById("seed-c").textContent = `$${seeds.c_usd.toLocaleString('en-US', { minimumFractionDigits: 2 })} (${Math.round(seeds.c_krw).toLocaleString('ko-KR')}원)`;
+            document.getElementById("profit-c").textContent = `+$${tot_c_usd.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+            document.getElementById("yield-c").textContent = `${summary.yield_c.toFixed(2)}%`;
+            document.getElementById("avg-yield-c").textContent = `${summary.avg_yield_c.toFixed(2)}%`;
+
+            // Update Status Lamps
+            if (bot_status) {
+                const updateLamp = (id, isRunning) => {
+                    const lamp = document.getElementById(id);
+                    if (lamp) {
+                        if (isRunning) {
+                            lamp.className = "status-dot running";
+                            lamp.title = "가동 중 (Running)";
+                        } else {
+                            lamp.className = "status-dot stopped";
+                            lamp.title = "중지됨 (Stopped)";
+                        }
+                    }
+                };
+                updateLamp("status-bithumb", bot_status.bithumb);
+                updateLamp("status-coinone", bot_status.coinone);
+                updateLamp("status-polymarket", bot_status.polymarket);
+            }
+
+            // 6. Build Daily Table
+            const tableBody = document.getElementById("portfolio-table-body");
+            daily.forEach(day => {
+                const tr = document.createElement("tr");
+                
+                const a_krw = day.a_usd * usd_krw;
+                const b_krw = day.b_usd * usd_krw;
+                const c_krw = day.c_usd * usd_krw;
+                const tot_krw = day.total_usd * usd_krw;
+                
+                const badgeClass = day.target_met ? "target-met" : "target-below";
+                const badgeText = day.target_met ? "Target Met" : "Below Target";
+                
+                tr.innerHTML = `
+                    <td>${day.date}</td>
+                    <td>${Math.round(a_krw).toLocaleString('ko-KR')}원 <span style="font-size:0.8rem; color:var(--text-secondary);">($${day.a_usd.toFixed(1)})</span></td>
+                    <td>${Math.round(b_krw).toLocaleString('ko-KR')}원 <span style="font-size:0.8rem; color:var(--text-secondary);">($${day.b_usd.toFixed(1)})</span></td>
+                    <td>${Math.round(c_krw).toLocaleString('ko-KR')}원 <span style="font-size:0.8rem; color:var(--text-secondary);">($${day.c_usd.toFixed(1)})</span></td>
+                    <td style="font-weight:700;">${Math.round(tot_krw).toLocaleString('ko-KR')}원 <span style="font-size:0.8rem; color:var(--text-secondary);">($${day.total_usd.toFixed(1)})</span></td>
+                    <td class="${day.yield_pct >= 1.0 ? 'text-green' : 'text-secondary'}" style="font-weight:700;">${day.yield_pct.toFixed(2)}%</td>
+                    <td><span class="badge ${badgeClass}">${badgeText}</span></td>
+                    <td style="font-weight:600; color:var(--text-secondary);">${Math.round(day.total_asset_krw).toLocaleString('ko-KR')}원</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+
+            // 7. Combined cumulative growth curve
+            const ctxGrowth = document.getElementById('portfolio-growth-chart').getContext('2d');
+            new Chart(ctxGrowth, {
+                type: 'line',
+                data: {
+                    labels: daily.map(d => d.date),
+                    datasets: [
+                        {
+                            label: '빗썸 ARB 수익금',
+                            data: daily.map(d => d.cum_a_krw),
+                            borderColor: '#4f46e5',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            fill: false
+                        },
+                        {
+                            label: '코인원 ARB 수익금',
+                            data: daily.map(d => d.cum_b_krw),
+                            borderColor: '#06b6d4',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            fill: false
+                        },
+                        {
+                            label: '폴리마켓 카피봇 수익금',
+                            data: daily.map(d => d.cum_c_krw),
+                            borderColor: '#db2777',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            fill: false
+                        },
+                        {
+                            label: '포트폴리오 총 합산 수익',
+                            data: daily.map(d => d.cum_total_krw),
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.03)',
+                            borderWidth: 4,
+                            tension: 0.3,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#0f172a', font: { family: 'Plus Jakarta Sans', weight: 'bold' } }
+                        }
+                    },
+                    scales: {
+                        x: { grid: { color: 'rgba(0,0,0,0.03)' }, ticks: { color: '#64748b' } },
+                        y: {
+                            grid: { color: 'rgba(0,0,0,0.03)' },
+                            ticks: {
+                                color: '#64748b',
+                                callback: value => `${Math.round(value / 10000).toLocaleString()}만원`
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 8. Combined Pie Chart
+            const ctxPie = document.getElementById('plan-pie-chart').getContext('2d');
+            new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                    labels: ['빗썸 ARB', '코인원 ARB', '폴리마켓 카피봇'],
+                    datasets: [{
+                        data: [summary.tot_a_krw, summary.tot_b_krw, summary.tot_c_krw],
+                        backgroundColor: ['#4f46e5', '#06b6d4', '#db2777'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#0f172a', font: { family: 'Plus Jakarta Sans', size: 12, weight: 'bold' } }
+                        }
+                    }
+                }
+            });
+
+            // 9-1. Render 빗썸 ARB Individual Chart (Dual Y-Axis: Left for Asset KRW, Right for Yield %)
+            new Chart(document.getElementById('chart-bot-bithumb').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: daily.map(d => d.date),
+                    datasets: [
+                        {
+                            label: '평가 자산 (원)',
+                            data: daily.map(d => d.asset_a_krw),
+                            borderColor: '#4f46e5',
+                            backgroundColor: 'rgba(79, 70, 229, 0.05)',
+                            borderWidth: 3,
+                            yAxisID: 'y-axis-asset',
+                            fill: true,
+                            tension: 0.2
+                        },
+                        {
+                            label: '수익률 (%)',
+                            data: daily.map(d => (d.cum_a_krw / seeds.a) * 100),
+                            borderColor: '#10b981',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            yAxisID: 'y-axis-yield',
+                            fill: false,
+                            tension: 0.2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { grid: { color: 'rgba(0,0,0,0.02)' }, ticks: { color: '#64748b' } },
+                        'y-axis-asset': {
+                            type: 'linear',
+                            position: 'left',
+                            grid: { color: 'rgba(0,0,0,0.03)' },
+                            ticks: {
+                                color: '#4f46e5',
+                                callback: value => `${Math.round(value / 10000).toLocaleString()}만`
+                            }
+                        },
+                        'y-axis-yield': {
+                            type: 'linear',
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            ticks: {
+                                color: '#10b981',
+                                callback: value => `${value.toFixed(1)}%`
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 9-2. Render 코인원 ARB Individual Chart (Dual Y-Axis: Left for Asset KRW, Right for Yield %)
+            new Chart(document.getElementById('chart-bot-coinone').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: daily.map(d => d.date),
+                    datasets: [
+                        {
+                            label: '평가 자산 (원)',
+                            data: daily.map(d => d.asset_b_krw),
+                            borderColor: '#06b6d4',
+                            backgroundColor: 'rgba(6, 182, 212, 0.05)',
+                            borderWidth: 3,
+                            yAxisID: 'y-axis-asset',
+                            fill: true,
+                            tension: 0.2
+                        },
+                        {
+                            label: '수익률 (%)',
+                            data: daily.map(d => (d.cum_b_krw / seeds.b) * 100),
+                            borderColor: '#10b981',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            yAxisID: 'y-axis-yield',
+                            fill: false,
+                            tension: 0.2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { grid: { color: 'rgba(0,0,0,0.02)' }, ticks: { color: '#64748b' } },
+                        'y-axis-asset': {
+                            type: 'linear',
+                            position: 'left',
+                            grid: { color: 'rgba(0,0,0,0.03)' },
+                            ticks: {
+                                color: '#06b6d4',
+                                callback: value => `${Math.round(value / 10000).toLocaleString()}만`
+                            }
+                        },
+                        'y-axis-yield': {
+                            type: 'linear',
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            ticks: {
+                                color: '#10b981',
+                                callback: value => `${value.toFixed(1)}%`
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 9-3. Render 폴리마켓 카피봇 Individual Chart (Dual Y-Axis: Left for Asset USD, Right for Yield %)
+            new Chart(document.getElementById('chart-bot-polymarket').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: daily.map(d => d.date),
+                    datasets: [
+                        {
+                            label: '평가 자산 ($)',
+                            data: daily.map(d => d.asset_c_krw / usd_krw),
+                            borderColor: '#db2777',
+                            backgroundColor: 'rgba(219, 39, 119, 0.05)',
+                            borderWidth: 3,
+                            yAxisID: 'y-axis-asset',
+                            fill: true,
+                            tension: 0.2
+                        },
+                        {
+                            label: '수익률 (%)',
+                            data: daily.map(d => (d.cum_c_krw / seeds.c_krw) * 100),
+                            borderColor: '#10b981',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            yAxisID: 'y-axis-yield',
+                            fill: false,
+                            tension: 0.2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { grid: { color: 'rgba(0,0,0,0.02)' }, ticks: { color: '#64748b' } },
+                        'y-axis-asset': {
+                            type: 'linear',
+                            position: 'left',
+                            grid: { color: 'rgba(0,0,0,0.03)' },
+                            ticks: {
+                                color: '#db2777',
+                                callback: value => `$${Math.round(value).toLocaleString()}`
+                            }
+                        },
+                        'y-axis-yield': {
+                            type: 'linear',
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            ticks: {
+                                color: '#10b981',
+                                callback: value => `${value.toFixed(1)}%`
+                            }
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
