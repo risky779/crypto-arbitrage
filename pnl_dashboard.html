@@ -410,7 +410,8 @@
             </div>
             <div class="header-right">
                 실시간 환율: <span id="usd-krw-rate">1,530.00 KRW</span><br>
-                목표 일수익률: <span>1.00%</span>
+                목표 일수익률: <span>1.00%</span><br>
+                <span style="font-size:0.8rem; color:var(--text-secondary);">마지막 업데이트: <span id="publish-time" style="color:var(--color-purple); font-weight:700;">조회 중...</span></span>
             </div>
         </header>
 
@@ -651,6 +652,9 @@
 
             // 1. Update Header
             document.getElementById("usd-krw-rate").textContent = `${usd_krw.toLocaleString('ko-KR', { minimumFractionDigits: 2 })} KRW`;
+            if (pnlData.updated_at) {
+                document.getElementById("publish-time").textContent = pnlData.updated_at;
+            }
 
             // 2. Overall Portfolio Summary
             const totalAssetKrw = seed_krw + summary.total_profit_krw;
@@ -734,7 +738,7 @@
                 const tot_krw = day.total_usd * usd_krw;
                 
                 const badgeClass = day.target_met ? "target-met" : "target-below";
-                const badgeText = day.target_met ? "Target Met" : "Below Target";
+                const badgeText = day.target_met ? "✅ 목표 달성" : "⏳ 목표 미달";
                 
                 tr.innerHTML = `
                     <td>${day.date}</td>
