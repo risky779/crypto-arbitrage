@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-07-08 07:46:47",
+  "updated_at": "2026-07-08 07:57:11",
   "usd_krw": 1530.802794,
   "seed_krw": 148473.79931112,
   "seeds": {
@@ -10,7 +10,7 @@ const pnlData = {
   },
   "balances": {
     "bithumb_krw": 5138.886129,
-    "okx_usd": 88.36235740769817
+    "okx_usd": 88.31681990769818
   },
   "bot_status": {
     "bithumb": true,
@@ -201,62 +201,62 @@ const pnlData = {
     "bithumb": [
       {
         "coin": "MMT",
-        "bithumb_krw": 222.0,
-        "okx_usdt": 0.1486,
-        "okx_krw": 227.4772951884,
-        "raw_spread": 2.47,
+        "bithumb_krw": 221.0,
+        "okx_usdt": 0.1497,
+        "okx_krw": 229.1611782618,
+        "raw_spread": 3.69,
         "friction": 1.49,
-        "net_spread": 0.98,
+        "net_spread": 2.2,
         "target_spread": 3.0
       },
       {
         "coin": "SUI",
-        "bithumb_krw": 1091.0,
-        "okx_usdt": 0.7278,
-        "okx_krw": 1114.1182734732,
-        "raw_spread": 2.12,
+        "bithumb_krw": 1093.0,
+        "okx_usdt": 0.7291,
+        "okx_krw": 1116.1083171054,
+        "raw_spread": 2.11,
         "friction": 0.3,
-        "net_spread": 1.82,
+        "net_spread": 1.81,
         "target_spread": 2.0
       },
       {
         "coin": "XRP",
         "bithumb_krw": 1674.0,
-        "okx_usdt": 1.1155,
-        "okx_krw": 1707.6105167069998,
-        "raw_spread": 2.01,
+        "okx_usdt": 1.1159,
+        "okx_krw": 1708.2228378245998,
+        "raw_spread": 2.04,
         "friction": 1.18,
-        "net_spread": 0.83,
+        "net_spread": 0.86,
         "target_spread": 2.0
       },
       {
         "coin": "TRX",
         "bithumb_krw": 498.0,
-        "okx_usdt": 0.33152,
-        "okx_krw": 507.49174226687995,
-        "raw_spread": 1.91,
+        "okx_usdt": 0.33192,
+        "okx_krw": 508.10406338447996,
+        "raw_spread": 2.03,
         "friction": 0.89,
-        "net_spread": 1.02,
+        "net_spread": 1.14,
         "target_spread": 2.0
       },
       {
         "coin": "SOL",
         "bithumb_krw": 121300.0,
-        "okx_usdt": 80.93,
-        "okx_krw": 123887.87011842,
-        "raw_spread": 2.13,
+        "okx_usdt": 80.88,
+        "okx_krw": 123811.32997872,
+        "raw_spread": 2.07,
         "friction": 1.75,
-        "net_spread": 0.39,
+        "net_spread": 0.32,
         "target_spread": 2.0
       },
       {
         "coin": "ADA",
-        "bithumb_krw": 261.0,
-        "okx_usdt": 0.1746,
-        "okx_krw": 267.2781678324,
-        "raw_spread": 2.41,
+        "bithumb_krw": 262.0,
+        "okx_usdt": 0.1747,
+        "okx_krw": 267.43124811179996,
+        "raw_spread": 2.07,
         "friction": 0.45,
-        "net_spread": 1.96,
+        "net_spread": 1.63,
         "target_spread": 2.0
       }
     ],
@@ -284,84 +284,84 @@ const pnlData = {
       {
         "coin": "BOME",
         "coinone_krw": 0.625,
-        "okx_usdt": 0.0004217,
-        "okx_krw": 0.6455395382298,
-        "raw_spread": 3.29,
+        "okx_usdt": 0.0004221,
+        "okx_krw": 0.6461518593474,
+        "raw_spread": 3.38,
         "friction": 0.54,
-        "net_spread": 2.74,
+        "net_spread": 2.84,
         "target_spread": 5.0
       },
       {
         "coin": "HYPE",
         "coinone_krw": 104000.0,
-        "okx_usdt": 69.627,
-        "okx_krw": 106585.20613783799,
-        "raw_spread": 2.49,
-        "friction": 209.17,
-        "net_spread": -206.69,
+        "okx_usdt": 69.761,
+        "okx_krw": 106790.33371223399,
+        "raw_spread": 2.68,
+        "friction": 209.57,
+        "net_spread": -206.89,
         "target_spread": 5.0
       },
       {
         "coin": "PNUT",
         "coinone_krw": 64.8,
-        "okx_usdt": 0.04363,
-        "okx_krw": 66.78892590222,
-        "raw_spread": 3.07,
+        "okx_usdt": 0.04367,
+        "okx_krw": 66.85015801397999,
+        "raw_spread": 3.16,
         "friction": 1.16,
-        "net_spread": 1.91,
+        "net_spread": 2.0,
         "target_spread": 5.0
       },
       {
         "coin": "MEME",
-        "coinone_krw": 0.8552,
-        "okx_usdt": 0.0005714,
-        "okx_krw": 0.8747007164916,
-        "raw_spread": 2.28,
+        "coinone_krw": 0.8513,
+        "okx_usdt": 0.0005709,
+        "okx_krw": 0.8739353150946001,
+        "raw_spread": 2.66,
         "friction": 0.46,
-        "net_spread": 1.82,
+        "net_spread": 2.2,
         "target_spread": 5.0
       },
       {
         "coin": "BAND",
         "coinone_krw": 230.0,
-        "okx_usdt": 0.163,
-        "okx_krw": 249.520855422,
-        "raw_spread": 8.49,
+        "okx_usdt": 0.1626,
+        "okx_krw": 248.90853430439998,
+        "raw_spread": 8.22,
         "friction": 0.62,
-        "net_spread": 7.87,
+        "net_spread": 7.61,
         "target_spread": 5.0
       },
       {
         "coin": "CVX",
         "coinone_krw": 1820.0,
-        "okx_usdt": 1.215,
-        "okx_krw": 1859.92539471,
-        "raw_spread": 2.19,
+        "okx_usdt": 1.213,
+        "okx_krw": 1856.863789122,
+        "raw_spread": 2.03,
         "friction": 2.72,
-        "net_spread": -0.53,
+        "net_spread": -0.69,
         "target_spread": 5.0
       },
       {
         "coin": "LQTY",
         "coinone_krw": 283.0,
-        "okx_usdt": 0.1801,
-        "okx_krw": 275.6975831994,
-        "raw_spread": -2.58,
+        "okx_usdt": 0.18,
+        "okx_krw": 275.54450291999996,
+        "raw_spread": -2.63,
         "friction": 0.65,
-        "net_spread": -3.23,
+        "net_spread": -3.28,
         "target_spread": 5.0
       },
       {
         "coin": "XRP",
-        "coinone_krw": 1673.0,
-        "okx_usdt": 1.1155,
-        "okx_krw": 1707.6105167069998,
-        "raw_spread": 2.07,
+        "coinone_krw": 1674.0,
+        "okx_usdt": 1.1159,
+        "okx_krw": 1708.2228378245998,
+        "raw_spread": 2.04,
         "friction": 2.52,
-        "net_spread": -0.45,
+        "net_spread": -0.48,
         "target_spread": 3.0
       }
     ],
-    "updated_at": "2026-07-08 07:46:48"
+    "updated_at": "2026-07-08 07:57:12"
   }
 };
