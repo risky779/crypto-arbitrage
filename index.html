@@ -625,9 +625,9 @@
                             <th>빗썸 ARB 수익</th>
                             <th>코인원 ARB 수익</th>
                             <th>폴리마켓 카피봇 수익</th>
-                            <th>합산 일일 수익</th>
-                            <th>일일 수익률</th>
-                            <th>목표 달성 상태</th>
+                            <th>기준 일일 수익 (빗썸)</th>
+                            <th>일일 수익률 (빗썸)</th>
+                            <th>목표 달성 상태 (빗썸)</th>
                             <th>총 평가 자산 (KRW)</th>
                         </tr>
                     </thead>
@@ -745,7 +745,7 @@
                     <td>${Math.round(a_krw).toLocaleString('ko-KR')}원 <span style="font-size:0.8rem; color:var(--text-secondary);">($${day.a_usd.toFixed(1)})</span></td>
                     <td>${Math.round(b_krw).toLocaleString('ko-KR')}원 <span style="font-size:0.8rem; color:var(--text-secondary);">($${day.b_usd.toFixed(1)})</span></td>
                     <td>${Math.round(c_krw).toLocaleString('ko-KR')}원 <span style="font-size:0.8rem; color:var(--text-secondary);">($${day.c_usd.toFixed(1)})</span></td>
-                    <td style="font-weight:700;">${Math.round(tot_krw).toLocaleString('ko-KR')}원 <span style="font-size:0.8rem; color:var(--text-secondary);">($${day.total_usd.toFixed(1)})</span></td>
+                    <td style="font-weight:700;">${Math.round(a_krw).toLocaleString('ko-KR')}원 <span style="font-size:0.8rem; color:var(--text-secondary);">($${day.a_usd.toFixed(1)})</span></td>
                     <td class="${day.yield_pct >= 1.0 ? 'text-green' : 'text-secondary'}" style="font-weight:700;">${day.yield_pct.toFixed(2)}%</td>
                     <td><span class="badge ${badgeClass}">${badgeText}</span></td>
                     <td style="font-weight:600; color:var(--text-secondary);">${Math.round(day.total_asset_krw).toLocaleString('ko-KR')}원</td>
