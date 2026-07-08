@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-07-09 01:39:55",
+  "updated_at": "2026-07-09 01:50:20",
   "usd_krw": 1516.89994,
   "seed_krw": 298397.6116712,
   "seeds": {
@@ -10,7 +10,7 @@ const pnlData = {
   },
   "balances": {
     "bithumb_krw": 7957.856129,
-    "okx_usd": 117.59426047127336
+    "okx_usd": 117.07303616031336
   },
   "bot_status": {
     "bithumb": true,
@@ -228,49 +228,49 @@ const pnlData = {
     "bithumb": [
       {
         "coin": "MMT",
-        "bithumb_krw": 234.0,
-        "okx_usdt": 0.1583,
-        "okx_krw": 240.125260502,
-        "raw_spread": 2.62,
+        "bithumb_krw": 237.0,
+        "okx_usdt": 0.1585,
+        "okx_krw": 240.42864049,
+        "raw_spread": 1.45,
         "friction": 1.49,
-        "net_spread": 1.13,
+        "net_spread": -0.04,
         "target_spread": 3.0
       },
       {
         "coin": "SUI",
-        "bithumb_krw": 1048.0,
-        "okx_usdt": 0.7014,
-        "okx_krw": 1063.953617916,
-        "raw_spread": 1.52,
+        "bithumb_krw": 1054.0,
+        "okx_usdt": 0.7046,
+        "okx_krw": 1068.807697724,
+        "raw_spread": 1.4,
         "friction": 0.3,
-        "net_spread": 1.22,
+        "net_spread": 1.1,
         "target_spread": 2.0
       },
       {
         "coin": "XRP",
-        "bithumb_krw": 1615.0,
-        "okx_usdt": 1.079,
-        "okx_krw": 1636.73503526,
-        "raw_spread": 1.35,
+        "bithumb_krw": 1617.0,
+        "okx_usdt": 1.0812,
+        "okx_krw": 1640.072215128,
+        "raw_spread": 1.43,
         "friction": 1.15,
-        "net_spread": 0.19,
+        "net_spread": 0.27,
         "target_spread": 2.0
       },
       {
         "coin": "TRX",
         "bithumb_krw": 492.0,
-        "okx_usdt": 0.32909,
-        "okx_krw": 499.1966012546,
-        "raw_spread": 1.46,
+        "okx_usdt": 0.32925,
+        "okx_krw": 499.43930524499996,
+        "raw_spread": 1.51,
         "friction": 0.88,
-        "net_spread": 0.58,
+        "net_spread": 0.63,
         "target_spread": 2.0
       },
       {
         "coin": "SOL",
-        "bithumb_krw": 115200.0,
-        "okx_usdt": 77.0,
-        "okx_krw": 116801.29538,
+        "bithumb_krw": 115600.0,
+        "okx_usdt": 77.27,
+        "okx_krw": 117210.8583638,
         "raw_spread": 1.39,
         "friction": 1.68,
         "net_spread": -0.29,
@@ -278,12 +278,12 @@ const pnlData = {
       },
       {
         "coin": "ADA",
-        "bithumb_krw": 249.0,
-        "okx_usdt": 0.1667,
-        "okx_krw": 252.867219998,
-        "raw_spread": 1.55,
+        "bithumb_krw": 250.0,
+        "okx_usdt": 0.167,
+        "okx_krw": 253.32228998000002,
+        "raw_spread": 1.33,
         "friction": 0.44,
-        "net_spread": 1.11,
+        "net_spread": 0.89,
         "target_spread": 2.0
       }
     ],
@@ -291,11 +291,11 @@ const pnlData = {
       {
         "coin": "AEVO",
         "coinone_krw": 26.36,
-        "okx_usdt": 0.01818,
-        "okx_krw": 27.577240909200004,
-        "raw_spread": 4.62,
+        "okx_usdt": 0.01824,
+        "okx_krw": 27.668254905599998,
+        "raw_spread": 4.96,
         "friction": 0.36,
-        "net_spread": 4.26,
+        "net_spread": 4.6,
         "target_spread": 5.0
       },
       {
@@ -311,51 +311,51 @@ const pnlData = {
       {
         "coin": "BOME",
         "coinone_krw": 0.6031,
-        "okx_usdt": 0.0004038,
-        "okx_krw": 0.612524195772,
-        "raw_spread": 1.56,
+        "okx_usdt": 0.0004067,
+        "okx_krw": 0.6169232055980001,
+        "raw_spread": 2.29,
         "friction": 0.53,
-        "net_spread": 1.03,
+        "net_spread": 1.76,
         "target_spread": 5.0
       },
       {
         "coin": "HYPE",
         "coinone_krw": 99950.0,
-        "okx_usdt": 67.543,
-        "okx_krw": 102455.97264742001,
-        "raw_spread": 2.51,
-        "friction": 202.92,
-        "net_spread": -200.41,
+        "okx_usdt": 67.537,
+        "okx_krw": 102446.87124778001,
+        "raw_spread": 2.5,
+        "friction": 202.9,
+        "net_spread": -200.4,
         "target_spread": 5.0
       },
       {
         "coin": "PNUT",
         "coinone_krw": 64.8,
-        "okx_usdt": 0.04261,
-        "okx_krw": 64.6351064434,
-        "raw_spread": -0.25,
-        "friction": 1.14,
-        "net_spread": -1.4,
+        "okx_usdt": 0.04282,
+        "okx_krw": 64.9536554308,
+        "raw_spread": 0.24,
+        "friction": 1.15,
+        "net_spread": -0.91,
         "target_spread": 5.0
       },
       {
         "coin": "MEME",
         "coinone_krw": 0.8351,
-        "okx_usdt": 0.0005632,
-        "okx_krw": 0.854318046208,
-        "raw_spread": 2.3,
+        "okx_usdt": 0.0005641,
+        "okx_krw": 0.855683256154,
+        "raw_spread": 2.46,
         "friction": 0.46,
-        "net_spread": 1.84,
+        "net_spread": 2.01,
         "target_spread": 5.0
       },
       {
         "coin": "BAND",
         "coinone_krw": 230.0,
-        "okx_usdt": 0.1738,
-        "okx_krw": 263.637209572,
-        "raw_spread": 14.62,
-        "friction": 0.64,
-        "net_spread": 13.99,
+        "okx_usdt": 0.1722,
+        "okx_krw": 261.210169668,
+        "raw_spread": 13.57,
+        "friction": 0.63,
+        "net_spread": 12.94,
         "target_spread": 5.0
       },
       {
@@ -371,24 +371,24 @@ const pnlData = {
       {
         "coin": "LQTY",
         "coinone_krw": 283.0,
-        "okx_usdt": 0.1739,
-        "okx_krw": 263.788899566,
-        "raw_spread": -6.79,
+        "okx_usdt": 0.1745,
+        "okx_krw": 264.69903953,
+        "raw_spread": -6.47,
         "friction": 0.64,
-        "net_spread": -7.43,
+        "net_spread": -7.11,
         "target_spread": 5.0
       },
       {
         "coin": "XRP",
-        "coinone_krw": 1613.0,
-        "okx_usdt": 1.079,
-        "okx_krw": 1636.73503526,
-        "raw_spread": 1.47,
+        "coinone_krw": 1617.0,
+        "okx_usdt": 1.0812,
+        "okx_krw": 1640.072215128,
+        "raw_spread": 1.43,
         "friction": 2.45,
-        "net_spread": -0.98,
+        "net_spread": -1.03,
         "target_spread": 3.0
       }
     ],
-    "updated_at": "2026-07-09 01:39:57"
+    "updated_at": "2026-07-09 01:50:21"
   }
 };
