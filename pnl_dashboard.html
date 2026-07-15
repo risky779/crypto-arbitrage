@@ -406,7 +406,7 @@
         <header>
             <div class="header-left">
                 <h1>PORTFOLIO ASSET PERFORMANCE DASHBOARD</h1>
-                <p>빗썸 ARB &middot; 코인원 ARB &middot; 폴리마켓 카피봇 실시간 통합 자산 관리 시스템</p>
+                <p>빗썸 ARB &middot; 코인원 ARB &middot; 폴리마켓 날씨봇 실시간 통합 자산 관리 시스템</p>
             </div>
             <div class="header-right">
                 실시간 환율: <span id="usd-krw-rate">1,530.00 KRW</span><br>
@@ -496,10 +496,10 @@
                 </div>
             </div>
 
-            <!-- 폴리마켓 카피봇 -->
+            <!-- 폴리마켓 날씨봇 -->
             <div class="plan-card plan-c-border">
                 <div class="plan-title">
-                    <span>폴리마켓 카피봇 <span class="status-dot stopped" id="status-polymarket" title="중지됨 (Stopped)"></span></span>
+                    <span>폴리마켓 날씨봇 <span class="status-dot stopped" id="status-polymarket" title="중지됨 (Stopped)"></span></span>
                     <span class="plan-tag c">Polymarket</span>
                 </div>
                 <div class="plan-metrics">
@@ -558,9 +558,9 @@
                     <canvas id="chart-bot-coinone"></canvas>
                 </div>
             </div>
-            <!-- 폴리마켓 카피봇 개별 그래프 -->
+            <!-- 폴리마켓 날씨봇 개별 그래프 -->
             <div class="chart-card small">
-                <h2>폴리마켓 카피봇 (Polymarket Copy)</h2>
+                <h2>폴리마켓 날씨봇 (Polymarket Copy)</h2>
                 <div style="position: relative; height: 260px; width: 100%;">
                     <canvas id="chart-bot-polymarket"></canvas>
                 </div>
@@ -624,7 +624,7 @@
                             <th>일자 (KST)</th>
                             <th>빗썸 ARB 수익</th>
                             <th>코인원 ARB 수익</th>
-                            <th>폴리마켓 카피봇 수익</th>
+                            <th>폴리마켓 날씨봇 수익</th>
                             <th>기준 일일 수익 (빗썸)</th>
                             <th>일일 수익률 (빗썸)</th>
                             <th>목표 달성 상태 (빗썸)</th>
@@ -698,7 +698,7 @@
             document.getElementById("yield-b").textContent = `${summary.yield_b.toFixed(2)}%`;
             document.getElementById("avg-yield-b").textContent = `${summary.avg_yield_b.toFixed(2)}%`;
 
-            // 5. 폴리마켓 카피봇 Summary Metrics
+            // 5. 폴리마켓 날씨봇 Summary Metrics
             const tot_c_usd = summary.tot_c_usd;
             const currentAssetCUsd = seeds.c_usd + tot_c_usd;
             const currentAssetCKrw = currentAssetCUsd * usd_krw;
@@ -820,7 +820,7 @@
                             fill: false
                         },
                         {
-                            label: '폴리마켓 카피봇 수익금',
+                            label: '폴리마켓 날씨봇 수익금',
                             data: daily.map(d => d.cum_c_krw),
                             borderColor: '#db2777',
                             borderWidth: 2,
@@ -864,7 +864,7 @@
             new Chart(ctxPie, {
                 type: 'pie',
                 data: {
-                    labels: ['빗썸 ARB', '코인원 ARB', '폴리마켓 카피봇'],
+                    labels: ['빗썸 ARB', '코인원 ARB', '폴리마켓 날씨봇'],
                     datasets: [{
                         data: [summary.tot_a_krw, summary.tot_b_krw, summary.tot_c_krw],
                         backgroundColor: ['#4f46e5', '#06b6d4', '#db2777'],
@@ -993,7 +993,7 @@
                 }
             });
 
-            // 9-3. Render 폴리마켓 카피봇 Individual Chart (Dual Y-Axis: Left for Asset USD, Right for Yield %)
+            // 9-3. Render 폴리마켓 날씨봇 Individual Chart (Dual Y-Axis: Left for Asset USD, Right for Yield %)
             new Chart(document.getElementById('chart-bot-polymarket').getContext('2d'), {
                 type: 'line',
                 data: {
