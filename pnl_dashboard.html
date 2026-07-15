@@ -406,7 +406,7 @@
         <header>
             <div class="header-left">
                 <h1>PORTFOLIO ASSET PERFORMANCE DASHBOARD</h1>
-                <p>빗썸 ARB &middot; 코인원 ARB &middot; 폴리마켓 날씨봇 실시간 통합 자산 관리 시스템</p>
+                <p>빗썸+OKX 풀 · 헷지스윙 &middot; 코인원 · 유휴 대기 &middot; 폴리마켓 날씨봇 실시간 통합 자산 관리 시스템</p>
             </div>
             <div class="header-right">
                 실시간 환율: <span id="usd-krw-rate">1,530.00 KRW</span><br>
@@ -441,10 +441,10 @@
 
         <!-- Plans Grid -->
         <div class="plans-grid">
-            <!-- 빗썸 ARB -->
+            <!-- 빗썸+OKX 풀 · 헷지스윙 -->
             <div class="plan-card plan-a-border">
                 <div class="plan-title">
-                    <span>빗썸 ARB <span class="status-dot stopped" id="status-bithumb" title="중지됨 (Stopped)"></span></span>
+                    <span>빗썸+OKX 풀 · 헷지스윙 <span class="status-dot stopped" id="status-bithumb" title="중지됨 (Stopped)"></span></span>
                     <span class="plan-tag a">Bithumb</span>
                 </div>
                 <div class="plan-metrics">
@@ -469,10 +469,10 @@
                 </div>
             </div>
 
-            <!-- 코인원 ARB -->
+            <!-- 코인원 · 유휴 대기 -->
             <div class="plan-card plan-b-border">
                 <div class="plan-title">
-                    <span>코인원 ARB <span class="status-dot stopped" id="status-coinone" title="중지됨 (Stopped)"></span></span>
+                    <span>코인원 · 유휴 대기 <span class="status-dot stopped" id="status-coinone" title="중지됨 (Stopped)"></span></span>
                     <span class="plan-tag b">Coinone</span>
                 </div>
                 <div class="plan-metrics">
@@ -544,16 +544,16 @@
         <!-- Section 2: Individual Bot Performance Charts (Dual Y-Axis) -->
         <h2 class="section-title">봇별 개별 자금 증감 및 수익률 추이</h2>
         <div class="charts-grid-individual">
-            <!-- 빗썸 ARB 개별 그래프 -->
+            <!-- 빗썸+OKX 풀 · 헷지스윙 개별 그래프 -->
             <div class="chart-card small">
-                <h2>빗썸 ARB (Bithumb ARB)</h2>
+                <h2>빗썸+OKX 풀 · 헷지스윙 (Bithumb ARB)</h2>
                 <div style="position: relative; height: 260px; width: 100%;">
                     <canvas id="chart-bot-bithumb"></canvas>
                 </div>
             </div>
-            <!-- 코인원 ARB 개별 그래프 -->
+            <!-- 코인원 · 유휴 대기 개별 그래프 -->
             <div class="chart-card small">
-                <h2>코인원 ARB (Coinone ARB)</h2>
+                <h2>코인원 · 유휴 대기 (Coinone ARB)</h2>
                 <div style="position: relative; height: 260px; width: 100%;">
                     <canvas id="chart-bot-coinone"></canvas>
                 </div>
@@ -622,8 +622,8 @@
                     <thead>
                         <tr>
                             <th>일자 (KST)</th>
-                            <th>빗썸 ARB 수익</th>
-                            <th>코인원 ARB 수익</th>
+                            <th>빗썸+OKX 풀 · 헷지스윙 수익</th>
+                            <th>코인원 · 유휴 대기 수익</th>
                             <th>폴리마켓 날씨봇 수익</th>
                             <th>기준 일일 수익 (빗썸)</th>
                             <th>일일 수익률 (빗썸)</th>
@@ -672,7 +672,7 @@
             const projectedKrw = seed_krw * (summary.projected_monthly_yield / 100);
             document.getElementById("projected-monthly-krw").innerHTML = `예상 월 수익: <span style="color:var(--text-primary); font-weight:700;">${Math.round(projectedKrw).toLocaleString('ko-KR')} KRW</span>`;
 
-            // 3. 빗썸 ARB Summary Metrics
+            // 3. 빗썸+OKX 풀 · 헷지스윙 Summary Metrics
             const currentAssetA = seeds.a + summary.tot_a_krw;
             document.getElementById("asset-a").textContent = `${Math.round(currentAssetA).toLocaleString('ko-KR')}원`;
             document.getElementById("seed-a").textContent = `${Math.round(seeds.a).toLocaleString('ko-KR')}원`;
@@ -690,7 +690,7 @@
             document.getElementById("yield-a").textContent = `${summary.yield_a.toFixed(2)}%`;
             document.getElementById("avg-yield-a").textContent = `${summary.avg_yield_a.toFixed(2)}%`;
 
-            // 4. 코인원 ARB Summary Metrics
+            // 4. 코인원 · 유휴 대기 Summary Metrics
             const currentAssetB = seeds.b + summary.tot_b_krw;
             document.getElementById("asset-b").textContent = `${Math.round(currentAssetB).toLocaleString('ko-KR')}원`;
             document.getElementById("seed-b").textContent = `${Math.round(seeds.b).toLocaleString('ko-KR')}원`;
@@ -722,9 +722,9 @@
                         }
                     }
                 };
-                updateLamp("status-bithumb", bot_status.bithumb);
-                updateLamp("status-coinone", bot_status.coinone);
-                updateLamp("status-polymarket", bot_status.polymarket);
+                updateLamp("status-bithumb", bot_status.hedge_swing_live);
+                updateLamp("status-coinone", bot_status.twin_cycle_paper);
+                updateLamp("status-polymarket", bot_status.weather_live);
             }
 
             // 6. Build Daily Table
@@ -804,7 +804,7 @@
                     labels: daily.map(d => d.date),
                     datasets: [
                         {
-                            label: '빗썸 ARB 수익금',
+                            label: '빗썸+OKX 풀 · 헷지스윙 수익금',
                             data: daily.map(d => d.cum_a_krw),
                             borderColor: '#4f46e5',
                             borderWidth: 2,
@@ -812,7 +812,7 @@
                             fill: false
                         },
                         {
-                            label: '코인원 ARB 수익금',
+                            label: '코인원 · 유휴 대기 수익금',
                             data: daily.map(d => d.cum_b_krw),
                             borderColor: '#06b6d4',
                             borderWidth: 2,
@@ -864,7 +864,7 @@
             new Chart(ctxPie, {
                 type: 'pie',
                 data: {
-                    labels: ['빗썸 ARB', '코인원 ARB', '폴리마켓 날씨봇'],
+                    labels: ['빗썸+OKX 풀 · 헷지스윙', '코인원 · 유휴 대기', '폴리마켓 날씨봇'],
                     datasets: [{
                         data: [summary.tot_a_krw, summary.tot_b_krw, summary.tot_c_krw],
                         backgroundColor: ['#4f46e5', '#06b6d4', '#db2777'],
@@ -883,7 +883,7 @@
                 }
             });
 
-            // 9-1. Render 빗썸 ARB Individual Chart (Dual Y-Axis: Left for Asset KRW, Right for Yield %)
+            // 9-1. Render 빗썸+OKX 풀 · 헷지스윙 Individual Chart (Dual Y-Axis: Left for Asset KRW, Right for Yield %)
             new Chart(document.getElementById('chart-bot-bithumb').getContext('2d'), {
                 type: 'line',
                 data: {
@@ -938,7 +938,7 @@
                 }
             });
 
-            // 9-2. Render 코인원 ARB Individual Chart (Dual Y-Axis: Left for Asset KRW, Right for Yield %)
+            // 9-2. Render 코인원 · 유휴 대기 Individual Chart (Dual Y-Axis: Left for Asset KRW, Right for Yield %)
             new Chart(document.getElementById('chart-bot-coinone').getContext('2d'), {
                 type: 'line',
                 data: {

@@ -444,7 +444,7 @@
             <!-- 빗썸 ARB -->
             <div class="plan-card plan-a-border">
                 <div class="plan-title">
-                    <span>빗썸 ARB <span class="status-dot stopped" id="status-bithumb" title="중지됨 (Stopped)"></span></span>
+                    <span>빗썸+OKX 풀 · 헷지스윙 <span class="status-dot stopped" id="status-bithumb" title="중지됨 (Stopped)"></span></span>
                     <span class="plan-tag a">Bithumb</span>
                 </div>
                 <div class="plan-metrics">
@@ -472,7 +472,7 @@
             <!-- 코인원 ARB -->
             <div class="plan-card plan-b-border">
                 <div class="plan-title">
-                    <span>코인원 ARB <span class="status-dot stopped" id="status-coinone" title="중지됨 (Stopped)"></span></span>
+                    <span>코인원 · 유휴 대기 <span class="status-dot stopped" id="status-coinone" title="중지됨 (Stopped)"></span></span>
                     <span class="plan-tag b">Coinone</span>
                 </div>
                 <div class="plan-metrics">
@@ -722,9 +722,9 @@
                         }
                     }
                 };
-                updateLamp("status-bithumb", bot_status.bithumb);
-                updateLamp("status-coinone", bot_status.coinone);
-                updateLamp("status-polymarket", bot_status.polymarket);
+                updateLamp("status-bithumb", bot_status.hedge_swing_live);
+                updateLamp("status-coinone", bot_status.twin_cycle_paper);
+                updateLamp("status-polymarket", bot_status.weather_live);
             }
 
             // 6. Build Daily Table
