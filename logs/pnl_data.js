@@ -1,17 +1,17 @@
 const pnlData = {
-  "updated_at": "2026-07-26 01:46:04",
+  "updated_at": "2026-07-26 01:51:04",
   "usd_krw": 1462.59,
-  "total_asset_krw": 445924,
-  "daily_pnl_krw": -1044,
-  "daily_yield_pct": -0.234,
+  "total_asset_krw": 445683,
+  "daily_pnl_krw": -1285,
+  "daily_yield_pct": -0.287,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -8343,
-    "seed_yield_pct": -1.837,
+    "seed_pnl_krw": -8584,
+    "seed_yield_pct": -1.89,
     "days_since_seed": 7,
-    "avg_daily_yield_pct": -0.262
+    "avg_daily_yield_pct": -0.27
   },
   "asset_trend": [
     {
@@ -20,7 +20,7 @@ const pnlData = {
     },
     {
       "date": "2026-07-26",
-      "total_krw": 445924
+      "total_krw": 445683
     }
   ],
   "daily_history": [
@@ -33,24 +33,24 @@ const pnlData = {
     },
     {
       "date": "2026-07-26",
-      "total_asset_krw": 445924,
-      "main_pnl_krw": -1404,
-      "twin_pnl_krw": 360,
-      "total_pnl_krw": -1044
+      "total_asset_krw": 445683,
+      "main_pnl_krw": -1692,
+      "twin_pnl_krw": 408,
+      "total_pnl_krw": -1285
     }
   ],
   "bots": {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 253359,
+      "asset_krw": 253070,
       "balance_krw": 227462,
-      "balance_usdt": 17.71,
-      "cum_pnl_krw": -1404,
+      "balance_usdt": 17.51,
+      "cum_pnl_krw": -1692,
       "cum_pnl_since": "2026-07-25",
       "total_pnl_usd_record": 199.7,
       "today_pnl_usd_record": 0,
-      "daily_pnl_krw": -1404,
+      "daily_pnl_krw": -1692,
       "today_trades": 0,
       "pending_transfers": 0,
       "restart_count": 14,
@@ -110,16 +110,16 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 192565,
+      "asset_krw": 192613,
       "xrp_bithumb": 5.343,
       "xrp_okx": 82.2894,
       "xrp_target": 43.8692,
-      "hedge_upnl_usd": 3.1688,
-      "cum_pnl_krw": 360,
+      "hedge_upnl_usd": 3.0209,
+      "cum_pnl_krw": 408,
       "cum_pnl_since": "2026-07-25",
       "session_pnl_usd_record": 0.4008,
       "today_pnl_usd_record": 0,
-      "daily_pnl_krw": 360,
+      "daily_pnl_krw": 408,
       "today_trades": 0,
       "recent_trades": [
         {
