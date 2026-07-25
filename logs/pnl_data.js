@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-07-25 15:16:04",
+  "updated_at": "2026-07-25 15:21:03",
   "usd_krw": 1462.59,
   "total_asset_krw": 448408,
   "daily_pnl_krw": null,
