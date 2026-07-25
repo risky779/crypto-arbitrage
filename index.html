@@ -12,9 +12,11 @@
     --text: #111827;
     --text-dim: #6b7280;
     --accent: #4f46e5;
+    --accent2: #06b6d4;
     --green: #059669;
     --red: #dc2626;
     --amber: #d97706;
+    --grid: #eef0f3;
     --radius: 14px;
     --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Pretendard, Roboto, sans-serif;
   }
@@ -26,9 +28,11 @@
       --text: #e5e7eb;
       --text-dim: #8b93a3;
       --accent: #818cf8;
+      --accent2: #22d3ee;
       --green: #34d399;
       --red: #f87171;
       --amber: #fbbf24;
+      --grid: #1c2029;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,7 +43,7 @@
     padding: 24px 16px 60px;
     line-height: 1.5;
   }
-  .wrap { max-width: 920px; margin: 0 auto; }
+  .wrap { max-width: 960px; margin: 0 auto; }
 
   header { margin-bottom: 24px; }
   header h1 { font-size: 1.35rem; font-weight: 700; }
@@ -63,8 +67,8 @@
   .neg { color: var(--red); }
   .neutral { color: var(--text-dim); }
 
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
 
   .card {
     background: var(--card);
@@ -73,6 +77,7 @@
     padding: 20px;
   }
   .card h2 { font-size: 1rem; font-weight: 700; display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .card h3 { font-size: 0.78rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.04em; margin: 16px 0 8px; }
   .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
   .dot.on { background: var(--green); box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2); }
   .dot.off { background: var(--red); }
@@ -88,14 +93,21 @@
   th { color: var(--text-dim); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; }
   td.time { color: var(--text-dim); font-size: 0.75rem; }
 
-  .trend {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-  }
-  .trend h2 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
-  svg { width: 100%; height: 90px; display: block; }
+  .chart-card svg { width: 100%; display: block; overflow: visible; }
+  .axis-label { font-size: 9px; fill: var(--text-dim); font-family: var(--font); }
+  .grid-line { stroke: var(--grid); stroke-width: 1; }
+  .tooltip-dot { opacity: 0; transition: opacity 0.1s; }
+
+  .donut-wrap { display: flex; align-items: center; gap: 20px; }
+  .donut-legend { display: flex; flex-direction: column; gap: 10px; font-size: 0.82rem; flex: 1; }
+  .legend-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 6px; flex-shrink: 0; }
+  .legend-name { display: flex; align-items: center; color: var(--text-dim); }
+  .legend-val { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  .bar-chart { display: flex; align-items: flex-end; gap: 4px; height: 56px; margin: 10px 0 4px; }
+  .bar-chart .bar-wrap { flex: 1; display: flex; align-items: flex-end; justify-content: center; height: 100%; }
+  .bar-chart .bar { width: 100%; max-width: 22px; border-radius: 3px 3px 0 0; min-height: 3px; }
 
   .empty { color: var(--text-dim); font-size: 0.82rem; padding: 12px 0; text-align: center; }
   footer { text-align: center; color: var(--text-dim); font-size: 0.75rem; margin-top: 28px; }
@@ -132,7 +144,18 @@
       </div>
     </div>
 
-    <div class="grid">
+    <div class="grid2">
+      <div class="card chart-card">
+        <h2>자산 추이</h2>
+        <div id="trend-chart"></div>
+      </div>
+      <div class="card chart-card">
+        <h2>자산 배분</h2>
+        <div id="allocation-chart"></div>
+      </div>
+    </div>
+
+    <div class="grid2">
       <div class="card">
         <h2><span class="dot" id="main-dot"></span> 메인봇 <span class="neutral" style="font-weight:400;font-size:0.75rem;">전송 아비트라지</span></h2>
         <div class="kv"><span class="k">보유 자산</span><span class="v" id="main-asset">-</span></div>
@@ -140,6 +163,8 @@
         <div class="kv"><span class="k">OKX USDT</span><span class="v" id="main-usdt">-</span></div>
         <div class="kv"><span class="k">누적 손익</span><span class="v" id="main-total-pnl">-</span></div>
         <div class="kv"><span class="k">오늘 거래</span><span class="v" id="main-today-trades">-</span></div>
+        <h3>최근 거래 손익</h3>
+        <div class="bar-chart" id="main-bars"></div>
         <table>
           <thead><tr><th>시각</th><th>코인</th><th>손익($)</th></tr></thead>
           <tbody id="main-trades"></tbody>
@@ -153,16 +178,13 @@
         <div class="kv"><span class="k">XRP (OKX)</span><span class="v" id="twin-xrp-o">-</span></div>
         <div class="kv"><span class="k">세션 누적손익</span><span class="v" id="twin-session-pnl">-</span></div>
         <div class="kv"><span class="k">오늘 거래</span><span class="v" id="twin-today-trades">-</span></div>
+        <h3>최근 거래 손익</h3>
+        <div class="bar-chart" id="twin-bars"></div>
         <table>
           <thead><tr><th>시각</th><th>방향</th><th>손익($)</th></tr></thead>
           <tbody id="twin-trades"></tbody>
         </table>
       </div>
-    </div>
-
-    <div class="trend">
-      <h2>자산 추이</h2>
-      <svg id="trend-svg" viewBox="0 0 600 90" preserveAspectRatio="none"></svg>
     </div>
 
     <footer>자동 갱신 · main_bot &amp; twin_bot 실시간 잔고 기준</footer>
@@ -177,10 +199,17 @@
   }
   const d = pnlData;
   const fmtKRW = n => n === null || n === undefined ? '-' : Math.round(n).toLocaleString('ko-KR') + '원';
+  const fmtKRWShort = n => {
+    const abs = Math.abs(n);
+    if (abs >= 10000) return (n / 10000).toFixed(1) + '만';
+    return Math.round(n).toLocaleString('ko-KR');
+  };
   const fmtUSD = n => n === null || n === undefined ? '-' : (n >= 0 ? '+' : '') + n.toFixed(4) + '$';
   const fmtPct = n => n === null || n === undefined ? '-' : (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
   const cls = n => n > 0 ? 'pos' : (n < 0 ? 'neg' : 'neutral');
+  const color = n => n > 0 ? 'var(--green)' : (n < 0 ? 'var(--red)' : 'var(--text-dim)');
   const shortTime = t => t ? t.replace('T', ' ').slice(5, 16) : '-';
+  const shortDate = ds => { const p = ds.split('-'); return p[1] + '/' + p[2]; };
 
   document.getElementById('updated').textContent = '업데이트: ' + d.updated_at + ' KST';
   document.getElementById('total-asset').textContent = fmtKRW(d.total_asset_krw);
@@ -242,25 +271,148 @@
     });
   }
 
-  // 자산추이 스파크라인
-  const trend = d.asset_trend || [];
-  const svg = document.getElementById('trend-svg');
-  if (trend.length < 2) {
-    svg.outerHTML = '<div class="empty">추이 데이터 축적 중 (매일 자동 기록)</div>';
-  } else {
+  // ---------------------------------------------------------------
+  // 거래별 손익 막대그래프 (최근 거래를 시간순으로, 최대 8건)
+  // ---------------------------------------------------------------
+  function renderBarChart(containerId, trades, valueKey) {
+    const el = document.getElementById(containerId);
+    const items = trades.slice(0, 8).reverse();
+    if (items.length === 0) {
+      el.innerHTML = '<div class="empty" style="height:56px;display:flex;align-items:center;justify-content:center;">거래 없음</div>';
+      return;
+    }
+    const vals = items.map(t => t[valueKey]);
+    const maxAbs = Math.max(...vals.map(Math.abs), 0.0001);
+    el.innerHTML = items.map(t => {
+      const v = t[valueKey];
+      const pct = Math.max(Math.abs(v) / maxAbs * 100, 6);
+      return '<div class="bar-wrap" title="' + fmtUSD(v) + '">' +
+        '<div class="bar" style="height:' + pct + '%;background:' + color(v) + ';"></div>' +
+        '</div>';
+    }).join('');
+  }
+  renderBarChart('main-bars', mb.recent_trades, 'profit_usd');
+  renderBarChart('twin-bars', tb.recent_trades, 'pnl_usd');
+
+  // ---------------------------------------------------------------
+  // 자산 추이 차트 (그리드 + 축 라벨 + 영역채우기 + 호버 툴팁)
+  // ---------------------------------------------------------------
+  (function renderTrend() {
+    const trend = d.asset_trend || [];
+    const container = document.getElementById('trend-chart');
+    if (trend.length < 2) {
+      const cur = trend.length === 1 ? fmtKRW(trend[0].total_krw) : '-';
+      container.innerHTML = '<div class="empty" style="padding:30px 0;">추이 데이터 축적 중 (매일 자동 기록)<br>' +
+        '<span style="font-size:1.1rem;font-weight:700;color:var(--text);">' + cur + '</span></div>';
+      return;
+    }
     const vals = trend.map(p => p.total_krw);
     const min = Math.min(...vals), max = Math.max(...vals);
-    const range = (max - min) || 1;
-    const w = 600, h = 90, pad = 4;
-    const pts = vals.map((v, i) => {
-      const x = pad + (i / (vals.length - 1)) * (w - pad * 2);
-      const y = h - pad - ((v - min) / range) * (h - pad * 2);
-      return x + ',' + y;
-    }).join(' ');
+    const range = (max - min) || max * 0.05 || 1;
+    const padMin = min - range * 0.15, padMax = max + range * 0.15;
+    const fullRange = padMax - padMin;
+
+    const W = 560, H = 180, padL = 46, padR = 10, padT = 12, padB = 22;
+    const plotW = W - padL - padR, plotH = H - padT - padB;
+
+    const xAt = i => padL + (trend.length === 1 ? plotW / 2 : (i / (trend.length - 1)) * plotW);
+    const yAt = v => padT + plotH - ((v - padMin) / fullRange) * plotH;
+
+    const linePts = vals.map((v, i) => xAt(i) + ',' + yAt(v)).join(' ');
+    const areaPts = linePts + ' ' + xAt(vals.length - 1) + ',' + (padT + plotH) + ' ' + xAt(0) + ',' + (padT + plotH);
+
     const isUp = vals[vals.length - 1] >= vals[0];
-    const color = isUp ? '#059669' : '#dc2626';
-    svg.innerHTML = '<polyline points="' + pts + '" fill="none" stroke="' + color + '" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />';
-  }
+    const lineColor = isUp ? 'var(--green)' : 'var(--red)';
+
+    // 그리드라인 4단 + Y축 라벨
+    let gridSvg = '';
+    const steps = 4;
+    for (let s = 0; s <= steps; s++) {
+      const v = padMin + (fullRange * s / steps);
+      const y = yAt(v);
+      gridSvg += '<line class="grid-line" x1="' + padL + '" y1="' + y + '" x2="' + (W - padR) + '" y2="' + y + '" />';
+      gridSvg += '<text class="axis-label" x="' + (padL - 6) + '" y="' + (y + 3) + '" text-anchor="end">' + fmtKRWShort(v) + '</text>';
+    }
+
+    // X축 날짜 라벨 (최대 6개, 균등 샘플)
+    let xLabelsSvg = '';
+    const labelCount = Math.min(trend.length, 6);
+    for (let k = 0; k < labelCount; k++) {
+      const idx = labelCount === 1 ? 0 : Math.round(k * (trend.length - 1) / (labelCount - 1));
+      xLabelsSvg += '<text class="axis-label" x="' + xAt(idx) + '" y="' + (H - 4) + '" text-anchor="middle">' + shortDate(trend[idx].date) + '</text>';
+    }
+
+    // 데이터 포인트 + 호버 대상 원
+    let dotsSvg = '';
+    vals.forEach((v, i) => {
+      dotsSvg += '<circle cx="' + xAt(i) + '" cy="' + yAt(v) + '" r="3" fill="' + lineColor + '" />';
+      dotsSvg += '<circle class="hover-target" data-idx="' + i + '" cx="' + xAt(i) + '" cy="' + yAt(v) + '" r="10" fill="transparent" style="cursor:pointer;" />';
+    });
+
+    const svgId = 'trend-svg-el';
+    const tipId = 'trend-tip';
+    container.innerHTML =
+      '<svg id="' + svgId + '" viewBox="0 0 ' + W + ' ' + H + '" style="height:' + H + 'px;">' +
+        '<defs><linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">' +
+          '<stop offset="0%" stop-color="' + lineColor + '" stop-opacity="0.25" />' +
+          '<stop offset="100%" stop-color="' + lineColor + '" stop-opacity="0" />' +
+        '</linearGradient></defs>' +
+        gridSvg +
+        '<polygon points="' + areaPts + '" fill="url(#areaGrad)" />' +
+        '<polyline points="' + linePts + '" fill="none" stroke="' + lineColor + '" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />' +
+        dotsSvg +
+        xLabelsSvg +
+      '</svg>' +
+      '<div id="' + tipId + '" style="display:none;position:relative;text-align:center;font-size:0.78rem;color:var(--text-dim);margin-top:2px;"></div>';
+
+    const tip = document.getElementById(tipId);
+    container.querySelectorAll('.hover-target').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        const i = +el.getAttribute('data-idx');
+        tip.style.display = 'block';
+        tip.innerHTML = '<b style="color:var(--text);">' + trend[i].date + '</b> · ' + fmtKRW(trend[i].total_krw);
+      });
+      el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+    });
+  })();
+
+  // ---------------------------------------------------------------
+  // 자산 배분 도넛차트 (main_bot vs twin_bot)
+  // ---------------------------------------------------------------
+  (function renderAllocation() {
+    const container = document.getElementById('allocation-chart');
+    const total = mb.asset_krw + tb.asset_krw;
+    if (total <= 0) {
+      container.innerHTML = '<div class="empty">데이터 없음</div>';
+      return;
+    }
+    const mainPct = mb.asset_krw / total * 100;
+    const twinPct = tb.asset_krw / total * 100;
+    const R = 52, CX = 60, CY = 60, STROKE = 16;
+    const CIRC = 2 * Math.PI * R;
+    const mainLen = CIRC * mainPct / 100;
+    const twinLen = CIRC * twinPct / 100;
+
+    const svg =
+      '<svg viewBox="0 0 120 120" style="width:130px;height:130px;flex-shrink:0;">' +
+        '<circle cx="' + CX + '" cy="' + CY + '" r="' + R + '" fill="none" stroke="var(--grid)" stroke-width="' + STROKE + '" />' +
+        '<circle cx="' + CX + '" cy="' + CY + '" r="' + R + '" fill="none" stroke="var(--accent)" stroke-width="' + STROKE + '" ' +
+          'stroke-dasharray="' + mainLen + ' ' + CIRC + '" stroke-dashoffset="0" transform="rotate(-90 ' + CX + ' ' + CY + ')" stroke-linecap="round" />' +
+        '<circle cx="' + CX + '" cy="' + CY + '" r="' + R + '" fill="none" stroke="var(--accent2)" stroke-width="' + STROKE + '" ' +
+          'stroke-dasharray="' + twinLen + ' ' + CIRC + '" stroke-dashoffset="-' + mainLen + '" transform="rotate(-90 ' + CX + ' ' + CY + ')" stroke-linecap="round" />' +
+        '<text x="' + CX + '" y="' + (CY - 4) + '" text-anchor="middle" style="font-size:15px;font-weight:800;fill:var(--text);">' + Math.round(mainPct) + '%</text>' +
+        '<text x="' + CX + '" y="' + (CY + 12) + '" text-anchor="middle" style="font-size:9px;fill:var(--text-dim);">메인봇</text>' +
+      '</svg>';
+
+    const legend =
+      '<div class="donut-legend">' +
+        '<div class="legend-row"><span class="legend-name"><span class="legend-dot" style="background:var(--accent);"></span>메인봇</span><span class="legend-val">' + fmtKRW(mb.asset_krw) + '</span></div>' +
+        '<div class="legend-row"><span class="legend-name"><span class="legend-dot" style="background:var(--accent2);"></span>쌍둥이봇</span><span class="legend-val">' + fmtKRW(tb.asset_krw) + '</span></div>' +
+        '<div class="legend-row" style="border-top:1px dashed var(--border);padding-top:8px;margin-top:2px;"><span class="legend-name">합계</span><span class="legend-val">' + fmtKRW(total) + '</span></div>' +
+      '</div>';
+
+    container.innerHTML = '<div class="donut-wrap">' + svg + legend + '</div>';
+  })();
 })();
 </script>
 </body>
