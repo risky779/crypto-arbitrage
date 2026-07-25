@@ -1,28 +1,28 @@
 const pnlData = {
-  "updated_at": "2026-07-25 22:16:03",
+  "updated_at": "2026-07-25 22:21:03",
   "usd_krw": 1462.59,
-  "total_asset_krw": 447253,
+  "total_asset_krw": 447240,
   "daily_pnl_krw": null,
   "daily_yield_pct": null,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -7014,
-    "seed_yield_pct": -1.544,
+    "seed_pnl_krw": -7027,
+    "seed_yield_pct": -1.547,
     "days_since_seed": 6,
-    "avg_daily_yield_pct": -0.257
+    "avg_daily_yield_pct": -0.258
   },
   "asset_trend": [
     {
       "date": "2026-07-25",
-      "total_krw": 447253
+      "total_krw": 447240
     }
   ],
   "daily_history": [
     {
       "date": "2026-07-25",
-      "total_asset_krw": 447253,
+      "total_asset_krw": 447240,
       "main_pnl_krw": null,
       "twin_pnl_krw": null,
       "total_pnl_krw": null
@@ -32,9 +32,9 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 255110,
-      "balance_krw": 176229,
-      "balance_usdt": 53.93,
+      "asset_krw": 255133,
+      "balance_krw": 196712,
+      "balance_usdt": 39.94,
       "cum_pnl_krw": 0,
       "cum_pnl_since": "2026-07-25",
       "total_pnl_usd_record": 199.7,
@@ -99,18 +99,32 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 192144,
-      "xrp_bithumb": 37.4207,
-      "xrp_okx": 50.2437,
+      "asset_krw": 192106,
+      "xrp_bithumb": 24.5896,
+      "xrp_okx": 63.062,
       "xrp_target": 43.8692,
-      "hedge_upnl_usd": 4.091,
+      "hedge_upnl_usd": 4.0997,
       "cum_pnl_krw": 0,
       "cum_pnl_since": "2026-07-25",
-      "session_pnl_usd_record": 0.3805,
-      "today_pnl_usd_record": 0.035,
+      "session_pnl_usd_record": 0.3886,
+      "today_pnl_usd_record": 0.0432,
       "daily_pnl_krw": null,
-      "today_trades": 5,
+      "today_trades": 7,
       "recent_trades": [
+        {
+          "time": "2026-07-25T22:19:28.501585",
+          "coin": "XRP",
+          "sell_side": "BITHUMB",
+          "gap_pct": -0.198,
+          "pnl_usd": 0.0041
+        },
+        {
+          "time": "2026-07-25T22:18:52.611286",
+          "coin": "XRP",
+          "sell_side": "BITHUMB",
+          "gap_pct": -0.198,
+          "pnl_usd": 0.0041
+        },
         {
           "time": "2026-07-25T19:53:05.128742",
           "coin": "XRP",
