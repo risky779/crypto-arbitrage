@@ -1,28 +1,28 @@
 const pnlData = {
-  "updated_at": "2026-07-25 18:56:04",
+  "updated_at": "2026-07-25 19:01:04",
   "usd_krw": 1462.59,
-  "total_asset_krw": 448221,
+  "total_asset_krw": 447941,
   "daily_pnl_krw": null,
   "daily_yield_pct": null,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -6046,
-    "seed_yield_pct": -1.331,
+    "seed_pnl_krw": -6326,
+    "seed_yield_pct": -1.393,
     "days_since_seed": 6,
-    "avg_daily_yield_pct": -0.222
+    "avg_daily_yield_pct": -0.232
   },
   "asset_trend": [
     {
       "date": "2026-07-25",
-      "total_krw": 448221
+      "total_krw": 447941
     }
   ],
   "daily_history": [
     {
       "date": "2026-07-25",
-      "total_asset_krw": 448221,
+      "total_asset_krw": 447941,
       "main_pnl_krw": null,
       "twin_pnl_krw": null,
       "total_pnl_krw": null
@@ -32,9 +32,9 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 256175,
+      "asset_krw": 255895,
       "balance_krw": 78330,
-      "balance_usdt": 121.6,
+      "balance_usdt": 121.4,
       "cum_pnl_krw": 0,
       "cum_pnl_since": "2026-07-25",
       "total_pnl_usd_record": 199.7,
@@ -42,7 +42,7 @@ const pnlData = {
       "daily_pnl_krw": null,
       "today_trades": 0,
       "pending_transfers": 0,
-      "restart_count": 11,
+      "restart_count": 12,
       "recent_trades": [
         {
           "time": "2026-07-21T18:54:59.276261",
