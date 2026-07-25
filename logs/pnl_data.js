@@ -1,14 +1,14 @@
 const pnlData = {
-  "updated_at": "2026-07-25 14:01:03",
+  "updated_at": "2026-07-25 14:06:03",
   "usd_krw": 1462.59,
-  "total_asset_krw": 448206,
+  "total_asset_krw": 448180,
   "daily_pnl_krw": null,
   "daily_yield_pct": null,
   "target_daily_yield_pct": 1.0,
   "asset_trend": [
     {
       "date": "2026-07-25",
-      "total_krw": 448206
+      "total_krw": 448180
     }
   ],
   "bots": {
@@ -79,7 +79,7 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 192298,
+      "asset_krw": 192272,
       "xrp_bithumb": 17.5901,
       "xrp_okx": 70.0972,
       "xrp_target": 43.8692,
