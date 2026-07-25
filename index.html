@@ -167,6 +167,7 @@
       <div class="card">
         <h2><span class="dot" id="main-dot"></span> 메인봇 <span class="neutral" style="font-weight:400;font-size:0.75rem;">전송 아비트라지</span></h2>
         <div class="kv"><span class="k">보유 자산</span><span class="v" id="main-asset">-</span></div>
+        <div class="kv"><span class="k">오늘 자산증감</span><span class="v" id="main-daily-pnl">-</span></div>
         <div class="kv"><span class="k">Bithumb KRW</span><span class="v" id="main-krw">-</span></div>
         <div class="kv"><span class="k">OKX USDT</span><span class="v" id="main-usdt">-</span></div>
         <div class="kv"><span class="k">누적 손익</span><span class="v" id="main-total-pnl">-</span></div>
@@ -182,6 +183,7 @@
       <div class="card">
         <h2><span class="dot" id="twin-dot"></span> 쌍둥이봇 <span class="neutral" style="font-weight:400;font-size:0.75rem;">양쪽재고 로컬거래</span></h2>
         <div class="kv"><span class="k">보유 자산</span><span class="v" id="twin-asset">-</span></div>
+        <div class="kv"><span class="k">오늘 자산증감</span><span class="v" id="twin-daily-pnl">-</span></div>
         <div class="kv"><span class="k">XRP (Bithumb)</span><span class="v" id="twin-xrp-b">-</span></div>
         <div class="kv"><span class="k">XRP (OKX)</span><span class="v" id="twin-xrp-o">-</span></div>
         <div class="kv"><span class="k">세션 누적손익</span><span class="v" id="twin-session-pnl">-</span></div>
@@ -193,6 +195,14 @@
           <tbody id="twin-trades"></tbody>
         </table>
       </div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px;">
+      <h2>📅 일별 봇별 수익현황</h2>
+      <table>
+        <thead><tr><th>날짜</th><th>메인봇</th><th>쌍둥이봇</th><th>총손익</th><th>총자산</th></tr></thead>
+        <tbody id="daily-history"></tbody>
+      </table>
     </div>
 
     <footer>자동 갱신 · main_bot &amp; twin_bot 실시간 잔고 기준</footer>
@@ -249,6 +259,10 @@
 
   document.getElementById('main-dot').className = 'dot ' + (mb.running ? 'on' : 'off');
   document.getElementById('main-asset').textContent = fmtKRW(mb.asset_krw);
+  const mdp = document.getElementById('main-daily-pnl');
+  if (mb.daily_pnl_krw !== null && mb.daily_pnl_krw !== undefined) {
+    mdp.textContent = fmtKRW(mb.daily_pnl_krw); mdp.className = 'v ' + cls(mb.daily_pnl_krw);
+  } else { mdp.textContent = '데이터 축적 중'; mdp.className = 'v neutral'; }
   document.getElementById('main-krw').textContent = fmtKRW(mb.balance_krw);
   document.getElementById('main-usdt').textContent = '$' + mb.balance_usdt.toFixed(2);
   const mtp = document.getElementById('main-total-pnl');
@@ -269,6 +283,10 @@
 
   document.getElementById('twin-dot').className = 'dot ' + (tb.running ? 'on' : 'off');
   document.getElementById('twin-asset').textContent = fmtKRW(tb.asset_krw);
+  const tdp = document.getElementById('twin-daily-pnl');
+  if (tb.daily_pnl_krw !== null && tb.daily_pnl_krw !== undefined) {
+    tdp.textContent = fmtKRW(tb.daily_pnl_krw); tdp.className = 'v ' + cls(tb.daily_pnl_krw);
+  } else { tdp.textContent = '데이터 축적 중'; tdp.className = 'v neutral'; }
   document.getElementById('twin-xrp-b').textContent = tb.xrp_bithumb.toFixed(4) + ' XRP';
   document.getElementById('twin-xrp-o').textContent = tb.xrp_okx.toFixed(4) + ' XRP';
   const tsp = document.getElementById('twin-session-pnl');
@@ -428,6 +446,26 @@
       '</div>';
 
     container.innerHTML = '<div class="donut-wrap">' + svg + legend + '</div>';
+  })();
+
+  // ---------------------------------------------------------------
+  // 일별 봇별 수익현황 테이블 (최신일 우선)
+  // ---------------------------------------------------------------
+  (function renderDailyHistory() {
+    const body = document.getElementById('daily-history');
+    const hist = (d.daily_history || []).slice().reverse();
+    if (hist.length === 0) {
+      body.innerHTML = '<tr><td colspan="5" class="empty">데이터 축적 중</td></tr>';
+      return;
+    }
+    body.innerHTML = hist.map(r => {
+      const mp = r.main_pnl_krw, tp = r.twin_pnl_krw, tot = r.total_pnl_krw;
+      return '<tr><td>' + r.date + '</td>' +
+        '<td class="' + cls(mp) + '">' + (mp === null || mp === undefined ? '-' : fmtKRW(mp)) + '</td>' +
+        '<td class="' + cls(tp) + '">' + (tp === null || tp === undefined ? '-' : fmtKRW(tp)) + '</td>' +
+        '<td class="' + cls(tot) + '">' + (tot === null || tot === undefined ? '-' : fmtKRW(tot)) + '</td>' +
+        '<td>' + fmtKRW(r.total_asset_krw) + '</td></tr>';
+    }).join('');
   })();
 })();
 </script>
