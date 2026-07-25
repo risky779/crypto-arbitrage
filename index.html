@@ -170,8 +170,9 @@
         <div class="kv"><span class="k">오늘 자산증감</span><span class="v" id="main-daily-pnl">-</span></div>
         <div class="kv"><span class="k">Bithumb KRW</span><span class="v" id="main-krw">-</span></div>
         <div class="kv"><span class="k">OKX USDT</span><span class="v" id="main-usdt">-</span></div>
-        <div class="kv"><span class="k">누적 손익</span><span class="v" id="main-total-pnl">-</span></div>
-        <div class="kv"><span class="k">오늘 거래</span><span class="v" id="main-today-trades">-</span></div>
+        <div class="kv"><span class="k">누적 손익 (잔고기준)</span><span class="v" id="main-total-pnl">-</span></div>
+        <div class="kv" style="font-size:0.72rem;"><span class="k" style="color:var(--text-dim);">└ 거래기록 합계(참고)</span><span class="v" id="main-total-pnl-record" style="font-weight:500;">-</span></div>
+        <div class="kv"><span class="k">오늘 거래(기록)</span><span class="v" id="main-today-trades">-</span></div>
         <h3>최근 거래 손익</h3>
         <div class="bar-chart" id="main-bars"></div>
         <table>
@@ -186,8 +187,9 @@
         <div class="kv"><span class="k">오늘 자산증감</span><span class="v" id="twin-daily-pnl">-</span></div>
         <div class="kv"><span class="k">XRP (Bithumb)</span><span class="v" id="twin-xrp-b">-</span></div>
         <div class="kv"><span class="k">XRP (OKX)</span><span class="v" id="twin-xrp-o">-</span></div>
-        <div class="kv"><span class="k">세션 누적손익</span><span class="v" id="twin-session-pnl">-</span></div>
-        <div class="kv"><span class="k">오늘 거래</span><span class="v" id="twin-today-trades">-</span></div>
+        <div class="kv"><span class="k">누적 손익 (잔고기준)</span><span class="v" id="twin-session-pnl">-</span></div>
+        <div class="kv" style="font-size:0.72rem;"><span class="k" style="color:var(--text-dim);">└ 자체기록 합계(참고)</span><span class="v" id="twin-session-pnl-record" style="font-weight:500;">-</span></div>
+        <div class="kv"><span class="k">오늘 거래(기록)</span><span class="v" id="twin-today-trades">-</span></div>
         <h3>최근 거래 손익</h3>
         <div class="bar-chart" id="twin-bars"></div>
         <table>
@@ -266,8 +268,12 @@
   document.getElementById('main-krw').textContent = fmtKRW(mb.balance_krw);
   document.getElementById('main-usdt').textContent = '$' + mb.balance_usdt.toFixed(2);
   const mtp = document.getElementById('main-total-pnl');
-  mtp.textContent = fmtUSD(mb.total_pnl_usd); mtp.className = 'v ' + cls(mb.total_pnl_usd);
-  document.getElementById('main-today-trades').textContent = mb.today_trades + '건 (' + fmtUSD(mb.today_pnl_usd) + ')';
+  if (mb.cum_pnl_krw !== null && mb.cum_pnl_krw !== undefined) {
+    mtp.textContent = fmtKRW(mb.cum_pnl_krw) + (mb.cum_pnl_since ? ' (' + mb.cum_pnl_since + '~)' : '');
+    mtp.className = 'v ' + cls(mb.cum_pnl_krw);
+  } else { mtp.textContent = '데이터 축적 중'; mtp.className = 'v neutral'; }
+  document.getElementById('main-total-pnl-record').textContent = fmtUSD(mb.total_pnl_usd_record);
+  document.getElementById('main-today-trades').textContent = mb.today_trades + '건 (' + fmtUSD(mb.today_pnl_usd_record) + ')';
 
   const mtBody = document.getElementById('main-trades');
   if (mb.recent_trades.length === 0) {
@@ -290,8 +296,12 @@
   document.getElementById('twin-xrp-b').textContent = tb.xrp_bithumb.toFixed(4) + ' XRP';
   document.getElementById('twin-xrp-o').textContent = tb.xrp_okx.toFixed(4) + ' XRP';
   const tsp = document.getElementById('twin-session-pnl');
-  tsp.textContent = fmtUSD(tb.session_pnl_usd); tsp.className = 'v ' + cls(tb.session_pnl_usd);
-  document.getElementById('twin-today-trades').textContent = tb.today_trades + '건 (' + fmtUSD(tb.today_pnl_usd) + ')';
+  if (tb.cum_pnl_krw !== null && tb.cum_pnl_krw !== undefined) {
+    tsp.textContent = fmtKRW(tb.cum_pnl_krw) + (tb.cum_pnl_since ? ' (' + tb.cum_pnl_since + '~)' : '');
+    tsp.className = 'v ' + cls(tb.cum_pnl_krw);
+  } else { tsp.textContent = '데이터 축적 중'; tsp.className = 'v neutral'; }
+  document.getElementById('twin-session-pnl-record').textContent = fmtUSD(tb.session_pnl_usd_record);
+  document.getElementById('twin-today-trades').textContent = tb.today_trades + '건 (' + fmtUSD(tb.today_pnl_usd_record) + ')';
 
   const ttBody = document.getElementById('twin-trades');
   if (tb.recent_trades.length === 0) {
