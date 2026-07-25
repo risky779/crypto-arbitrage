@@ -63,6 +63,13 @@
   .hero-sub .item { font-size: 0.85rem; }
   .hero-sub .item b { display: block; font-size: 1.05rem; margin-top: 2px; }
 
+  .seed-row {
+    display: flex; align-items: baseline; gap: 10px; margin-top: 10px;
+    padding-top: 10px; border-top: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .seed-row .seed-yield { font-size: 1.3rem; font-weight: 800; }
+  .seed-row .seed-note { font-size: 0.78rem; color: var(--text-dim); }
+
   .pos { color: var(--green); }
   .neg { color: var(--red); }
   .neutral { color: var(--text-dim); }
@@ -128,6 +135,7 @@
         </div>
         <div id="daily-pnl-badge"></div>
       </div>
+      <div class="seed-row" id="seed-row"></div>
       <div class="hero-sub">
         <div class="item">
           <span class="hero-label">일일 목표</span>
@@ -215,6 +223,14 @@
   document.getElementById('total-asset').textContent = fmtKRW(d.total_asset_krw);
   document.getElementById('usd-krw').textContent = d.usd_krw.toLocaleString('ko-KR');
   document.getElementById('target').textContent = d.target_daily_yield_pct.toFixed(2) + '%';
+
+  if (d.seed) {
+    const s = d.seed;
+    document.getElementById('seed-row').innerHTML =
+      '<span class="seed-yield ' + cls(s.seed_yield_pct) + '">' + fmtPct(s.seed_yield_pct) + '</span>' +
+      '<span class="seed-note">원금 대비 누적 (' + fmtKRW(s.seed_krw) + ', ' + s.seed_date + ' 기준 · ' + s.days_since_seed + '일 경과)</span>' +
+      '<span class="seed-note" style="margin-left:auto;">손익 ' + fmtKRW(s.seed_pnl_krw) + ' · 일평균 ' + fmtPct(s.avg_daily_yield_pct) + '</span>';
+  }
 
   const dp = document.getElementById('daily-pnl');
   const badge = document.getElementById('daily-pnl-badge');

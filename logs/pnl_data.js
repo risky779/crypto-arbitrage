@@ -1,10 +1,18 @@
 const pnlData = {
-  "updated_at": "2026-07-25 14:16:03",
+  "updated_at": "2026-07-25 14:18:14",
   "usd_krw": 1462.59,
   "total_asset_krw": 448345,
   "daily_pnl_krw": null,
   "daily_yield_pct": null,
   "target_daily_yield_pct": 1.0,
+  "seed": {
+    "seed_krw": 454267,
+    "seed_date": "2026-07-19",
+    "seed_pnl_krw": -5922,
+    "seed_yield_pct": -1.304,
+    "days_since_seed": 6,
+    "avg_daily_yield_pct": -0.217
+  },
   "asset_trend": [
     {
       "date": "2026-07-25",
