@@ -138,6 +138,10 @@
       <div class="seed-row" id="seed-row"></div>
       <div class="hero-sub">
         <div class="item">
+          <span class="hero-label">초기 원금</span>
+          <b id="seed-krw">-</b>
+        </div>
+        <div class="item">
           <span class="hero-label">일일 목표</span>
           <b id="target">1.00%</b>
         </div>
@@ -238,6 +242,7 @@
 
   if (d.seed) {
     const s = d.seed;
+    document.getElementById('seed-krw').textContent = fmtKRW(s.seed_krw) + '원 (' + s.seed_date + ')';
     document.getElementById('seed-row').innerHTML =
       '<span class="seed-yield ' + cls(s.seed_yield_pct) + '">' + fmtPct(s.seed_yield_pct) + '</span>' +
       '<span class="seed-note">원금 대비 누적 (' + fmtKRW(s.seed_krw) + ', ' + s.seed_date + ' 기준 · ' + s.days_since_seed + '일 경과)</span>' +
