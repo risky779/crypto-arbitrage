@@ -202,7 +202,7 @@
     <div class="card" style="margin-bottom:16px;">
       <h2>📅 일별 봇별 수익현황</h2>
       <table>
-        <thead><tr><th>날짜</th><th>메인봇</th><th>쌍둥이봇</th><th>총손익</th><th>총자산</th></tr></thead>
+        <thead><tr><th>날짜</th><th>메인봇</th><th>쌍둥이봇</th><th>총손익</th><th>총수익률</th><th>목표(1%)</th><th>총자산</th></tr></thead>
         <tbody id="daily-history"></tbody>
       </table>
     </div>
@@ -263,13 +263,14 @@
   document.getElementById('main-asset').textContent = fmtKRW(mb.asset_krw);
   const mdp = document.getElementById('main-daily-pnl');
   if (mb.daily_pnl_krw !== null && mb.daily_pnl_krw !== undefined) {
-    mdp.textContent = fmtKRW(mb.daily_pnl_krw); mdp.className = 'v ' + cls(mb.daily_pnl_krw);
+    mdp.textContent = fmtKRW(mb.daily_pnl_krw) + (mb.daily_pnl_pct !== null ? ' (' + fmtPct(mb.daily_pnl_pct) + ')' : '') + (mb.daily_target_met ? ' ✓' : '');
+    mdp.className = 'v ' + cls(mb.daily_pnl_krw);
   } else { mdp.textContent = '데이터 축적 중'; mdp.className = 'v neutral'; }
   document.getElementById('main-krw').textContent = fmtKRW(mb.balance_krw);
   document.getElementById('main-usdt').textContent = '$' + mb.balance_usdt.toFixed(2);
   const mtp = document.getElementById('main-total-pnl');
   if (mb.cum_pnl_krw !== null && mb.cum_pnl_krw !== undefined) {
-    mtp.textContent = fmtKRW(mb.cum_pnl_krw) + (mb.cum_pnl_since ? ' (' + mb.cum_pnl_since + '~)' : '');
+    mtp.textContent = fmtKRW(mb.cum_pnl_krw) + (mb.cum_pnl_pct !== null ? ' (' + fmtPct(mb.cum_pnl_pct) + ')' : '') + (mb.cum_pnl_since ? ' [' + mb.cum_pnl_since + '~]' : '');
     mtp.className = 'v ' + cls(mb.cum_pnl_krw);
   } else { mtp.textContent = '데이터 축적 중'; mtp.className = 'v neutral'; }
   document.getElementById('main-total-pnl-record').textContent = fmtUSD(mb.total_pnl_usd_record);
@@ -291,13 +292,14 @@
   document.getElementById('twin-asset').textContent = fmtKRW(tb.asset_krw);
   const tdp = document.getElementById('twin-daily-pnl');
   if (tb.daily_pnl_krw !== null && tb.daily_pnl_krw !== undefined) {
-    tdp.textContent = fmtKRW(tb.daily_pnl_krw); tdp.className = 'v ' + cls(tb.daily_pnl_krw);
+    tdp.textContent = fmtKRW(tb.daily_pnl_krw) + (tb.daily_pnl_pct !== null ? ' (' + fmtPct(tb.daily_pnl_pct) + ')' : '') + (tb.daily_target_met ? ' ✓' : '');
+    tdp.className = 'v ' + cls(tb.daily_pnl_krw);
   } else { tdp.textContent = '데이터 축적 중'; tdp.className = 'v neutral'; }
   document.getElementById('twin-xrp-b').textContent = tb.xrp_bithumb.toFixed(4) + ' XRP';
   document.getElementById('twin-xrp-o').textContent = tb.xrp_okx.toFixed(4) + ' XRP';
   const tsp = document.getElementById('twin-session-pnl');
   if (tb.cum_pnl_krw !== null && tb.cum_pnl_krw !== undefined) {
-    tsp.textContent = fmtKRW(tb.cum_pnl_krw) + (tb.cum_pnl_since ? ' (' + tb.cum_pnl_since + '~)' : '');
+    tsp.textContent = fmtKRW(tb.cum_pnl_krw) + (tb.cum_pnl_pct !== null ? ' (' + fmtPct(tb.cum_pnl_pct) + ')' : '') + (tb.cum_pnl_since ? ' [' + tb.cum_pnl_since + '~]' : '');
     tsp.className = 'v ' + cls(tb.cum_pnl_krw);
   } else { tsp.textContent = '데이터 축적 중'; tsp.className = 'v neutral'; }
   document.getElementById('twin-session-pnl-record').textContent = fmtUSD(tb.session_pnl_usd_record);
@@ -465,15 +467,19 @@
     const body = document.getElementById('daily-history');
     const hist = (d.daily_history || []).slice().reverse();
     if (hist.length === 0) {
-      body.innerHTML = '<tr><td colspan="5" class="empty">데이터 축적 중</td></tr>';
+      body.innerHTML = '<tr><td colspan="7" class="empty">데이터 축적 중</td></tr>';
       return;
     }
     body.innerHTML = hist.map(r => {
-      const mp = r.main_pnl_krw, tp = r.twin_pnl_krw, tot = r.total_pnl_krw;
+      const mp = r.main_pnl_krw, tp = r.twin_pnl_krw, tot = r.total_pnl_krw, totPct = r.total_pnl_pct;
+      const fmtCell = (krw, pct) => krw === null || krw === undefined ? '-' : fmtKRW(krw) + (pct !== null && pct !== undefined ? ' (' + fmtPct(pct) + ')' : '');
+      const metCell = r.target_met === null || r.target_met === undefined ? '-' : (r.target_met ? '<span class="pos">✓</span>' : '<span class="neutral">-</span>');
       return '<tr><td>' + r.date + '</td>' +
-        '<td class="' + cls(mp) + '">' + (mp === null || mp === undefined ? '-' : fmtKRW(mp)) + '</td>' +
-        '<td class="' + cls(tp) + '">' + (tp === null || tp === undefined ? '-' : fmtKRW(tp)) + '</td>' +
+        '<td class="' + cls(mp) + '">' + fmtCell(mp, r.main_pnl_pct) + '</td>' +
+        '<td class="' + cls(tp) + '">' + fmtCell(tp, r.twin_pnl_pct) + '</td>' +
         '<td class="' + cls(tot) + '">' + (tot === null || tot === undefined ? '-' : fmtKRW(tot)) + '</td>' +
+        '<td class="' + cls(totPct) + '">' + (totPct === null || totPct === undefined ? '-' : fmtPct(totPct)) + '</td>' +
+        '<td>' + metCell + '</td>' +
         '<td>' + fmtKRW(r.total_asset_krw) + '</td></tr>';
     }).join('');
   })();
