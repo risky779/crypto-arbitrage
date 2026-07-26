@@ -1,17 +1,17 @@
 const pnlData = {
-  "updated_at": "2026-07-26 22:16:04",
+  "updated_at": "2026-07-26 22:31:04",
   "usd_krw": 1462.79,
-  "total_asset_krw": 443765,
-  "daily_pnl_krw": -3203,
-  "daily_yield_pct": -0.717,
+  "total_asset_krw": 443867,
+  "daily_pnl_krw": -3101,
+  "daily_yield_pct": -0.694,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -10502,
-    "seed_yield_pct": -2.312,
+    "seed_pnl_krw": -10400,
+    "seed_yield_pct": -2.289,
     "days_since_seed": 7,
-    "avg_daily_yield_pct": -0.33
+    "avg_daily_yield_pct": -0.327
   },
   "asset_trend": [
     {
@@ -20,7 +20,7 @@ const pnlData = {
     },
     {
       "date": "2026-07-26",
-      "total_krw": 443765
+      "total_krw": 443867
     }
   ],
   "daily_history": [
@@ -37,13 +37,13 @@ const pnlData = {
     },
     {
       "date": "2026-07-26",
-      "total_asset_krw": 443765,
-      "main_pnl_krw": -1898,
+      "total_asset_krw": 443867,
+      "main_pnl_krw": -1797,
       "twin_pnl_krw": -1304,
-      "total_pnl_krw": -3203,
-      "main_pnl_pct": -0.745,
-      "twin_pnl_pct": -0.679,
-      "total_pnl_pct": -0.717,
+      "total_pnl_krw": -3101,
+      "main_pnl_pct": -0.705,
+      "twin_pnl_pct": -0.678,
+      "total_pnl_pct": -0.694,
       "target_met": false
     }
   ],
@@ -51,16 +51,16 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 252865,
+      "asset_krw": 252966,
       "balance_krw": 163656,
-      "balance_usdt": 60.98,
-      "cum_pnl_krw": -1898,
-      "cum_pnl_pct": -0.745,
+      "balance_usdt": 61.05,
+      "cum_pnl_krw": -1797,
+      "cum_pnl_pct": -0.705,
       "cum_pnl_since": "2026-07-25",
       "total_pnl_usd_record": 199.7,
       "today_pnl_usd_record": 0,
-      "daily_pnl_krw": -1898,
-      "daily_pnl_pct": -0.745,
+      "daily_pnl_krw": -1797,
+      "daily_pnl_pct": -0.705,
       "daily_target_met": false,
       "today_trades": 0,
       "pending_transfers": 0,
@@ -125,14 +125,14 @@ const pnlData = {
       "xrp_bithumb": 74.9893,
       "xrp_okx": 11.7379,
       "xrp_target": 43.8692,
-      "hedge_upnl_usd": 3.569,
+      "hedge_upnl_usd": 3.6212,
       "cum_pnl_krw": -1304,
-      "cum_pnl_pct": -0.679,
+      "cum_pnl_pct": -0.678,
       "cum_pnl_since": "2026-07-25",
       "session_pnl_usd_record": 0.4956,
       "today_pnl_usd_record": 0.0947,
       "daily_pnl_krw": -1304,
-      "daily_pnl_pct": -0.679,
+      "daily_pnl_pct": -0.678,
       "daily_target_met": false,
       "today_trades": 18,
       "recent_trades": [
