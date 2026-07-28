@@ -1,17 +1,17 @@
 const pnlData = {
-  "updated_at": "2026-07-29 01:16:11",
+  "updated_at": "2026-07-29 01:31:03",
   "usd_krw": 1467.33,
-  "total_asset_krw": 436898,
-  "daily_pnl_krw": -2157,
-  "daily_yield_pct": -0.491,
+  "total_asset_krw": 436951,
+  "daily_pnl_krw": -2104,
+  "daily_yield_pct": -0.479,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -17369,
-    "seed_yield_pct": -3.823,
+    "seed_pnl_krw": -17316,
+    "seed_yield_pct": -3.812,
     "days_since_seed": 10,
-    "avg_daily_yield_pct": -0.382
+    "avg_daily_yield_pct": -0.381
   },
   "asset_trend": [
     {
@@ -32,7 +32,7 @@ const pnlData = {
     },
     {
       "date": "2026-07-29",
-      "total_krw": 436898
+      "total_krw": 436951
     }
   ],
   "daily_history": [
@@ -82,13 +82,13 @@ const pnlData = {
     },
     {
       "date": "2026-07-29",
-      "total_asset_krw": 436898,
-      "main_pnl_krw": 11516,
-      "twin_pnl_krw": -13674,
-      "total_pnl_krw": -2157,
-      "main_pnl_pct": 3.391,
-      "twin_pnl_pct": -13.745,
-      "total_pnl_pct": -0.491,
+      "total_asset_krw": 436951,
+      "main_pnl_krw": 11582,
+      "twin_pnl_krw": -13687,
+      "total_pnl_krw": -2104,
+      "main_pnl_pct": 3.411,
+      "twin_pnl_pct": -13.758,
+      "total_pnl_pct": -0.479,
       "target_met": false
     }
   ],
@@ -96,16 +96,16 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 390037,
+      "asset_krw": 390102,
       "balance_krw": 26309,
-      "balance_usdt": 249.6,
-      "cum_pnl_krw": 11516,
-      "cum_pnl_pct": 3.391,
+      "balance_usdt": 249.64,
+      "cum_pnl_krw": 11582,
+      "cum_pnl_pct": 3.411,
       "cum_pnl_since": "2026-07-28",
       "total_pnl_usd_record": 199.7,
       "today_pnl_usd_record": 0,
-      "daily_pnl_krw": 11516,
-      "daily_pnl_pct": 3.391,
+      "daily_pnl_krw": 11582,
+      "daily_pnl_pct": 3.411,
       "daily_target_met": true,
       "today_trades": 0,
       "pending_transfers": 0,
@@ -166,18 +166,18 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 46862,
+      "asset_krw": 46849,
       "xrp_bithumb": 17.7393,
       "xrp_okx": 3.1198,
       "xrp_target": 10.451,
-      "hedge_upnl_usd": 0.5874,
-      "cum_pnl_krw": -13674,
-      "cum_pnl_pct": -13.745,
+      "hedge_upnl_usd": 0.621,
+      "cum_pnl_krw": -13687,
+      "cum_pnl_pct": -13.758,
       "cum_pnl_since": "2026-07-28",
       "session_pnl_usd_record": 1.7149,
       "today_pnl_usd_record": 0.1301,
-      "daily_pnl_krw": -13674,
-      "daily_pnl_pct": -13.745,
+      "daily_pnl_krw": -13687,
+      "daily_pnl_pct": -13.758,
       "daily_target_met": false,
       "today_trades": 2,
       "recent_trades": [
