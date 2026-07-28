@@ -1,17 +1,17 @@
 const pnlData = {
-  "updated_at": "2026-07-29 00:46:03",
+  "updated_at": "2026-07-29 01:01:03",
   "usd_krw": 1467.33,
-  "total_asset_krw": 438209,
-  "daily_pnl_krw": -846,
-  "daily_yield_pct": -0.193,
+  "total_asset_krw": 436849,
+  "daily_pnl_krw": -2207,
+  "daily_yield_pct": -0.503,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -16058,
-    "seed_yield_pct": -3.535,
+    "seed_pnl_krw": -17418,
+    "seed_yield_pct": -3.834,
     "days_since_seed": 10,
-    "avg_daily_yield_pct": -0.353
+    "avg_daily_yield_pct": -0.383
   },
   "asset_trend": [
     {
@@ -32,7 +32,7 @@ const pnlData = {
     },
     {
       "date": "2026-07-29",
-      "total_krw": 438209
+      "total_krw": 436849
     }
   ],
   "daily_history": [
@@ -82,13 +82,13 @@ const pnlData = {
     },
     {
       "date": "2026-07-29",
-      "total_asset_krw": 438209,
-      "main_pnl_krw": -1134,
-      "twin_pnl_krw": 288,
-      "total_pnl_krw": -846,
-      "main_pnl_pct": -0.334,
-      "twin_pnl_pct": 0.289,
-      "total_pnl_pct": -0.193,
+      "total_asset_krw": 436849,
+      "main_pnl_krw": 11459,
+      "twin_pnl_krw": -13666,
+      "total_pnl_krw": -2207,
+      "main_pnl_pct": 3.375,
+      "twin_pnl_pct": -13.737,
+      "total_pnl_pct": -0.503,
       "target_met": false
     }
   ],
@@ -96,17 +96,17 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 338440,
-      "balance_krw": 8127,
-      "balance_usdt": 226.7,
-      "cum_pnl_krw": -1134,
-      "cum_pnl_pct": -0.334,
+      "asset_krw": 389979,
+      "balance_krw": 26309,
+      "balance_usdt": 249.56,
+      "cum_pnl_krw": 11459,
+      "cum_pnl_pct": 3.375,
       "cum_pnl_since": "2026-07-28",
       "total_pnl_usd_record": 199.7,
       "today_pnl_usd_record": 0,
-      "daily_pnl_krw": -1134,
-      "daily_pnl_pct": -0.334,
-      "daily_target_met": false,
+      "daily_pnl_krw": 11459,
+      "daily_pnl_pct": 3.375,
+      "daily_target_met": true,
       "today_trades": 0,
       "pending_transfers": 0,
       "restart_count": 1,
@@ -166,21 +166,35 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 99769,
-      "xrp_bithumb": 29.5386,
-      "xrp_okx": 16.316,
-      "xrp_target": 22.9297,
-      "hedge_upnl_usd": 1.2085,
-      "cum_pnl_krw": 288,
-      "cum_pnl_pct": 0.289,
+      "asset_krw": 46870,
+      "xrp_bithumb": 17.7393,
+      "xrp_okx": 3.1198,
+      "xrp_target": 10.451,
+      "hedge_upnl_usd": 0.558,
+      "cum_pnl_krw": -13666,
+      "cum_pnl_pct": -13.737,
       "cum_pnl_since": "2026-07-28",
-      "session_pnl_usd_record": 1.5848,
-      "today_pnl_usd_record": 0,
-      "daily_pnl_krw": 288,
-      "daily_pnl_pct": 0.289,
+      "session_pnl_usd_record": 1.7149,
+      "today_pnl_usd_record": 0.1301,
+      "daily_pnl_krw": -13666,
+      "daily_pnl_pct": -13.737,
       "daily_target_met": false,
-      "today_trades": 0,
+      "today_trades": 2,
       "recent_trades": [
+        {
+          "time": "2026-07-29T00:53:26.614257",
+          "coin": "XRP",
+          "sell_side": "OKX",
+          "gap_pct": 1.042,
+          "pnl_usd": 0.0625
+        },
+        {
+          "time": "2026-07-29T00:52:51.830773",
+          "coin": "XRP",
+          "sell_side": "OKX",
+          "gap_pct": 1.117,
+          "pnl_usd": 0.0676
+        },
         {
           "time": "2026-07-28T23:33:38.907673",
           "coin": "XRP",
@@ -236,20 +250,6 @@ const pnlData = {
           "sell_side": "OKX",
           "gap_pct": 0.795,
           "pnl_usd": 0.0455
-        },
-        {
-          "time": "2026-07-28T18:06:12.072075",
-          "coin": "XRP",
-          "sell_side": "OKX",
-          "gap_pct": 0.822,
-          "pnl_usd": 0.0473
-        },
-        {
-          "time": "2026-07-28T16:38:57.578551",
-          "coin": "XRP",
-          "sell_side": "OKX",
-          "gap_pct": 0.833,
-          "pnl_usd": 0.0481
         }
       ]
     }
