@@ -256,7 +256,7 @@
     dp.className = cls(d.daily_pnl_krw);
     const met = d.daily_yield_pct >= d.target_daily_yield_pct;
     badge.innerHTML = '<span class="' + (met ? 'pos' : 'neutral') + '" style="font-size:0.85rem;font-weight:700;">' +
-      (met ? '✓ 목표 달성 ' : '') + fmtPct(d.daily_yield_pct) + '</span>';
+      (met ? '✓ 오늘의 목표 달성 ' : '') + fmtPct(d.daily_yield_pct) + '</span>';
   } else {
     dp.textContent = '데이터 축적 중';
     dp.className = 'neutral';
