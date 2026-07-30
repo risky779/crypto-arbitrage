@@ -1,40 +1,40 @@
 const pnlData = {
-  "updated_at": "2026-07-30 23:31:03",
+  "updated_at": "2026-07-30 23:46:04",
   "usd_krw": 1448.99,
-  "total_asset_krw": 423494,
-  "daily_pnl_krw": -7519,
-  "daily_yield_pct": -1.744,
+  "total_asset_krw": 423306,
+  "daily_pnl_krw": -7706,
+  "daily_yield_pct": -1.788,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -30773,
-    "seed_yield_pct": -6.774,
+    "seed_pnl_krw": -30961,
+    "seed_yield_pct": -6.816,
     "days_since_seed": 11,
-    "avg_daily_yield_pct": -0.616
+    "avg_daily_yield_pct": -0.62
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -2.98,
-    "combined_actual_delta_usd": -12.42,
-    "drift_usd": -9.44,
-    "drift_pct": -3.229,
+    "combined_actual_delta_usd": -12.55,
+    "drift_usd": -9.57,
+    "drift_pct": -3.275,
     "status": "WARNING",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "bot_reconciliation": {
     "twin_bot": {
-      "displayed_asset_krw": 169864,
+      "displayed_asset_krw": 169882,
       "twr_implied_asset_krw": 187524,
-      "drift_krw": -17661,
-      "drift_pct": -10.4,
+      "drift_krw": -17643,
+      "drift_pct": -10.39,
       "status": "WARNING"
     },
     "main_bot": {
-      "displayed_asset_krw": 253630,
+      "displayed_asset_krw": 253424,
       "twr_implied_asset_krw": 249645,
-      "drift_krw": 3985,
-      "drift_pct": 1.57,
+      "drift_krw": 3779,
+      "drift_pct": 1.49,
       "status": "OK"
     },
     "note": "drift = 표시자산(shift보정) - TWR내포자산(그 봇 자체 거래+이체비용만). 크면 cum_capital_shift_krw가 못 잡은 미기록 자본이동 의심."
@@ -62,7 +62,7 @@ const pnlData = {
     },
     {
       "date": "2026-07-30",
-      "total_krw": 423494
+      "total_krw": 423306
     }
   ],
   "daily_history": [
@@ -123,13 +123,13 @@ const pnlData = {
     },
     {
       "date": "2026-07-30",
-      "total_asset_krw": 423494,
-      "main_pnl_krw": -316,
-      "twin_pnl_krw": -7202,
-      "total_pnl_krw": -7519,
-      "main_pnl_pct": -0.124,
-      "twin_pnl_pct": -4.068,
-      "total_pnl_pct": -1.744,
+      "total_asset_krw": 423306,
+      "main_pnl_krw": -521,
+      "twin_pnl_krw": -7185,
+      "total_pnl_krw": -7706,
+      "main_pnl_pct": -0.205,
+      "twin_pnl_pct": -4.058,
+      "total_pnl_pct": -1.788,
       "target_met": false
     }
   ],
@@ -137,19 +137,19 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 253630,
+      "asset_krw": 253424,
       "balance_krw": 5468,
-      "balance_usdt": 118.01,
-      "cum_pnl_krw": -316,
-      "cum_pnl_pct": -0.124,
+      "balance_usdt": 117.87,
+      "cum_pnl_krw": -521,
+      "cum_pnl_pct": -0.205,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -0.7893,
       "twr_events": 10,
       "twr_since": "2026-07-25",
       "total_pnl_usd_record": 201.07,
       "today_pnl_usd_record": 1.3711,
-      "daily_pnl_krw": -316,
-      "daily_pnl_pct": -0.124,
+      "daily_pnl_krw": -521,
+      "daily_pnl_pct": -0.205,
       "daily_target_met": false,
       "today_trades": 6,
       "pending_transfers": 0,
@@ -210,21 +210,21 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 169864,
+      "asset_krw": 169882,
       "xrp_bithumb": 112.6273,
       "xrp_okx": 6.1329,
       "xrp_target": 59.3848,
-      "hedge_upnl_usd": -1.3999,
-      "cum_pnl_krw": -15245,
-      "cum_pnl_pct": -8.236,
+      "hedge_upnl_usd": -1.5061,
+      "cum_pnl_krw": -15227,
+      "cum_pnl_pct": -8.226,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -1.2306,
       "twr_events": 105,
       "twr_since": "2026-07-25",
       "session_pnl_usd_record": 2.2963,
       "today_pnl_usd_record": 0.3093,
-      "daily_pnl_krw": -7202,
-      "daily_pnl_pct": -4.068,
+      "daily_pnl_krw": -7185,
+      "daily_pnl_pct": -4.058,
       "daily_target_met": false,
       "today_trades": 3,
       "recent_trades": [
