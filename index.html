@@ -158,7 +158,7 @@
 
     <div class="grid2">
       <div class="card chart-card">
-        <h2>자산 추이</h2>
+        <h2>일별 손익</h2>
         <div id="trend-chart"></div>
       </div>
       <div class="card chart-card">
@@ -346,34 +346,29 @@
   renderBarChart('twin-bars', tb.recent_trades, 'pnl_usd');
 
   // ---------------------------------------------------------------
-  // 자산 추이 차트 (그리드 + 축 라벨 + 영역채우기 + 호버 툴팁)
+  // 일별 손익 막대그래프 (0선 기준 양/음수, 그리드 + 축 라벨 + 호버 툴팁)
   // ---------------------------------------------------------------
   (function renderTrend() {
-    const trend = d.asset_trend || [];
+    const hist = (d.daily_history || []).filter(r => r.total_pnl_krw !== null && r.total_pnl_krw !== undefined);
     const container = document.getElementById('trend-chart');
-    if (trend.length < 2) {
-      const cur = trend.length === 1 ? fmtKRW(trend[0].total_krw) : '-';
-      container.innerHTML = '<div class="empty" style="padding:30px 0;">추이 데이터 축적 중 (매일 자동 기록)<br>' +
-        '<span style="font-size:1.1rem;font-weight:700;color:var(--text);">' + cur + '</span></div>';
+    if (hist.length < 1) {
+      container.innerHTML = '<div class="empty" style="padding:30px 0;">일별 손익 데이터 축적 중 (매일 자동 기록)</div>';
       return;
     }
-    const vals = trend.map(p => p.total_krw);
-    const min = Math.min(...vals), max = Math.max(...vals);
-    const range = (max - min) || max * 0.05 || 1;
+    const vals = hist.map(p => p.total_pnl_krw);
+    const min = Math.min(0, ...vals), max = Math.max(0, ...vals);
+    const range = (max - min) || Math.abs(max) * 0.1 || 1;
     const padMin = min - range * 0.15, padMax = max + range * 0.15;
     const fullRange = padMax - padMin;
 
     const W = 560, H = 180, padL = 46, padR = 10, padT = 12, padB = 22;
     const plotW = W - padL - padR, plotH = H - padT - padB;
 
-    const xAt = i => padL + (trend.length === 1 ? plotW / 2 : (i / (trend.length - 1)) * plotW);
+    const xAt = i => padL + (hist.length === 1 ? plotW / 2 : (i / Math.max(hist.length - 1, 1)) * plotW) ;
     const yAt = v => padT + plotH - ((v - padMin) / fullRange) * plotH;
-
-    const linePts = vals.map((v, i) => xAt(i) + ',' + yAt(v)).join(' ');
-    const areaPts = linePts + ' ' + xAt(vals.length - 1) + ',' + (padT + plotH) + ' ' + xAt(0) + ',' + (padT + plotH);
-
-    const isUp = vals[vals.length - 1] >= vals[0];
-    const lineColor = isUp ? 'var(--green)' : 'var(--red)';
+    const zeroY = yAt(0);
+    const barSlot = hist.length === 1 ? plotW : plotW / hist.length;
+    const barW = Math.min(barSlot * 0.55, 26);
 
     // 그리드라인 4단 + Y축 라벨
     let gridSvg = '';
@@ -384,34 +379,33 @@
       gridSvg += '<line class="grid-line" x1="' + padL + '" y1="' + y + '" x2="' + (W - padR) + '" y2="' + y + '" />';
       gridSvg += '<text class="axis-label" x="' + (padL - 6) + '" y="' + (y + 3) + '" text-anchor="end">' + fmtKRWShort(v) + '</text>';
     }
+    // 0선 강조
+    gridSvg += '<line x1="' + padL + '" y1="' + zeroY + '" x2="' + (W - padR) + '" y2="' + zeroY + '" stroke="var(--text-dim)" stroke-width="1" opacity="0.5" />';
 
     // X축 날짜 라벨 (최대 6개, 균등 샘플)
     let xLabelsSvg = '';
-    const labelCount = Math.min(trend.length, 6);
+    const labelCount = Math.min(hist.length, 6);
     for (let k = 0; k < labelCount; k++) {
-      const idx = labelCount === 1 ? 0 : Math.round(k * (trend.length - 1) / (labelCount - 1));
-      xLabelsSvg += '<text class="axis-label" x="' + xAt(idx) + '" y="' + (H - 4) + '" text-anchor="middle">' + shortDate(trend[idx].date) + '</text>';
+      const idx = labelCount === 1 ? 0 : Math.round(k * (hist.length - 1) / (labelCount - 1));
+      xLabelsSvg += '<text class="axis-label" x="' + xAt(idx) + '" y="' + (H - 4) + '" text-anchor="middle">' + shortDate(hist[idx].date) + '</text>';
     }
 
-    // 데이터 포인트 + 호버 대상 원
-    let dotsSvg = '';
+    // 막대 + 호버 대상
+    let barsSvg = '';
     vals.forEach((v, i) => {
-      dotsSvg += '<circle cx="' + xAt(i) + '" cy="' + yAt(v) + '" r="3" fill="' + lineColor + '" />';
-      dotsSvg += '<circle class="hover-target" data-idx="' + i + '" cx="' + xAt(i) + '" cy="' + yAt(v) + '" r="10" fill="transparent" style="cursor:pointer;" />';
+      const cx = xAt(i);
+      const y = yAt(Math.max(v, 0));
+      const barH = Math.max(Math.abs(yAt(v) - zeroY), 2);
+      const color = v >= 0 ? 'var(--green)' : 'var(--red)';
+      barsSvg += '<rect x="' + (cx - barW / 2) + '" y="' + y + '" width="' + barW + '" height="' + barH + '" rx="2" fill="' + color + '" />';
+      barsSvg += '<rect class="hover-target" data-idx="' + i + '" x="' + (cx - barSlot / 2) + '" y="' + padT + '" width="' + barSlot + '" height="' + plotH + '" fill="transparent" style="cursor:pointer;" />';
     });
 
-    const svgId = 'trend-svg-el';
     const tipId = 'trend-tip';
     container.innerHTML =
-      '<svg id="' + svgId + '" viewBox="0 0 ' + W + ' ' + H + '" style="height:' + H + 'px;">' +
-        '<defs><linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">' +
-          '<stop offset="0%" stop-color="' + lineColor + '" stop-opacity="0.25" />' +
-          '<stop offset="100%" stop-color="' + lineColor + '" stop-opacity="0" />' +
-        '</linearGradient></defs>' +
+      '<svg viewBox="0 0 ' + W + ' ' + H + '" style="height:' + H + 'px;">' +
         gridSvg +
-        '<polygon points="' + areaPts + '" fill="url(#areaGrad)" />' +
-        '<polyline points="' + linePts + '" fill="none" stroke="' + lineColor + '" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />' +
-        dotsSvg +
+        barsSvg +
         xLabelsSvg +
       '</svg>' +
       '<div id="' + tipId + '" style="display:none;position:relative;text-align:center;font-size:0.78rem;color:var(--text-dim);margin-top:2px;"></div>';
@@ -420,8 +414,12 @@
     container.querySelectorAll('.hover-target').forEach(el => {
       el.addEventListener('mouseenter', () => {
         const i = +el.getAttribute('data-idx');
+        const v = hist[i].total_pnl_krw;
+        const pct = hist[i].total_pnl_pct;
+        const color = v >= 0 ? 'var(--green)' : 'var(--red)';
         tip.style.display = 'block';
-        tip.innerHTML = '<b style="color:var(--text);">' + trend[i].date + '</b> · ' + fmtKRW(trend[i].total_krw);
+        tip.innerHTML = '<b style="color:var(--text);">' + hist[i].date + '</b> · <span style="color:' + color + ';font-weight:600;">' +
+          (v >= 0 ? '+' : '') + fmtKRW(v) + (pct !== null && pct !== undefined ? ' (' + (v >= 0 ? '+' : '') + pct + '%)' : '') + '</span>';
       });
       el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
     });
