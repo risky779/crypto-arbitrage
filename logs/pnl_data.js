@@ -1,40 +1,40 @@
 const pnlData = {
-  "updated_at": "2026-07-30 22:31:03",
+  "updated_at": "2026-07-30 22:46:03",
   "usd_krw": 1448.99,
-  "total_asset_krw": 424598,
-  "daily_pnl_krw": -6415,
-  "daily_yield_pct": -1.488,
+  "total_asset_krw": 424020,
+  "daily_pnl_krw": -6992,
+  "daily_yield_pct": -1.622,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -29669,
-    "seed_yield_pct": -6.531,
+    "seed_pnl_krw": -30247,
+    "seed_yield_pct": -6.658,
     "days_since_seed": 11,
-    "avg_daily_yield_pct": -0.594
+    "avg_daily_yield_pct": -0.605
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -2.98,
-    "combined_actual_delta_usd": -11.66,
-    "drift_usd": -8.68,
-    "drift_pct": -2.961,
-    "status": "OK",
+    "combined_actual_delta_usd": -12.06,
+    "drift_usd": -9.08,
+    "drift_pct": -3.101,
+    "status": "WARNING",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "bot_reconciliation": {
     "twin_bot": {
-      "displayed_asset_krw": 169463,
+      "displayed_asset_krw": 169661,
       "twr_implied_asset_krw": 187524,
-      "drift_krw": -18061,
-      "drift_pct": -10.66,
+      "drift_krw": -17864,
+      "drift_pct": -10.53,
       "status": "WARNING"
     },
     "main_bot": {
-      "displayed_asset_krw": 255134,
+      "displayed_asset_krw": 254359,
       "twr_implied_asset_krw": 249645,
-      "drift_krw": 5489,
-      "drift_pct": 2.15,
+      "drift_krw": 4714,
+      "drift_pct": 1.85,
       "status": "OK"
     },
     "note": "drift = 표시자산(shift보정) - TWR내포자산(그 봇 자체 거래+이체비용만). 크면 cum_capital_shift_krw가 못 잡은 미기록 자본이동 의심."
@@ -62,7 +62,7 @@ const pnlData = {
     },
     {
       "date": "2026-07-30",
-      "total_krw": 424598
+      "total_krw": 424020
     }
   ],
   "daily_history": [
@@ -123,13 +123,13 @@ const pnlData = {
     },
     {
       "date": "2026-07-30",
-      "total_asset_krw": 424598,
-      "main_pnl_krw": 1189,
-      "twin_pnl_krw": -7603,
-      "total_pnl_krw": -6415,
-      "main_pnl_pct": 0.468,
-      "twin_pnl_pct": -4.294,
-      "total_pnl_pct": -1.488,
+      "total_asset_krw": 424020,
+      "main_pnl_krw": 414,
+      "twin_pnl_krw": -7406,
+      "total_pnl_krw": -6992,
+      "main_pnl_pct": 0.163,
+      "twin_pnl_pct": -4.182,
+      "total_pnl_pct": -1.622,
       "target_met": false
     }
   ],
@@ -137,19 +137,19 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 255134,
+      "asset_krw": 254359,
       "balance_krw": 5468,
-      "balance_usdt": 119.05,
-      "cum_pnl_krw": 1189,
-      "cum_pnl_pct": 0.468,
+      "balance_usdt": 118.52,
+      "cum_pnl_krw": 414,
+      "cum_pnl_pct": 0.163,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -0.7893,
       "twr_events": 10,
       "twr_since": "2026-07-25",
       "total_pnl_usd_record": 201.07,
       "today_pnl_usd_record": 1.3711,
-      "daily_pnl_krw": 1189,
-      "daily_pnl_pct": 0.468,
+      "daily_pnl_krw": 414,
+      "daily_pnl_pct": 0.163,
       "daily_target_met": false,
       "today_trades": 6,
       "pending_transfers": 0,
@@ -210,21 +210,21 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 169463,
+      "asset_krw": 169661,
       "xrp_bithumb": 112.6273,
       "xrp_okx": 6.1329,
       "xrp_target": 59.3848,
-      "hedge_upnl_usd": -0.6211,
-      "cum_pnl_krw": -15645,
-      "cum_pnl_pct": -8.452,
+      "hedge_upnl_usd": -1.0223,
+      "cum_pnl_krw": -15448,
+      "cum_pnl_pct": -8.345,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -1.2306,
       "twr_events": 105,
       "twr_since": "2026-07-25",
       "session_pnl_usd_record": 2.2963,
       "today_pnl_usd_record": 0.3093,
-      "daily_pnl_krw": -7603,
-      "daily_pnl_pct": -4.294,
+      "daily_pnl_krw": -7406,
+      "daily_pnl_pct": -4.182,
       "daily_target_met": false,
       "today_trades": 3,
       "recent_trades": [
