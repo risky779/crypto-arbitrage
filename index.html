@@ -178,7 +178,7 @@
         <div class="kv" style="font-size:0.72rem;"><span class="k" style="color:var(--text-dim);">└ 거래기록 합계(참고)</span><span class="v" id="main-total-pnl-record" style="font-weight:500;">-</span></div>
         <div class="kv"><span class="k">봇 자체 성과(TWR)</span><span class="v" id="main-twr">-</span></div>
         <div class="kv"><span class="k">오늘 거래(기록)</span><span class="v" id="main-today-trades">-</span></div>
-        <h3>최근 거래 손익</h3>
+        <h3>일별 손익</h3>
         <div class="bar-chart" id="main-bars"></div>
         <table>
           <thead><tr><th>시각</th><th>코인</th><th>손익($)</th></tr></thead>
@@ -196,7 +196,7 @@
         <div class="kv" style="font-size:0.72rem;"><span class="k" style="color:var(--text-dim);">└ 자체기록 합계(참고)</span><span class="v" id="twin-session-pnl-record" style="font-weight:500;">-</span></div>
         <div class="kv"><span class="k">봇 자체 성과(TWR)</span><span class="v" id="twin-twr">-</span></div>
         <div class="kv"><span class="k">오늘 거래(기록)</span><span class="v" id="twin-today-trades">-</span></div>
-        <h3>최근 거래 손익</h3>
+        <h3>일별 손익</h3>
         <div class="bar-chart" id="twin-bars"></div>
         <table>
           <thead><tr><th>시각</th><th>방향</th><th>손익($)</th></tr></thead>
@@ -335,27 +335,27 @@
   }
 
   // ---------------------------------------------------------------
-  // 거래별 손익 막대그래프 (최근 거래를 시간순으로, 최대 8건)
+  // 봇별 일별 손익 막대그래프 (daily_history 기준, 최대 8일)
   // ---------------------------------------------------------------
-  function renderBarChart(containerId, trades, valueKey) {
+  function renderBarChart(containerId, rows, valueKey) {
     const el = document.getElementById(containerId);
-    const items = trades.slice(0, 8).reverse();
+    const items = rows.filter(r => r[valueKey] !== null && r[valueKey] !== undefined).slice(-8);
     if (items.length === 0) {
-      el.innerHTML = '<div class="empty" style="height:56px;display:flex;align-items:center;justify-content:center;">거래 없음</div>';
+      el.innerHTML = '<div class="empty" style="height:56px;display:flex;align-items:center;justify-content:center;">데이터 없음</div>';
       return;
     }
-    const vals = items.map(t => t[valueKey]);
+    const vals = items.map(r => r[valueKey]);
     const maxAbs = Math.max(...vals.map(Math.abs), 0.0001);
-    el.innerHTML = items.map(t => {
-      const v = t[valueKey];
+    el.innerHTML = items.map(r => {
+      const v = r[valueKey];
       const pct = Math.max(Math.abs(v) / maxAbs * 100, 6);
-      return '<div class="bar-wrap" title="' + fmtUSD(v) + '">' +
+      return '<div class="bar-wrap" title="' + r.date + ' · ' + fmtKRW(v) + '">' +
         '<div class="bar" style="height:' + pct + '%;background:' + color(v) + ';"></div>' +
         '</div>';
     }).join('');
   }
-  renderBarChart('main-bars', mb.recent_trades, 'profit_usd');
-  renderBarChart('twin-bars', tb.recent_trades, 'pnl_usd');
+  renderBarChart('main-bars', d.daily_history || [], 'main_pnl_krw');
+  renderBarChart('twin-bars', d.daily_history || [], 'twin_pnl_krw');
 
   // ---------------------------------------------------------------
   // 일별 손익 막대그래프 (0선 기준 양/음수, 그리드 + 축 라벨 + 호버 툴팁)
