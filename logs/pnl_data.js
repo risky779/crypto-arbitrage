@@ -1,40 +1,40 @@
 const pnlData = {
-  "updated_at": "2026-07-31 23:31:04",
+  "updated_at": "2026-07-31 23:46:04",
   "usd_krw": 1429.51,
-  "total_asset_krw": 343037,
-  "daily_pnl_krw": -80269,
-  "daily_yield_pct": -18.962,
+  "total_asset_krw": 343335,
+  "daily_pnl_krw": -79971,
+  "daily_yield_pct": -18.892,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -111230,
-    "seed_yield_pct": -24.486,
+    "seed_pnl_krw": -110932,
+    "seed_yield_pct": -24.42,
     "days_since_seed": 12,
-    "avg_daily_yield_pct": -2.04
+    "avg_daily_yield_pct": -2.035
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -3.05,
-    "combined_actual_delta_usd": -64.72,
-    "drift_usd": -61.67,
-    "drift_pct": -25.7,
+    "combined_actual_delta_usd": -64.51,
+    "drift_usd": -61.46,
+    "drift_pct": -25.591,
     "status": "WARNING",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "bot_reconciliation": {
     "twin_bot": {
-      "displayed_asset_krw": 86182,
+      "displayed_asset_krw": 86210,
       "twr_implied_asset_krw": 184906,
-      "drift_krw": -98724,
-      "drift_pct": -114.55,
+      "drift_krw": -98696,
+      "drift_pct": -114.48,
       "status": "WARNING"
     },
     "main_bot": {
-      "displayed_asset_krw": 256855,
+      "displayed_asset_krw": 257125,
       "twr_implied_asset_krw": 246290,
-      "drift_krw": 10565,
-      "drift_pct": 4.11,
+      "drift_krw": 10835,
+      "drift_pct": 4.21,
       "status": "OK"
     },
     "note": "drift = 표시자산(shift보정) - TWR내포자산(그 봇 자체 거래+이체비용만). 크면 cum_capital_shift_krw가 못 잡은 미기록 자본이동 의심."
@@ -66,7 +66,7 @@ const pnlData = {
     },
     {
       "date": "2026-07-31",
-      "total_krw": 343037
+      "total_krw": 343335
     }
   ],
   "daily_history": [
@@ -138,13 +138,13 @@ const pnlData = {
     },
     {
       "date": "2026-07-31",
-      "total_asset_krw": 343037,
-      "main_pnl_krw": 3430,
-      "twin_pnl_krw": -83700,
-      "total_pnl_krw": -80269,
-      "main_pnl_pct": 1.354,
-      "twin_pnl_pct": -49.269,
-      "total_pnl_pct": -18.962,
+      "total_asset_krw": 343335,
+      "main_pnl_krw": 3700,
+      "twin_pnl_krw": -83672,
+      "total_pnl_krw": -79971,
+      "main_pnl_pct": 1.46,
+      "twin_pnl_pct": -49.253,
+      "total_pnl_pct": -18.892,
       "target_met": false
     }
   ],
@@ -152,19 +152,19 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 256855,
+      "asset_krw": 257125,
       "balance_krw": 166042,
-      "balance_usdt": 9.79,
-      "cum_pnl_krw": 2909,
-      "cum_pnl_pct": 1.146,
+      "balance_usdt": 9.97,
+      "cum_pnl_krw": 3179,
+      "cum_pnl_pct": 1.252,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -0.7893,
       "twr_events": 10,
       "twr_since": "2026-07-25",
       "total_pnl_usd_record": 201.07,
       "today_pnl_usd_record": 0,
-      "daily_pnl_krw": 3430,
-      "daily_pnl_pct": 1.354,
+      "daily_pnl_krw": 3700,
+      "daily_pnl_pct": 1.46,
       "daily_target_met": true,
       "today_trades": 0,
       "pending_transfers": 0,
@@ -225,21 +225,21 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 86182,
+      "asset_krw": 86210,
       "xrp_bithumb": 7.2603,
       "xrp_okx": 59.3271,
       "xrp_target": 59.3848,
-      "hedge_upnl_usd": 1.4203,
-      "cum_pnl_krw": -98927,
-      "cum_pnl_pct": -53.442,
+      "hedge_upnl_usd": 1.5737,
+      "cum_pnl_krw": -98898,
+      "cum_pnl_pct": -53.427,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -1.2828,
       "twr_events": 123,
       "twr_since": "2026-07-25",
       "session_pnl_usd_record": 2.562,
       "today_pnl_usd_record": 0.2658,
-      "daily_pnl_krw": -83700,
-      "daily_pnl_pct": -49.269,
+      "daily_pnl_krw": -83672,
+      "daily_pnl_pct": -49.253,
       "daily_target_met": false,
       "today_trades": 16,
       "recent_trades": [
