@@ -1,40 +1,40 @@
 const pnlData = {
-  "updated_at": "2026-08-01 23:16:03",
+  "updated_at": "2026-08-01 23:31:03",
   "usd_krw": 1439.43,
-  "total_asset_krw": 421372,
-  "daily_pnl_krw": 78037,
-  "daily_yield_pct": 22.729,
+  "total_asset_krw": 421319,
+  "daily_pnl_krw": 77984,
+  "daily_yield_pct": 22.714,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -32895,
-    "seed_yield_pct": -7.241,
+    "seed_pnl_krw": -32948,
+    "seed_yield_pct": -7.253,
     "days_since_seed": 13,
-    "avg_daily_yield_pct": -0.557
+    "avg_daily_yield_pct": -0.558
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -2.96,
-    "combined_actual_delta_usd": -11.95,
-    "drift_usd": -9.0,
-    "drift_pct": -3.073,
+    "combined_actual_delta_usd": -11.99,
+    "drift_usd": -9.03,
+    "drift_pct": -3.086,
     "status": "WARNING",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "bot_reconciliation": {
     "twin_bot": {
-      "displayed_asset_krw": 194826,
+      "displayed_asset_krw": 194852,
       "twr_implied_asset_krw": 186323,
-      "drift_krw": 8502,
-      "drift_pct": 4.36,
+      "drift_krw": 8529,
+      "drift_pct": 4.38,
       "status": "OK"
     },
     "main_bot": {
-      "displayed_asset_krw": 226546,
+      "displayed_asset_krw": 226467,
       "twr_implied_asset_krw": 247998,
-      "drift_krw": -21451,
-      "drift_pct": -9.47,
+      "drift_krw": -21531,
+      "drift_pct": -9.51,
       "status": "WARNING"
     },
     "note": "drift = 표시자산(shift보정) - TWR내포자산(그 봇 자체 거래+이체비용만). 크면 cum_capital_shift_krw가 못 잡은 미기록 자본이동 의심."
@@ -70,7 +70,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-01",
-      "total_krw": 421372
+      "total_krw": 421319
     }
   ],
   "daily_history": [
@@ -153,13 +153,13 @@ const pnlData = {
     },
     {
       "date": "2026-08-01",
-      "total_asset_krw": 421372,
-      "main_pnl_krw": -26878,
-      "twin_pnl_krw": 104915,
-      "total_pnl_krw": 78037,
-      "main_pnl_pct": -10.606,
-      "twin_pnl_pct": 116.689,
-      "total_pnl_pct": 22.729,
+      "total_asset_krw": 421319,
+      "main_pnl_krw": -26958,
+      "twin_pnl_krw": 104942,
+      "total_pnl_krw": 77984,
+      "main_pnl_pct": -10.637,
+      "twin_pnl_pct": 116.719,
+      "total_pnl_pct": 22.714,
       "target_met": true
     }
   ],
@@ -167,19 +167,19 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 226546,
+      "asset_krw": 226467,
       "balance_krw": 167453,
-      "balance_usdt": 102.6,
-      "cum_pnl_krw": -27399,
-      "cum_pnl_pct": -10.789,
+      "balance_usdt": 102.54,
+      "cum_pnl_krw": -27479,
+      "cum_pnl_pct": -10.821,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -0.7893,
       "twr_events": 10,
       "twr_since": "2026-07-25",
       "total_pnl_usd_record": 201.07,
       "today_pnl_usd_record": 0,
-      "daily_pnl_krw": -26878,
-      "daily_pnl_pct": -10.606,
+      "daily_pnl_krw": -26958,
+      "daily_pnl_pct": -10.637,
       "daily_target_met": false,
       "today_trades": 0,
       "pending_transfers": 0,
@@ -240,21 +240,21 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 194826,
+      "asset_krw": 194852,
       "xrp_bithumb": 32.5326,
       "xrp_okx": 18.9477,
       "xrp_target": 25.7445,
-      "hedge_upnl_usd": 0.5739,
-      "cum_pnl_krw": 9717,
-      "cum_pnl_pct": 5.249,
+      "hedge_upnl_usd": 0.5375,
+      "cum_pnl_krw": 9744,
+      "cum_pnl_pct": 5.264,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -1.2113,
       "twr_events": 158,
       "twr_since": "2026-07-25",
       "session_pnl_usd_record": 2.9826,
       "today_pnl_usd_record": 0.4209,
-      "daily_pnl_krw": 104915,
-      "daily_pnl_pct": 116.689,
+      "daily_pnl_krw": 104942,
+      "daily_pnl_pct": 116.719,
       "daily_target_met": true,
       "today_trades": 28,
       "recent_trades": [
