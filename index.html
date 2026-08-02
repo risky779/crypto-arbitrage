@@ -180,7 +180,7 @@
         <h3>일별 손익</h3>
         <div class="bar-chart" id="main-bars"></div>
         <table>
-          <thead><tr><th>시각</th><th>코인</th><th>손익($)</th></tr></thead>
+          <thead><tr><th>시각</th><th>코인</th><th>손익($)</th><th>배분이체비용</th><th>순손익</th></tr></thead>
           <tbody id="main-trades"></tbody>
         </table>
       </div>
@@ -197,7 +197,7 @@
         <h3>일별 손익</h3>
         <div class="bar-chart" id="twin-bars"></div>
         <table>
-          <thead><tr><th>시각</th><th>방향</th><th>손익($)</th></tr></thead>
+          <thead><tr><th>시각</th><th>방향</th><th>손익($)</th><th>배분이체비용</th><th>순손익</th></tr></thead>
           <tbody id="twin-trades"></tbody>
         </table>
       </div>
@@ -283,12 +283,14 @@
 
   const mtBody = document.getElementById('main-trades');
   if (mb.recent_trades.length === 0) {
-    mtBody.innerHTML = '<tr><td colspan="3" class="empty">거래 이력 없음</td></tr>';
+    mtBody.innerHTML = '<tr><td colspan="5" class="empty">거래 이력 없음</td></tr>';
   } else {
     mb.recent_trades.forEach(t => {
       const tr = document.createElement('tr');
       tr.innerHTML = '<td class="time">' + shortTime(t.time) + '</td><td>' + t.coin +
-        '</td><td class="' + cls(t.profit_usd) + '">' + fmtUSD(t.profit_usd) + '</td>';
+        '</td><td class="' + cls(t.profit_usd) + '">' + fmtUSD(t.profit_usd) + '</td>' +
+        '<td class="neutral">' + (t.allocated_cost_usd ? fmtUSD(-t.allocated_cost_usd) : '-') + '</td>' +
+        '<td class="' + cls(t.net_pnl_usd) + '">' + fmtUSD(t.net_pnl_usd) + '</td>';
       mtBody.appendChild(tr);
     });
   }
@@ -312,12 +314,14 @@
 
   const ttBody = document.getElementById('twin-trades');
   if (tb.recent_trades.length === 0) {
-    ttBody.innerHTML = '<tr><td colspan="3" class="empty">거래 이력 없음</td></tr>';
+    ttBody.innerHTML = '<tr><td colspan="5" class="empty">거래 이력 없음</td></tr>';
   } else {
     tb.recent_trades.forEach(t => {
       const tr = document.createElement('tr');
       tr.innerHTML = '<td class="time">' + shortTime(t.time) + '</td><td>' + (t.sell_side === 'BITHUMB' ? '빗썸매도' : 'OKX매도') +
-        '</td><td class="' + cls(t.pnl_usd) + '">' + fmtUSD(t.pnl_usd) + '</td>';
+        '</td><td class="' + cls(t.pnl_usd) + '">' + fmtUSD(t.pnl_usd) + '</td>' +
+        '<td class="neutral">' + (t.allocated_cost_usd ? fmtUSD(-t.allocated_cost_usd) : '-') + '</td>' +
+        '<td class="' + cls(t.net_pnl_usd) + '">' + fmtUSD(t.net_pnl_usd) + '</td>';
       ttBody.appendChild(tr);
     });
   }
