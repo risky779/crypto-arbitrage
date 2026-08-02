@@ -170,13 +170,12 @@
     <div class="grid2">
       <div class="card">
         <h2><span class="dot" id="main-dot"></span> 메인봇 <span class="neutral" style="font-weight:400;font-size:0.75rem;">전송 아비트라지</span></h2>
-        <div class="kv"><span class="k">보유 자산</span><span class="v" id="main-asset">-</span></div>
+        <div class="kv"><span class="k">보유 자산 (배분추정)</span><span class="v" id="main-asset">-</span></div>
         <div class="kv"><span class="k">오늘 자산증감</span><span class="v" id="main-daily-pnl">-</span></div>
         <div class="kv"><span class="k">Bithumb KRW</span><span class="v" id="main-krw">-</span></div>
         <div class="kv"><span class="k">OKX USDT</span><span class="v" id="main-usdt">-</span></div>
-        <div class="kv"><span class="k">누적 손익 (잔고기준)</span><span class="v" id="main-total-pnl">-</span></div>
+        <div class="kv"><span class="k">누적 손익 (자체거래+이체비용)</span><span class="v" id="main-total-pnl">-</span></div>
         <div class="kv" style="font-size:0.72rem;"><span class="k" style="color:var(--text-dim);">└ 거래기록 합계(참고)</span><span class="v" id="main-total-pnl-record" style="font-weight:500;">-</span></div>
-        <div class="kv"><span class="k">봇 자체 성과(TWR)</span><span class="v" id="main-twr">-</span></div>
         <div class="kv"><span class="k">오늘 거래(기록)</span><span class="v" id="main-today-trades">-</span></div>
         <h3>일별 손익</h3>
         <div class="bar-chart" id="main-bars"></div>
@@ -188,13 +187,12 @@
 
       <div class="card">
         <h2><span class="dot" id="twin-dot"></span> 쌍둥이봇 <span class="neutral" style="font-weight:400;font-size:0.75rem;">양쪽재고 로컬거래</span></h2>
-        <div class="kv"><span class="k">보유 자산</span><span class="v" id="twin-asset">-</span></div>
+        <div class="kv"><span class="k">보유 자산 (배분추정)</span><span class="v" id="twin-asset">-</span></div>
         <div class="kv"><span class="k">오늘 자산증감</span><span class="v" id="twin-daily-pnl">-</span></div>
         <div class="kv"><span class="k">XRP (Bithumb)</span><span class="v" id="twin-xrp-b">-</span></div>
         <div class="kv"><span class="k">XRP (OKX)</span><span class="v" id="twin-xrp-o">-</span></div>
-        <div class="kv"><span class="k">누적 손익 (잔고기준)</span><span class="v" id="twin-session-pnl">-</span></div>
+        <div class="kv"><span class="k">누적 손익 (자체거래+이체비용)</span><span class="v" id="twin-session-pnl">-</span></div>
         <div class="kv" style="font-size:0.72rem;"><span class="k" style="color:var(--text-dim);">└ 자체기록 합계(참고)</span><span class="v" id="twin-session-pnl-record" style="font-weight:500;">-</span></div>
-        <div class="kv"><span class="k">봇 자체 성과(TWR)</span><span class="v" id="twin-twr">-</span></div>
         <div class="kv"><span class="k">오늘 거래(기록)</span><span class="v" id="twin-today-trades">-</span></div>
         <h3>일별 손익</h3>
         <div class="bar-chart" id="twin-bars"></div>
@@ -281,11 +279,6 @@
     mtp.className = 'v ' + cls(mb.cum_pnl_krw);
   } else { mtp.textContent = '데이터 축적 중'; mtp.className = 'v neutral'; }
   document.getElementById('main-total-pnl-record').textContent = fmtUSD(mb.total_pnl_usd_record);
-  const mtwr = document.getElementById('main-twr');
-  if (mb.twr_pct !== null && mb.twr_pct !== undefined) {
-    mtwr.textContent = fmtPct(mb.twr_pct) + ' (' + mb.twr_events + '건, ' + mb.twr_since + '~)';
-    mtwr.className = 'v ' + cls(mb.twr_pct);
-  } else { mtwr.textContent = '데이터 축적 중'; mtwr.className = 'v neutral'; }
   document.getElementById('main-today-trades').textContent = mb.today_trades + '건 (' + fmtUSD(mb.today_pnl_usd_record) + ')';
 
   const mtBody = document.getElementById('main-trades');
@@ -315,11 +308,6 @@
     tsp.className = 'v ' + cls(tb.cum_pnl_krw);
   } else { tsp.textContent = '데이터 축적 중'; tsp.className = 'v neutral'; }
   document.getElementById('twin-session-pnl-record').textContent = fmtUSD(tb.session_pnl_usd_record);
-  const ttwr = document.getElementById('twin-twr');
-  if (tb.twr_pct !== null && tb.twr_pct !== undefined) {
-    ttwr.textContent = fmtPct(tb.twr_pct) + ' (' + tb.twr_events + '건, ' + tb.twr_since + '~)';
-    ttwr.className = 'v ' + cls(tb.twr_pct);
-  } else { ttwr.textContent = '데이터 축적 중'; ttwr.className = 'v neutral'; }
   document.getElementById('twin-today-trades').textContent = tb.today_trades + '건 (' + fmtUSD(tb.today_pnl_usd_record) + ')';
 
   const ttBody = document.getElementById('twin-trades');
