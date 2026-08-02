@@ -153,6 +153,10 @@
           <span class="hero-label">USD/KRW</span>
           <b id="usd-krw">-</b>
         </div>
+        <div class="item">
+          <span class="hero-label">미배분 잔차</span>
+          <b id="unallocated">-</b>
+        </div>
       </div>
     </div>
 
@@ -239,6 +243,13 @@
   document.getElementById('total-asset').textContent = fmtKRW(d.total_asset_krw);
   document.getElementById('usd-krw').textContent = d.usd_krw.toLocaleString('ko-KR');
   document.getElementById('target').textContent = d.target_daily_yield_pct.toFixed(2) + '%';
+
+  if (d.unallocated) {
+    const u = d.unallocated;
+    const ua = document.getElementById('unallocated');
+    ua.textContent = fmtKRW(u.krw) + ' (' + fmtPct(u.pct) + ')' + (u.status === 'WARNING' ? ' ⚠️' : '');
+    ua.className = 'v ' + cls(u.krw);
+  }
 
   if (d.seed) {
     const s = d.seed;
