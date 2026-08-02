@@ -1,40 +1,40 @@
 const pnlData = {
-  "updated_at": "2026-08-02 11:01:10",
+  "updated_at": "2026-08-02 11:16:04",
   "usd_krw": 1438.2,
-  "total_asset_krw": 421004,
-  "daily_pnl_krw": -338,
-  "daily_yield_pct": -0.08,
+  "total_asset_krw": 420505,
+  "daily_pnl_krw": -837,
+  "daily_yield_pct": -0.199,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -33263,
-    "seed_yield_pct": -7.322,
+    "seed_pnl_krw": -33762,
+    "seed_yield_pct": -7.432,
     "days_since_seed": 14,
-    "avg_daily_yield_pct": -0.523
+    "avg_daily_yield_pct": -0.531
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -2.91,
-    "combined_actual_delta_usd": -11.96,
-    "drift_usd": -9.05,
-    "drift_pct": -3.093,
+    "combined_actual_delta_usd": -12.31,
+    "drift_usd": -9.4,
+    "drift_pct": -3.216,
     "status": "WARNING",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "bot_reconciliation": {
     "twin_bot": {
-      "displayed_asset_krw": 194880,
+      "displayed_asset_krw": 195039,
       "twr_implied_asset_krw": 186240,
-      "drift_krw": 8640,
-      "drift_pct": 4.43,
+      "drift_krw": 8799,
+      "drift_pct": 4.51,
       "status": "OK"
     },
     "main_bot": {
-      "displayed_asset_krw": 226124,
+      "displayed_asset_krw": 225466,
       "twr_implied_asset_krw": 247786,
-      "drift_krw": -21662,
-      "drift_pct": -9.58,
+      "drift_krw": -22320,
+      "drift_pct": -9.9,
       "status": "WARNING"
     },
     "note": "drift = 표시자산(shift보정) - TWR내포자산(그 봇 자체 거래+이체비용만). 크면 cum_capital_shift_krw가 못 잡은 미기록 자본이동 의심."
@@ -74,7 +74,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-02",
-      "total_krw": 421004
+      "total_krw": 420505
     }
   ],
   "daily_history": [
@@ -168,13 +168,13 @@ const pnlData = {
     },
     {
       "date": "2026-08-02",
-      "total_asset_krw": 421004,
-      "main_pnl_krw": -362,
-      "twin_pnl_krw": 25,
-      "total_pnl_krw": -338,
-      "main_pnl_pct": -0.16,
-      "twin_pnl_pct": 0.013,
-      "total_pnl_pct": -0.08,
+      "total_asset_krw": 420505,
+      "main_pnl_krw": -1021,
+      "twin_pnl_krw": 184,
+      "total_pnl_krw": -837,
+      "main_pnl_pct": -0.451,
+      "twin_pnl_pct": 0.094,
+      "total_pnl_pct": -0.199,
       "target_met": false
     }
   ],
@@ -182,19 +182,19 @@ const pnlData = {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 226124,
+      "asset_krw": 225466,
       "balance_krw": 226871,
-      "balance_usdt": 61.19,
-      "cum_pnl_krw": -27821,
-      "cum_pnl_pct": -10.956,
+      "balance_usdt": 60.73,
+      "cum_pnl_krw": -28479,
+      "cum_pnl_pct": -11.215,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -0.7893,
       "twr_events": 10,
       "twr_since": "2026-07-25",
       "total_pnl_usd_record": 201.07,
       "today_pnl_usd_record": 0,
-      "daily_pnl_krw": -362,
-      "daily_pnl_pct": -0.16,
+      "daily_pnl_krw": -1021,
+      "daily_pnl_pct": -0.451,
       "daily_target_met": false,
       "today_trades": 0,
       "pending_transfers": 0,
@@ -255,21 +255,21 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 194880,
+      "asset_krw": 195039,
       "xrp_bithumb": 19.0705,
       "xrp_okx": 32.3606,
       "xrp_target": 25.7189,
-      "hedge_upnl_usd": 0.4439,
-      "cum_pnl_krw": 9771,
-      "cum_pnl_pct": 5.279,
+      "hedge_upnl_usd": 0.0955,
+      "cum_pnl_krw": 9930,
+      "cum_pnl_pct": 5.364,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -1.1713,
       "twr_events": 165,
       "twr_since": "2026-07-25",
       "session_pnl_usd_record": 3.0457,
       "today_pnl_usd_record": 0.063,
-      "daily_pnl_krw": 25,
-      "daily_pnl_pct": 0.013,
+      "daily_pnl_krw": 184,
+      "daily_pnl_pct": 0.094,
       "daily_target_met": false,
       "today_trades": 6,
       "recent_trades": [
