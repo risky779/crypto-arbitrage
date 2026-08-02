@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-08-02 11:16:04",
+  "updated_at": "2026-08-02 11:31:05",
   "usd_krw": 1438.2,
   "total_asset_krw": 420505,
   "daily_pnl_krw": -837,
@@ -259,9 +259,9 @@ const pnlData = {
       "xrp_bithumb": 19.0705,
       "xrp_okx": 32.3606,
       "xrp_target": 25.7189,
-      "hedge_upnl_usd": 0.0955,
+      "hedge_upnl_usd": 0.1007,
       "cum_pnl_krw": 9930,
-      "cum_pnl_pct": 5.364,
+      "cum_pnl_pct": 5.365,
       "cum_pnl_since": "2026-07-28",
       "twr_pct": -1.1713,
       "twr_events": 165,
