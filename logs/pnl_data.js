@@ -1,30 +1,30 @@
 const pnlData = {
-  "updated_at": "2026-08-03 18:16:04",
+  "updated_at": "2026-08-03 18:31:03",
   "usd_krw": 1440.53,
-  "total_asset_krw": 422094,
-  "daily_pnl_krw": 2743,
-  "daily_yield_pct": 0.654,
+  "total_asset_krw": 442020,
+  "daily_pnl_krw": 22670,
+  "daily_yield_pct": 5.406,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 454267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -32173,
-    "seed_yield_pct": -7.083,
+    "seed_pnl_krw": -12247,
+    "seed_yield_pct": -2.696,
     "days_since_seed": 15,
-    "avg_daily_yield_pct": -0.472
+    "avg_daily_yield_pct": -0.18
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -2.83,
-    "combined_actual_delta_usd": -11.68,
-    "drift_usd": -8.85,
-    "drift_pct": -3.019,
-    "status": "WARNING",
+    "combined_actual_delta_usd": 2.16,
+    "drift_usd": 4.99,
+    "drift_pct": 1.625,
+    "status": "OK",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -20797,
-    "pct": -4.93,
+    "krw": -871,
+    "pct": -0.2,
     "status": "OK",
     "note": "총자산(실측) - (메인봇+쌍둥이봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
   },
@@ -67,7 +67,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-03",
-      "total_krw": 422094
+      "total_krw": 442020
     }
   ],
   "daily_history": [
@@ -172,14 +172,14 @@ const pnlData = {
     },
     {
       "date": "2026-08-03",
-      "total_asset_krw": 422094,
+      "total_asset_krw": 442020,
       "main_pnl_krw": 0,
       "twin_pnl_krw": 0,
-      "total_pnl_krw": 2743,
+      "total_pnl_krw": 22670,
       "main_pnl_pct": 0.0,
       "twin_pnl_pct": 0.0,
-      "total_pnl_pct": 0.654,
-      "target_met": false
+      "total_pnl_pct": 5.406,
+      "target_met": true
     }
   ],
   "bots": {
@@ -187,8 +187,8 @@ const pnlData = {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
       "asset_krw": 173022,
-      "balance_krw": 106452,
-      "balance_usdt": 72.25,
+      "balance_krw": 126452,
+      "balance_usdt": 72.21,
       "cum_pnl_krw": -1975,
       "cum_pnl_pct": -0.7893,
       "cum_pnl_since": "2026-07-25",
@@ -283,7 +283,7 @@ const pnlData = {
       "xrp_bithumb": 96.6251,
       "xrp_okx": 6.1112,
       "xrp_target": 51.3906,
-      "hedge_upnl_usd": 0.8769,
+      "hedge_upnl_usd": 0.8157,
       "cum_pnl_krw": -2102,
       "cum_pnl_pct": -1.131,
       "cum_pnl_since": "2026-07-25",
