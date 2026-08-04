@@ -112,9 +112,7 @@
   .legend-name { display: flex; align-items: center; color: var(--text-dim); }
   .legend-val { font-weight: 700; font-variant-numeric: tabular-nums; }
 
-  .bar-chart { display: flex; align-items: flex-end; gap: 4px; height: 56px; margin: 10px 0 4px; }
-  .bar-chart .bar-wrap { flex: 1; display: flex; align-items: flex-end; justify-content: center; height: 100%; }
-  .bar-chart .bar { width: 100%; max-width: 22px; border-radius: 3px 3px 0 0; min-height: 3px; }
+  .bar-chart { margin: 10px 0 4px; }
 
   .empty { color: var(--text-dim); font-size: 0.82rem; padding: 12px 0; text-align: center; }
   footer { text-align: center; color: var(--text-dim); font-size: 0.75rem; margin-top: 28px; }
@@ -344,8 +342,12 @@
 
   // ---------------------------------------------------------------
   // 봇별 일별 손익 막대그래프 (daily_history 기준, 최대 8일)
+  // [08-04 사용자 지적: "일자라도 있어야하는거아냐? 마이너스면 아래로 가야지 왜 위로 올라가?"]
+  // 옛 버전은 항상 아래→위로만 자라는 높이막대(부호는 색으로만 구분, 날짜라벨 없음)였음 —
+  // renderTrend/renderRealized와 같은 0선 기준 SVG 방식으로 교체(양수는 위로, 음수는 아래로,
+  // X축에 날짜 라벨 표시).
   // ---------------------------------------------------------------
-  function renderBarChart(containerId, rows, valueKey) {
+  function renderMiniBarChart(containerId, rows, valueKey, pctKey) {
     const el = document.getElementById(containerId);
     const items = rows.filter(r => r[valueKey] !== null && r[valueKey] !== undefined).slice(-8);
     if (items.length === 0) {
@@ -353,17 +355,60 @@
       return;
     }
     const vals = items.map(r => r[valueKey]);
-    const maxAbs = Math.max(...vals.map(Math.abs), 0.0001);
-    el.innerHTML = items.map(r => {
+    const min = Math.min(0, ...vals), max = Math.max(0, ...vals);
+    const range = (max - min) || Math.abs(max) * 0.1 || 1;
+    const padMin = min - range * 0.15, padMax = max + range * 0.15;
+    const fullRange = padMax - padMin;
+
+    const W = 300, H = 90, padL = 4, padR = 4, padT = 6, padB = 16;
+    const plotW = W - padL - padR, plotH = H - padT - padB;
+    const xAt = i => padL + (items.length === 1 ? plotW / 2 : (i / Math.max(items.length - 1, 1)) * plotW);
+    const yAt = v => padT + plotH - ((v - padMin) / fullRange) * plotH;
+    const zeroY = yAt(0);
+    const barSlot = items.length === 1 ? plotW : plotW / items.length;
+    const barW = Math.min(barSlot * 0.55, 20);
+
+    let gridSvg = '<line x1="' + padL + '" y1="' + zeroY + '" x2="' + (W - padR) + '" y2="' + zeroY + '" stroke="var(--text-dim)" stroke-width="1" opacity="0.5" />';
+
+    let xLabelsSvg = '';
+    const labelCount = Math.min(items.length, 5);
+    for (let k = 0; k < labelCount; k++) {
+      const idx = labelCount === 1 ? 0 : Math.round(k * (items.length - 1) / (labelCount - 1));
+      xLabelsSvg += '<text class="axis-label" x="' + xAt(idx) + '" y="' + (H - 3) + '" text-anchor="middle">' + shortDate(items[idx].date) + '</text>';
+    }
+
+    let barsSvg = '';
+    items.forEach((r, i) => {
       const v = r[valueKey];
-      const pct = Math.max(Math.abs(v) / maxAbs * 100, 6);
-      return '<div class="bar-wrap" title="' + r.date + ' · ' + fmtKRW(v) + '">' +
-        '<div class="bar" style="height:' + pct + '%;background:' + color(v) + ';"></div>' +
-        '</div>';
-    }).join('');
+      const cx = xAt(i);
+      const y = yAt(Math.max(v, 0));
+      const barH = Math.max(Math.abs(yAt(v) - zeroY), 2);
+      barsSvg += '<rect x="' + (cx - barW / 2) + '" y="' + y + '" width="' + barW + '" height="' + barH + '" rx="2" fill="' + color(v) + '" />';
+      barsSvg += '<rect class="hover-target" data-idx="' + i + '" x="' + (cx - barSlot / 2) + '" y="' + padT + '" width="' + barSlot + '" height="' + plotH + '" fill="transparent" style="cursor:pointer;" />';
+    });
+
+    const tipId = containerId + '-tip';
+    el.innerHTML =
+      '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:' + H + 'px;display:block;overflow:visible;">' +
+        gridSvg + barsSvg + xLabelsSvg +
+      '</svg>' +
+      '<div id="' + tipId + '" style="display:none;text-align:center;font-size:0.72rem;color:var(--text-dim);margin-top:2px;"></div>';
+
+    const tip = document.getElementById(tipId);
+    el.querySelectorAll('.hover-target').forEach(hEl => {
+      hEl.addEventListener('mouseenter', () => {
+        const i = +hEl.getAttribute('data-idx');
+        const v = items[i][valueKey];
+        const pct = pctKey ? items[i][pctKey] : null;
+        tip.style.display = 'block';
+        tip.innerHTML = '<b style="color:var(--text);">' + items[i].date + '</b> · <span style="color:' + color(v) + ';font-weight:600;">' +
+          (v >= 0 ? '+' : '') + fmtKRW(v) + (pct !== null && pct !== undefined ? ' (' + (v >= 0 ? '+' : '') + pct + '%)' : '') + '</span>';
+      });
+      hEl.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+    });
   }
-  renderBarChart('main-bars', d.daily_history || [], 'main_pnl_krw');
-  renderBarChart('twin-bars', d.daily_history || [], 'twin_pnl_krw');
+  renderMiniBarChart('main-bars', d.daily_history || [], 'main_pnl_krw', 'main_pnl_pct');
+  renderMiniBarChart('twin-bars', d.daily_history || [], 'twin_pnl_krw', 'twin_pnl_pct');
 
   // ---------------------------------------------------------------
   // 일별 손익 막대그래프 (0선 기준 양/음수, 그리드 + 축 라벨 + 호버 툴팁)
