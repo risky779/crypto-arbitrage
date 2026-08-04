@@ -160,9 +160,14 @@
       </div>
     </div>
 
+    <div class="card chart-card">
+      <h2>누적 실현손익 <span class="neutral" style="font-weight:400;font-size:0.75rem;">매매+이체비용만, 시세·환율 변동 제외</span></h2>
+      <div id="realized-chart"></div>
+    </div>
+
     <div class="grid2">
       <div class="card chart-card">
-        <h2>일별 손익</h2>
+        <h2>일별 총자산 증감 <span class="neutral" style="font-weight:400;font-size:0.75rem;">시세·환율 변동 포함</span></h2>
         <div id="trend-chart"></div>
       </div>
       <div class="card chart-card">
@@ -435,6 +440,92 @@
         tip.style.display = 'block';
         tip.innerHTML = '<b style="color:var(--text);">' + hist[i].date + '</b> · <span style="color:' + color + ';font-weight:600;">' +
           (v >= 0 ? '+' : '') + fmtKRW(v) + (pct !== null && pct !== undefined ? ' (' + (v >= 0 ? '+' : '') + pct + '%)' : '') + '</span>';
+      });
+      el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+    });
+  })();
+
+  // ---------------------------------------------------------------
+  // 누적 실현손익 라인차트 (raw 로그 재구성, 매매+이체비용만 — 시세/환율변동 제외)
+  // [08-04 사용자 지시: "일별 손익 그래프 확인해서 의미있는 그래프로 업그레이드해. 지금은 그래프가
+  // 의미하는게 뭔지 파악이 안되"] 위 total_pnl_krw 막대는 총자산(실측) 델타라 XRP 시세·환율
+  // 변동까지 섞여 실적 신호가 안 보였음(실측: 08-02→08-03 총자산 +20,992원인데 실현손익은 거의
+  // 0). 이 차트는 그 봇 자신의 거래+이체비용만 누적한 순수 실현손익이라, 흔들림 없이 매매전략이
+  // 실제로 돈을 벌고 있는지 보여줌 — total_pnl_krw 막대와 다른 값이 나오는 게 정상(서로 다른 걸
+  // 측정하므로 각 카드 부제로 구분 표시함).
+  // ---------------------------------------------------------------
+  (function renderRealized() {
+    const hist = d.realized_pnl_history || [];
+    const container = document.getElementById('realized-chart');
+    if (hist.length < 2) {
+      container.innerHTML = '<div class="empty" style="padding:30px 0;">실현손익 데이터 축적 중</div>';
+      return;
+    }
+    const mainVals = hist.map(p => p.main_cum_krw);
+    const twinVals = hist.map(p => p.twin_cum_krw);
+    const totalVals = hist.map(p => p.total_cum_krw);
+    const allVals = mainVals.concat(twinVals, totalVals);
+    const min = Math.min(0, ...allVals), max = Math.max(0, ...allVals);
+    const range = (max - min) || Math.abs(max) * 0.1 || 1;
+    const padMin = min - range * 0.15, padMax = max + range * 0.15;
+    const fullRange = padMax - padMin;
+
+    const W = 560, H = 190, padL = 46, padR = 10, padT = 12, padB = 22;
+    const plotW = W - padL - padR, plotH = H - padT - padB;
+    const xAt = i => padL + (hist.length === 1 ? plotW / 2 : (i / Math.max(hist.length - 1, 1)) * plotW);
+    const yAt = v => padT + plotH - ((v - padMin) / fullRange) * plotH;
+    const zeroY = yAt(0);
+
+    let gridSvg = '';
+    const steps = 4;
+    for (let s = 0; s <= steps; s++) {
+      const v = padMin + (fullRange * s / steps);
+      const y = yAt(v);
+      gridSvg += '<line class="grid-line" x1="' + padL + '" y1="' + y + '" x2="' + (W - padR) + '" y2="' + y + '" />';
+      gridSvg += '<text class="axis-label" x="' + (padL - 6) + '" y="' + (y + 3) + '" text-anchor="end">' + fmtKRWShort(v) + '</text>';
+    }
+    gridSvg += '<line x1="' + padL + '" y1="' + zeroY + '" x2="' + (W - padR) + '" y2="' + zeroY + '" stroke="var(--text-dim)" stroke-width="1" opacity="0.5" />';
+
+    let xLabelsSvg = '';
+    const labelCount = Math.min(hist.length, 6);
+    for (let k = 0; k < labelCount; k++) {
+      const idx = labelCount === 1 ? 0 : Math.round(k * (hist.length - 1) / (labelCount - 1));
+      xLabelsSvg += '<text class="axis-label" x="' + xAt(idx) + '" y="' + (H - 4) + '" text-anchor="middle">' + shortDate(hist[idx].date) + '</text>';
+    }
+
+    const toPath = vals => vals.map((v, i) => (i === 0 ? 'M' : 'L') + xAt(i) + ' ' + yAt(v)).join(' ');
+    const linesSvg =
+      '<path d="' + toPath(mainVals) + '" fill="none" stroke="#6ba3ff" stroke-width="1.5" opacity="0.85" />' +
+      '<path d="' + toPath(twinVals) + '" fill="none" stroke="#ffb454" stroke-width="1.5" opacity="0.85" />' +
+      '<path d="' + toPath(totalVals) + '" fill="none" stroke="var(--text)" stroke-width="2.2" />';
+
+    let hoverSvg = '';
+    const barSlot = hist.length === 1 ? plotW : plotW / hist.length;
+    hist.forEach((_, i) => {
+      hoverSvg += '<rect class="hover-target" data-idx="' + i + '" x="' + (xAt(i) - barSlot / 2) + '" y="' + padT + '" width="' + barSlot + '" height="' + plotH + '" fill="transparent" style="cursor:pointer;" />';
+    });
+
+    const tipId = 'realized-tip';
+    container.innerHTML =
+      '<div style="font-size:0.72rem;margin-bottom:4px;">' +
+        '<span style="color:var(--text);">■ 합계</span> &nbsp;' +
+        '<span style="color:#6ba3ff;">■ 메인봇</span> &nbsp;' +
+        '<span style="color:#ffb454;">■ 쌍둥이봇</span>' +
+      '</div>' +
+      '<svg viewBox="0 0 ' + W + ' ' + H + '" style="height:' + H + 'px;">' +
+        gridSvg + linesSvg + hoverSvg + xLabelsSvg +
+      '</svg>' +
+      '<div id="' + tipId + '" style="display:none;position:relative;text-align:center;font-size:0.78rem;color:var(--text-dim);margin-top:2px;"></div>';
+
+    const tip = document.getElementById(tipId);
+    container.querySelectorAll('.hover-target').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        const i = +el.getAttribute('data-idx');
+        const r = hist[i];
+        tip.style.display = 'block';
+        tip.innerHTML = '<b style="color:var(--text);">' + r.date + '</b> · ' +
+          '합계 <span style="color:' + (r.total_cum_krw >= 0 ? 'var(--green)' : 'var(--red)') + ';font-weight:600;">' + fmtKRW(r.total_cum_krw) + '</span> ' +
+          '(메인 ' + fmtKRW(r.main_cum_krw) + ', 쌍둥이 ' + fmtKRW(r.twin_cum_krw) + ')';
       });
       el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
     });
