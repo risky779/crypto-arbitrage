@@ -1,30 +1,30 @@
 const pnlData = {
-  "updated_at": "2026-08-05 07:16:04",
+  "updated_at": "2026-08-05 07:31:04",
   "usd_krw": 1429.59,
-  "total_asset_krw": 437370,
+  "total_asset_krw": 437341,
   "daily_pnl_krw": 59,
   "daily_yield_pct": 0.013,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 474267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -36897,
-    "seed_yield_pct": -7.78,
+    "seed_pnl_krw": -36926,
+    "seed_yield_pct": -7.786,
     "days_since_seed": 17,
     "avg_daily_yield_pct": -0.458
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -2.67,
-    "combined_actual_delta_usd": 1.25,
-    "drift_usd": 3.93,
-    "drift_pct": 1.283,
+    "combined_actual_delta_usd": 1.23,
+    "drift_usd": 3.91,
+    "drift_pct": 1.277,
     "status": "OK",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -5774,
-    "pct": -1.32,
+    "krw": -5803,
+    "pct": -1.33,
     "status": "OK",
     "note": "총자산(실측) - (메인봇+쌍둥이봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
   },
@@ -75,7 +75,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-05",
-      "total_krw": 437370
+      "total_krw": 437341
     }
   ],
   "daily_history": [
@@ -202,7 +202,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-05",
-      "total_asset_krw": 437370,
+      "total_asset_krw": 437341,
       "main_pnl_krw": 0,
       "twin_pnl_krw": 59,
       "total_pnl_krw": 59,
@@ -292,7 +292,7 @@ const pnlData = {
       "running": true,
       "asset_krw": 173642,
       "balance_krw": 15906,
-      "balance_usdt": 273.85,
+      "balance_usdt": 273.82,
       "cum_pnl_krw": -1960,
       "cum_pnl_pct": -0.7893,
       "cum_pnl_since": "2026-07-25",
@@ -387,7 +387,7 @@ const pnlData = {
       "xrp_bithumb": 14.4814,
       "xrp_okx": 0.0,
       "xrp_target": 7.241,
-      "hedge_upnl_usd": 0.0075,
+      "hedge_upnl_usd": -0.0135,
       "cum_pnl_krw": -1864,
       "cum_pnl_pct": -1.048,
       "cum_pnl_since": "2026-07-25",
