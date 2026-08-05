@@ -1,30 +1,30 @@
 const pnlData = {
-  "updated_at": "2026-08-05 17:01:05",
+  "updated_at": "2026-08-05 17:16:04",
   "usd_krw": 1428.89,
-  "total_asset_krw": 437936,
-  "daily_pnl_krw": 141,
-  "daily_yield_pct": 0.032,
+  "total_asset_krw": 438105,
+  "daily_pnl_krw": 172,
+  "daily_yield_pct": 0.039,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 474267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -36331,
-    "seed_yield_pct": -7.661,
+    "seed_pnl_krw": -36162,
+    "seed_yield_pct": -7.625,
     "days_since_seed": 17,
-    "avg_daily_yield_pct": -0.451
+    "avg_daily_yield_pct": -0.449
   },
   "reconciliation": {
     "since": "2026-07-25",
-    "combined_realized_usd": -2.62,
-    "combined_actual_delta_usd": 1.8,
-    "drift_usd": 4.41,
-    "drift_pct": 1.44,
+    "combined_realized_usd": -2.6,
+    "combined_actual_delta_usd": 1.92,
+    "drift_usd": 4.51,
+    "drift_pct": 1.471,
     "status": "OK",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -5292,
-    "pct": -1.21,
+    "krw": -5154,
+    "pct": -1.18,
     "status": "OK",
     "note": "총자산(실측) - (메인봇+쌍둥이봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
   },
@@ -75,7 +75,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-05",
-      "total_krw": 437936
+      "total_krw": 438105
     }
   ],
   "daily_history": [
@@ -202,13 +202,13 @@ const pnlData = {
     },
     {
       "date": "2026-08-05",
-      "total_asset_krw": 437936,
+      "total_asset_krw": 438105,
       "main_pnl_krw": 0,
-      "twin_pnl_krw": 141,
-      "total_pnl_krw": 141,
+      "twin_pnl_krw": 172,
+      "total_pnl_krw": 172,
       "main_pnl_pct": 0.0,
-      "twin_pnl_pct": 0.052,
-      "total_pnl_pct": 0.032,
+      "twin_pnl_pct": 0.064,
+      "total_pnl_pct": 0.039,
       "target_met": false
     }
   ],
@@ -282,22 +282,22 @@ const pnlData = {
     {
       "date": "2026-08-05",
       "main_cum_krw": -1959,
-      "twin_cum_krw": -1781,
-      "total_cum_krw": -3740
+      "twin_cum_krw": -1750,
+      "total_cum_krw": -3709
     }
   ],
   "bots": {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 173682,
-      "balance_krw": 4289,
-      "balance_usdt": 92.5,
+      "asset_krw": 102238,
+      "balance_krw": 5391,
+      "balance_usdt": 35.95,
       "cum_pnl_krw": -1959,
       "cum_pnl_pct": -0.7893,
       "cum_pnl_since": "2026-07-25",
       "twr_pct": -0.7893,
-      "twr_events": 11,
+      "twr_events": 12,
       "twr_since": "2026-07-25",
       "total_pnl_usd_record": 201.07,
       "today_pnl_usd_record": 0,
@@ -383,32 +383,41 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 269546,
-      "xrp_bithumb": 22.0443,
-      "xrp_okx": 125.4311,
-      "xrp_target": 73.7399,
-      "hedge_upnl_usd": 0.9267,
-      "cum_pnl_krw": -1781,
-      "cum_pnl_pct": -1.0171,
+      "asset_krw": 341021,
+      "xrp_bithumb": 21.309,
+      "xrp_okx": 165.6616,
+      "xrp_target": 93.4853,
+      "hedge_upnl_usd": 1.1595,
+      "cum_pnl_krw": -1750,
+      "cum_pnl_pct": -1.0081,
       "cum_pnl_since": "2026-07-25",
-      "twr_pct": -1.0171,
-      "twr_events": 215,
+      "twr_pct": -1.0081,
+      "twr_events": 218,
       "twr_since": "2026-07-25",
-      "session_pnl_usd_record": 3.9343,
-      "today_pnl_usd_record": 0.3048,
-      "daily_pnl_krw": 141,
-      "daily_pnl_pct": 0.052,
+      "session_pnl_usd_record": 3.9589,
+      "today_pnl_usd_record": 0.3294,
+      "daily_pnl_krw": 172,
+      "daily_pnl_pct": 0.064,
       "daily_target_met": false,
-      "today_trades": 11,
+      "today_trades": 12,
       "recent_trades": [
+        {
+          "time": "2026-08-05T17:11:18.051061",
+          "coin": "XRP",
+          "sell_side": "OKX",
+          "gap_pct": 0.493,
+          "pnl_usd": 0.0246,
+          "allocated_cost_usd": 0.0,
+          "net_pnl_usd": 0.0246
+        },
         {
           "time": "2026-08-05T16:32:27.115023",
           "coin": "XRP",
           "sell_side": "OKX",
           "gap_pct": 0.504,
           "pnl_usd": 0.0253,
-          "allocated_cost_usd": 0.0,
-          "net_pnl_usd": 0.0253
+          "allocated_cost_usd": 0.00019,
+          "net_pnl_usd": 0.02511
         },
         {
           "time": "2026-08-05T15:53:52.243628",
@@ -416,8 +425,8 @@ const pnlData = {
           "sell_side": "OKX",
           "gap_pct": 0.54,
           "pnl_usd": 0.0278,
-          "allocated_cost_usd": 0.00018,
-          "net_pnl_usd": 0.02762
+          "allocated_cost_usd": 0.00038,
+          "net_pnl_usd": 0.02742
         },
         {
           "time": "2026-08-05T15:23:52.053921",
@@ -425,8 +434,8 @@ const pnlData = {
           "sell_side": "OKX",
           "gap_pct": 0.549,
           "pnl_usd": 0.0285,
-          "allocated_cost_usd": 0.00152,
-          "net_pnl_usd": 0.02698
+          "allocated_cost_usd": 0.00171,
+          "net_pnl_usd": 0.02679
         },
         {
           "time": "2026-08-05T10:56:55.213326",
@@ -434,8 +443,8 @@ const pnlData = {
           "sell_side": "OKX",
           "gap_pct": 0.669,
           "pnl_usd": 0.0368,
-          "allocated_cost_usd": 0.00292,
-          "net_pnl_usd": 0.03388
+          "allocated_cost_usd": 0.00311,
+          "net_pnl_usd": 0.03369
         },
         {
           "time": "2026-08-05T09:01:09.631682",
@@ -443,8 +452,8 @@ const pnlData = {
           "sell_side": "OKX",
           "gap_pct": 0.521,
           "pnl_usd": 0.0265,
-          "allocated_cost_usd": 0.00439,
-          "net_pnl_usd": 0.02211
+          "allocated_cost_usd": 0.00458,
+          "net_pnl_usd": 0.02192
         },
         {
           "time": "2026-08-05T06:57:54.557656",
@@ -452,8 +461,8 @@ const pnlData = {
           "sell_side": "OKX",
           "gap_pct": 0.595,
           "pnl_usd": 0.0217,
-          "allocated_cost_usd": 0.00439,
-          "net_pnl_usd": 0.01731
+          "allocated_cost_usd": 0.00458,
+          "net_pnl_usd": 0.01712
         },
         {
           "time": "2026-08-05T06:57:20.398063",
@@ -461,8 +470,8 @@ const pnlData = {
           "sell_side": "OKX",
           "gap_pct": 0.576,
           "pnl_usd": 0.0303,
-          "allocated_cost_usd": 0.00439,
-          "net_pnl_usd": 0.02591
+          "allocated_cost_usd": 0.00458,
+          "net_pnl_usd": 0.02572
         },
         {
           "time": "2026-08-05T06:46:04.575782",
@@ -470,8 +479,8 @@ const pnlData = {
           "sell_side": "OKX",
           "gap_pct": 0.529,
           "pnl_usd": 0.0271,
-          "allocated_cost_usd": 0.005,
-          "net_pnl_usd": 0.0221
+          "allocated_cost_usd": 0.00519,
+          "net_pnl_usd": 0.02191
         },
         {
           "time": "2026-08-05T02:47:01.864096",
@@ -479,17 +488,8 @@ const pnlData = {
           "sell_side": "OKX",
           "gap_pct": 0.548,
           "pnl_usd": 0.0202,
-          "allocated_cost_usd": 0.00747,
-          "net_pnl_usd": 0.01273
-        },
-        {
-          "time": "2026-08-05T02:46:28.022711",
-          "coin": "XRP",
-          "sell_side": "OKX",
-          "gap_pct": 0.538,
-          "pnl_usd": 0.0277,
-          "allocated_cost_usd": 0.00747,
-          "net_pnl_usd": 0.02023
+          "allocated_cost_usd": 0.00766,
+          "net_pnl_usd": 0.01254
         }
       ]
     }
