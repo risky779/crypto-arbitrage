@@ -1,15 +1,15 @@
 const pnlData = {
-  "updated_at": "2026-08-07 02:01:03",
+  "updated_at": "2026-08-07 02:16:03",
   "usd_krw": 1423.62,
-  "total_asset_krw": 432193,
+  "total_asset_krw": 432202,
   "daily_pnl_krw": 0,
   "daily_yield_pct": 0.0,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 474267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -42074,
-    "seed_yield_pct": -8.871,
+    "seed_pnl_krw": -42065,
+    "seed_yield_pct": -8.869,
     "days_since_seed": 19,
     "avg_daily_yield_pct": -0.467
   },
@@ -17,14 +17,14 @@ const pnlData = {
     "since": "2026-07-25",
     "combined_realized_usd": -4.26,
     "combined_actual_delta_usd": -1.1,
-    "drift_usd": 3.15,
-    "drift_pct": 1.039,
+    "drift_usd": 3.16,
+    "drift_pct": 1.041,
     "status": "OK",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -8713,
-    "pct": -2.02,
+    "krw": -8704,
+    "pct": -2.01,
     "status": "OK",
     "note": "총자산(실측) - (메인봇+쌍둥이봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
   },
@@ -83,7 +83,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-07",
-      "total_krw": 432193
+      "total_krw": 432202
     }
   ],
   "daily_history": [
@@ -232,7 +232,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-07",
-      "total_asset_krw": 432193,
+      "total_asset_krw": 432202,
       "main_pnl_krw": 0,
       "twin_pnl_krw": 0,
       "total_pnl_krw": 0,
@@ -334,7 +334,7 @@ const pnlData = {
       "running": true,
       "asset_krw": 102801,
       "balance_krw": 3699,
-      "balance_usdt": 284.81,
+      "balance_usdt": 284.82,
       "cum_pnl_krw": -1951,
       "cum_pnl_pct": -0.7893,
       "cum_pnl_since": "2026-07-25",
@@ -429,7 +429,7 @@ const pnlData = {
       "xrp_bithumb": 11.2372,
       "xrp_okx": 0.0,
       "xrp_target": 5.9817,
-      "hedge_upnl_usd": 0.2318,
+      "hedge_upnl_usd": 0.239,
       "cum_pnl_krw": -4111,
       "cum_pnl_pct": -1.7079,
       "cum_pnl_since": "2026-07-25",
