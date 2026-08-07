@@ -1,30 +1,30 @@
 const pnlData = {
-  "updated_at": "2026-08-07 09:16:03",
+  "updated_at": "2026-08-07 09:31:03",
   "usd_krw": 1423.62,
-  "total_asset_krw": 432370,
+  "total_asset_krw": 432320,
   "daily_pnl_krw": -4,
   "daily_yield_pct": -0.001,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 474267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -41897,
-    "seed_yield_pct": -8.834,
+    "seed_pnl_krw": -41947,
+    "seed_yield_pct": -8.845,
     "days_since_seed": 19,
-    "avg_daily_yield_pct": -0.465
+    "avg_daily_yield_pct": -0.466
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -4.26,
-    "combined_actual_delta_usd": -0.98,
-    "drift_usd": 3.28,
-    "drift_pct": 1.081,
+    "combined_actual_delta_usd": -1.01,
+    "drift_usd": 3.25,
+    "drift_pct": 1.069,
     "status": "OK",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -8533,
-    "pct": -1.97,
+    "krw": -8583,
+    "pct": -1.99,
     "status": "OK",
     "note": "총자산(실측) - (메인봇+쌍둥이봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
   },
@@ -83,7 +83,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-07",
-      "total_krw": 432370
+      "total_krw": 432320
     }
   ],
   "daily_history": [
@@ -232,7 +232,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-07",
-      "total_asset_krw": 432370,
+      "total_asset_krw": 432320,
       "main_pnl_krw": 0,
       "twin_pnl_krw": -3,
       "total_pnl_krw": -3,
@@ -334,7 +334,7 @@ const pnlData = {
       "running": true,
       "asset_krw": 102801,
       "balance_krw": 3770,
-      "balance_usdt": 277.15,
+      "balance_usdt": 277.11,
       "cum_pnl_krw": -1951,
       "cum_pnl_pct": -0.7893,
       "cum_pnl_since": "2026-07-25",
@@ -429,7 +429,7 @@ const pnlData = {
       "xrp_bithumb": 11.1231,
       "xrp_okx": 5.9757,
       "xrp_target": 8.5494,
-      "hedge_upnl_usd": 0.4185,
+      "hedge_upnl_usd": 0.3845,
       "cum_pnl_krw": -4114,
       "cum_pnl_pct": -1.709,
       "cum_pnl_since": "2026-07-25",
