@@ -1,29 +1,29 @@
 const pnlData = {
-  "updated_at": "2026-08-07 16:31:04",
+  "updated_at": "2026-08-07 16:46:03",
   "usd_krw": 1423.48,
-  "total_asset_krw": 431930,
+  "total_asset_krw": 431939,
   "daily_pnl_krw": -57,
   "daily_yield_pct": -0.013,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 474267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -42337,
-    "seed_yield_pct": -8.927,
+    "seed_pnl_krw": -42328,
+    "seed_yield_pct": -8.925,
     "days_since_seed": 19,
     "avg_daily_yield_pct": -0.47
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -4.3,
-    "combined_actual_delta_usd": -1.26,
-    "drift_usd": 3.04,
-    "drift_pct": 1.002,
+    "combined_actual_delta_usd": -1.25,
+    "drift_usd": 3.05,
+    "drift_pct": 1.004,
     "status": "OK",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -8919,
+    "krw": -8910,
     "pct": -2.06,
     "status": "OK",
     "note": "총자산(실측) - (메인봇+쌍둥이봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
@@ -83,7 +83,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-07",
-      "total_krw": 431930
+      "total_krw": 431939
     }
   ],
   "daily_history": [
@@ -232,7 +232,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-07",
-      "total_asset_krw": 431930,
+      "total_asset_krw": 431939,
       "main_pnl_krw": 0,
       "twin_pnl_krw": -58,
       "total_pnl_krw": -58,
@@ -334,7 +334,7 @@ const pnlData = {
       "running": true,
       "asset_krw": 102816,
       "balance_krw": 10304,
-      "balance_usdt": 282.66,
+      "balance_usdt": 282.67,
       "cum_pnl_krw": -1951,
       "cum_pnl_pct": -0.7893,
       "cum_pnl_since": "2026-07-25",
@@ -429,7 +429,7 @@ const pnlData = {
       "xrp_bithumb": 6.6513,
       "xrp_okx": 3.3265,
       "xrp_target": 4.9889,
-      "hedge_upnl_usd": 0.1937,
+      "hedge_upnl_usd": 0.2009,
       "cum_pnl_krw": -4168,
       "cum_pnl_pct": -1.7248,
       "cum_pnl_since": "2026-07-25",
