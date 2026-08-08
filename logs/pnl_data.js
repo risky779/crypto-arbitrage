@@ -1,30 +1,30 @@
 const pnlData = {
-  "updated_at": "2026-08-08 13:46:04",
+  "updated_at": "2026-08-08 14:01:04",
   "usd_krw": 1411.63,
-  "total_asset_krw": 361268,
+  "total_asset_krw": 361459,
   "daily_pnl_krw": 0,
   "daily_yield_pct": 0.0,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 474267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -112999,
-    "seed_yield_pct": -23.826,
+    "seed_pnl_krw": -112808,
+    "seed_yield_pct": -23.786,
     "days_since_seed": 20,
-    "avg_daily_yield_pct": -1.191
+    "avg_daily_yield_pct": -1.189
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -4.26,
-    "combined_actual_delta_usd": -48.77,
-    "drift_usd": -44.51,
-    "drift_pct": -17.391,
+    "combined_actual_delta_usd": -48.63,
+    "drift_usd": -44.37,
+    "drift_pct": -17.329,
     "status": "WARNING",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -79687,
-    "pct": -22.06,
+    "krw": -79496,
+    "pct": -21.99,
     "status": "WARNING",
     "note": "총자산(실측) - (메인봇+쌍둥이봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
   },
@@ -87,7 +87,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-08",
-      "total_krw": 361268
+      "total_krw": 361459
     }
   ],
   "daily_history": [
@@ -236,7 +236,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-08",
-      "total_asset_krw": 361268,
+      "total_asset_krw": 361459,
       "main_pnl_krw": 0,
       "twin_pnl_krw": 0,
       "total_pnl_krw": 0,
@@ -343,8 +343,8 @@ const pnlData = {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
       "asset_krw": 104080,
-      "balance_krw": 44154,
-      "balance_usdt": 224.64,
+      "balance_krw": 31224,
+      "balance_usdt": 233.94,
       "cum_pnl_krw": -1935,
       "cum_pnl_pct": -0.7893,
       "cum_pnl_since": "2026-07-25",
