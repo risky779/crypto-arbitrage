@@ -1,30 +1,30 @@
 const pnlData = {
-  "updated_at": "2026-08-08 10:16:04",
+  "updated_at": "2026-08-08 10:31:04",
   "usd_krw": 1411.63,
-  "total_asset_krw": 402168,
+  "total_asset_krw": 401908,
   "daily_pnl_krw": 0,
   "daily_yield_pct": 0.0,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 474267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -72099,
-    "seed_yield_pct": -15.202,
+    "seed_pnl_krw": -72359,
+    "seed_yield_pct": -15.257,
     "days_since_seed": 20,
-    "avg_daily_yield_pct": -0.76
+    "avg_daily_yield_pct": -0.763
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -4.26,
-    "combined_actual_delta_usd": -19.79,
-    "drift_usd": -15.53,
-    "drift_pct": -5.452,
+    "combined_actual_delta_usd": -19.98,
+    "drift_usd": -15.72,
+    "drift_pct": -5.521,
     "status": "WARNING",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -38787,
-    "pct": -9.64,
+    "krw": -39047,
+    "pct": -9.72,
     "status": "WARNING",
     "note": "총자산(실측) - (메인봇+쌍둥이봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
   },
@@ -87,7 +87,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-08",
-      "total_krw": 402168
+      "total_krw": 401908
     }
   ],
   "daily_history": [
@@ -236,7 +236,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-08",
-      "total_asset_krw": 402168,
+      "total_asset_krw": 401908,
       "main_pnl_krw": 0,
       "twin_pnl_krw": 0,
       "total_pnl_krw": 0,
@@ -344,7 +344,7 @@ const pnlData = {
       "running": true,
       "asset_krw": 104080,
       "balance_krw": 1825,
-      "balance_usdt": 275.4,
+      "balance_usdt": 278.44,
       "cum_pnl_krw": -1935,
       "cum_pnl_pct": -0.7893,
       "cum_pnl_since": "2026-07-25",
@@ -438,8 +438,8 @@ const pnlData = {
       "asset_krw": 336875,
       "xrp_bithumb": 3.4491,
       "xrp_okx": 0.0,
-      "xrp_target": 6.7269,
-      "hedge_upnl_usd": 0.2279,
+      "xrp_target": 1.7245,
+      "hedge_upnl_usd": 0.0645,
       "cum_pnl_krw": -4078,
       "cum_pnl_pct": -1.7085,
       "cum_pnl_since": "2026-07-25",
