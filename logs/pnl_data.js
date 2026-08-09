@@ -1,30 +1,30 @@
 const pnlData = {
-  "updated_at": "2026-08-09 09:01:04",
-  "usd_krw": 1411.63,
-  "total_asset_krw": 428969,
+  "updated_at": "2026-08-09 09:16:04",
+  "usd_krw": 1412.2,
+  "total_asset_krw": 429638,
   "daily_pnl_krw": -255,
   "daily_yield_pct": -0.059,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 474267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -45298,
-    "seed_yield_pct": -9.551,
+    "seed_pnl_krw": -44629,
+    "seed_yield_pct": -9.41,
     "days_since_seed": 21,
-    "avg_daily_yield_pct": -0.455
+    "avg_daily_yield_pct": -0.448
   },
   "reconciliation": {
     "since": "2026-07-25",
     "combined_realized_usd": -6.85,
-    "combined_actual_delta_usd": -0.81,
-    "drift_usd": 6.04,
-    "drift_pct": 1.989,
+    "combined_actual_delta_usd": -0.46,
+    "drift_usd": 6.4,
+    "drift_pct": 2.102,
     "status": "OK",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -8326,
-    "pct": -1.94,
+    "krw": -7653,
+    "pct": -1.78,
     "status": "OK",
     "note": "총자산(실측) - (메인봇+쌍둥이봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
   },
@@ -91,7 +91,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-09",
-      "total_krw": 428969
+      "total_krw": 429638
     }
   ],
   "daily_history": [
@@ -110,8 +110,8 @@ const pnlData = {
       "date": "2026-07-28",
       "total_asset_krw": 439056,
       "main_pnl_krw": 0,
-      "twin_pnl_krw": -281,
-      "total_pnl_krw": -281,
+      "twin_pnl_krw": -280,
+      "total_pnl_krw": -280,
       "main_pnl_pct": 0.0,
       "twin_pnl_pct": -0.148,
       "total_pnl_pct": -0.063,
@@ -121,8 +121,8 @@ const pnlData = {
       "date": "2026-07-29",
       "total_asset_krw": 431012,
       "main_pnl_krw": 0,
-      "twin_pnl_krw": -112,
-      "total_pnl_krw": -112,
+      "twin_pnl_krw": -113,
+      "total_pnl_krw": -113,
       "main_pnl_pct": 0.0,
       "twin_pnl_pct": -0.061,
       "total_pnl_pct": -0.026,
@@ -131,9 +131,9 @@ const pnlData = {
     {
       "date": "2026-07-30",
       "total_asset_krw": 423306,
-      "main_pnl_krw": -1932,
+      "main_pnl_krw": -1933,
       "twin_pnl_krw": -756,
-      "total_pnl_krw": -2688,
+      "total_pnl_krw": -2689,
       "main_pnl_pct": -0.761,
       "twin_pnl_pct": -0.427,
       "total_pnl_pct": -0.624,
@@ -154,21 +154,21 @@ const pnlData = {
       "date": "2026-08-01",
       "total_asset_krw": 421341,
       "main_pnl_krw": 0,
-      "twin_pnl_krw": 132,
-      "total_pnl_krw": 132,
+      "twin_pnl_krw": 133,
+      "total_pnl_krw": 133,
       "main_pnl_pct": 0.0,
-      "twin_pnl_pct": 0.147,
-      "total_pnl_pct": 0.038,
+      "twin_pnl_pct": 0.148,
+      "total_pnl_pct": 0.039,
       "target_met": false
     },
     {
       "date": "2026-08-02",
       "total_asset_krw": 419351,
       "main_pnl_krw": 0,
-      "twin_pnl_krw": 181,
-      "total_pnl_krw": 181,
+      "twin_pnl_krw": 180,
+      "total_pnl_krw": 180,
       "main_pnl_pct": 0.0,
-      "twin_pnl_pct": 0.093,
+      "twin_pnl_pct": 0.092,
       "total_pnl_pct": 0.043,
       "target_met": false
     },
@@ -198,10 +198,10 @@ const pnlData = {
       "date": "2026-08-05",
       "total_asset_krw": 434954,
       "main_pnl_krw": 0,
-      "twin_pnl_krw": -658,
-      "total_pnl_krw": -658,
+      "twin_pnl_krw": -659,
+      "total_pnl_krw": -659,
       "main_pnl_pct": 0.0,
-      "twin_pnl_pct": -0.244,
+      "twin_pnl_pct": -0.245,
       "total_pnl_pct": -0.149,
       "target_met": false
     },
@@ -231,19 +231,19 @@ const pnlData = {
       "date": "2026-08-08",
       "total_asset_krw": 429044,
       "main_pnl_krw": 0,
-      "twin_pnl_krw": -3405,
-      "total_pnl_krw": -3405,
+      "twin_pnl_krw": -3407,
+      "total_pnl_krw": -3407,
       "main_pnl_pct": 0.0,
-      "twin_pnl_pct": -1.007,
-      "total_pnl_pct": -0.772,
+      "twin_pnl_pct": -1.008,
+      "total_pnl_pct": -0.773,
       "target_met": false
     },
     {
       "date": "2026-08-09",
-      "total_asset_krw": 428969,
+      "total_asset_krw": 429638,
       "main_pnl_krw": 0,
-      "twin_pnl_krw": -255,
-      "total_pnl_krw": -255,
+      "twin_pnl_krw": -254,
+      "total_pnl_krw": -254,
       "main_pnl_pct": 0.0,
       "twin_pnl_pct": -0.076,
       "total_pnl_pct": -0.058,
@@ -260,14 +260,14 @@ const pnlData = {
     {
       "date": "2026-07-26",
       "main_cum_krw": -3,
-      "twin_cum_krw": -1599,
-      "total_cum_krw": -1602
+      "twin_cum_krw": -1600,
+      "total_cum_krw": -1603
     },
     {
       "date": "2026-07-27",
       "main_cum_krw": -3,
-      "twin_cum_krw": -1599,
-      "total_cum_krw": -1602
+      "twin_cum_krw": -1600,
+      "total_cum_krw": -1603
     },
     {
       "date": "2026-07-28",
@@ -278,84 +278,84 @@ const pnlData = {
     {
       "date": "2026-07-29",
       "main_cum_krw": -3,
-      "twin_cum_krw": -1992,
-      "total_cum_krw": -1995
+      "twin_cum_krw": -1993,
+      "total_cum_krw": -1996
     },
     {
       "date": "2026-07-30",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -2748,
-      "total_cum_krw": -4683
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -2749,
+      "total_cum_krw": -4685
     },
     {
       "date": "2026-07-31",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -2373,
-      "total_cum_krw": -4308
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -2374,
+      "total_cum_krw": -4310
     },
     {
       "date": "2026-08-01",
-      "main_cum_krw": -1935,
+      "main_cum_krw": -1936,
       "twin_cum_krw": -2241,
-      "total_cum_krw": -4176
+      "total_cum_krw": -4177
     },
     {
       "date": "2026-08-02",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -2060,
-      "total_cum_krw": -3995
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -2061,
+      "total_cum_krw": -3997
     },
     {
       "date": "2026-08-03",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -2060,
-      "total_cum_krw": -3995
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -2061,
+      "total_cum_krw": -3997
     },
     {
       "date": "2026-08-04",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -1899,
-      "total_cum_krw": -3834
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -1900,
+      "total_cum_krw": -3836
     },
     {
       "date": "2026-08-05",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -2557,
-      "total_cum_krw": -4492
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -2559,
+      "total_cum_krw": -4495
     },
     {
       "date": "2026-08-06",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -4076,
-      "total_cum_krw": -6011
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -4078,
+      "total_cum_krw": -6014
     },
     {
       "date": "2026-08-07",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -4078,
-      "total_cum_krw": -6013
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -4080,
+      "total_cum_krw": -6016
     },
     {
       "date": "2026-08-08",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -7483,
-      "total_cum_krw": -9418
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -7487,
+      "total_cum_krw": -9423
     },
     {
       "date": "2026-08-09",
-      "main_cum_krw": -1935,
-      "twin_cum_krw": -7738,
-      "total_cum_krw": -9673
+      "main_cum_krw": -1936,
+      "twin_cum_krw": -7741,
+      "total_cum_krw": -9677
     }
   ],
   "bots": {
     "main_bot": {
       "label": "메인봇 · 전송 아비트라지",
       "running": true,
-      "asset_krw": 104080,
+      "asset_krw": 104020,
       "balance_krw": 2654,
-      "balance_usdt": 224.82,
-      "cum_pnl_krw": -1935,
+      "balance_usdt": 225.2,
+      "cum_pnl_krw": -1936,
       "cum_pnl_pct": -0.7893,
       "cum_pnl_since": "2026-07-25",
       "twr_pct": -0.7893,
@@ -445,12 +445,12 @@ const pnlData = {
     "twin_bot": {
       "label": "쌍둥이봇 · 양쪽재고 로컬거래",
       "running": true,
-      "asset_krw": 333215,
+      "asset_krw": 333271,
       "xrp_bithumb": 0.0,
       "xrp_okx": 0.0,
       "xrp_target": 0.0,
-      "hedge_upnl_usd": 0.7605,
-      "cum_pnl_krw": -7738,
+      "hedge_upnl_usd": 1.0473,
+      "cum_pnl_krw": -7741,
       "cum_pnl_pct": -2.7998,
       "cum_pnl_since": "2026-07-25",
       "twr_pct": -2.7998,
