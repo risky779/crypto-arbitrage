@@ -1,31 +1,31 @@
 const pnlData = {
-  "updated_at": "2026-08-10 21:36:17",
+  "updated_at": "2026-08-10 21:41:04",
   "usd_krw": 1409.64,
-  "total_asset_krw": 357131,
+  "total_asset_krw": 426188,
   "daily_pnl_krw": 10010,
-  "daily_yield_pct": 2.884,
+  "daily_yield_pct": 2.405,
   "target_daily_yield_pct": 1.0,
   "seed": {
     "seed_krw": 474267,
     "seed_date": "2026-07-19",
-    "seed_pnl_krw": -117136,
-    "seed_yield_pct": -24.698,
+    "seed_pnl_krw": -48079,
+    "seed_yield_pct": -10.138,
     "days_since_seed": 22,
-    "avg_daily_yield_pct": -1.123
+    "avg_daily_yield_pct": -0.461
   },
   "reconciliation": {
     "since": "2026-08-11",
     "combined_realized_usd": 0.0,
-    "combined_actual_delta_usd": -0.13,
-    "drift_usd": -0.13,
-    "drift_pct": -0.052,
-    "status": "OK",
+    "combined_actual_delta_usd": 48.86,
+    "drift_usd": 48.86,
+    "drift_pct": 16.16,
+    "status": "WARNING",
     "note": "drift = 실제총자산 증감(마크투마켓 포함) - 원장상 실현손익합계. 헷지 정상이면 작아야 함."
   },
   "unallocated": {
-    "krw": -198,
-    "pct": -0.06,
-    "status": "OK",
+    "krw": 68859,
+    "pct": 16.16,
+    "status": "WARNING",
     "note": "총자산(실측) - (메인봇+쌍둥이봇+현선봇 TWR기준 자산). 봇별 원장이 실제잔고와 못 맞춘 부분 — 크면 TWR 원장에 미기록 이벤트 의심."
   },
   "asset_trend": [
@@ -95,7 +95,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-10",
-      "total_krw": 357131
+      "total_krw": 426188
     }
   ],
   "daily_history": [
@@ -244,7 +244,7 @@ const pnlData = {
     },
     {
       "date": "2026-08-10",
-      "total_asset_krw": 357131,
+      "total_asset_krw": 426188,
       "main_pnl_krw": null,
       "twin_pnl_krw": null,
       "total_pnl_krw": null,
@@ -261,7 +261,7 @@ const pnlData = {
       "running": false,
       "asset_krw": 65737,
       "balance_krw": 5411,
-      "balance_usdt": 51.15,
+      "balance_usdt": 51.19,
       "cum_pnl_krw": 0,
       "cum_pnl_pct": 0.0,
       "cum_pnl_since": "2026-08-11",
@@ -466,8 +466,8 @@ const pnlData = {
       "label": "현선봇 · 현물+선물 숏헤지 (ZRO/RE)",
       "running": true,
       "asset_krw": 281648,
-      "spot_krw": 217490,
-      "hedge_upnl_usd": -0.8438,
+      "spot_krw": 217657,
+      "hedge_upnl_usd": -0.8091,
       "cum_pnl_krw": 0,
       "cum_pnl_pct": 0.0,
       "cum_pnl_since": "2026-08-11",
