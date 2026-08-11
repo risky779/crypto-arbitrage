@@ -1,14 +1,14 @@
 const pnlData = {
-  "updated_at": "2026-08-12 02:16:03",
+  "updated_at": "2026-08-12 02:31:03",
   "usd_krw": 1409.0,
-  "total_asset_krw": 343474,
+  "total_asset_krw": 338400,
   "seed": {
     "seed_krw": 470000,
     "seed_date": "2026-08-10",
-    "seed_pnl_krw": -126526,
-    "seed_yield_pct": -26.92,
+    "seed_pnl_krw": -131600,
+    "seed_yield_pct": -28.0,
     "days_since_seed": 2,
-    "avg_daily_yield_pct": -13.46,
+    "avg_daily_yield_pct": -14.0,
     "target_daily_yield_pct": 1.0
   },
   "asset_trend": [
@@ -22,115 +22,115 @@ const pnlData = {
     },
     {
       "date": "2026-08-12",
-      "total_krw": 343474
+      "total_krw": 338400
     }
   ],
   "perp_hedge_bot": {
     "label": "현선봇 · 현물+선물 숏헤지 (ZRO/RE)",
     "running": true,
-    "spot_krw": 49618,
-    "hedge_upnl_usd": 0.0148,
-    "realized_usd_alltime": 45.675,
-    "realized_krw_alltime": 64356,
+    "spot_krw": 147918,
+    "hedge_upnl_usd": 0.0918,
+    "realized_usd_alltime": 47.8369,
+    "realized_krw_alltime": 67402,
     "recent_events": [
       {
         "coin": "RE",
-        "time": "2026-08-12T02:14:24.558368+09:00",
+        "time": "2026-08-12T02:30:06.504569+09:00",
         "kind": "ENTRY",
-        "gap_pct": 0.9083,
-        "spread_usd": 0.2837
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-12T02:14:17.296499+09:00",
-        "kind": "CLOSE",
-        "pnl_usd": 0.2362
+        "gap_pct": 1.0356,
+        "spread_usd": 0.3274
       },
       {
         "coin": "ZRO",
-        "time": "2026-08-12T02:13:27.352703+09:00",
-        "kind": "CLOSE",
-        "pnl_usd": 0.2121
+        "time": "2026-08-12T02:29:06.692711+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 1.2571,
+        "spread_usd": 0.4032
       },
       {
         "coin": "ZRO",
-        "time": "2026-08-12T02:12:56.892752+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 1.1168,
-        "spread_usd": 0.3552
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-12T02:11:56.705886+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 1.1662,
-        "spread_usd": 0.3721
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-12T02:11:49.157869+09:00",
+        "time": "2026-08-12T02:28:59.073862+09:00",
         "kind": "CLOSE",
-        "pnl_usd": 0.3408
+        "pnl_usd": 0.1048
       },
       {
         "coin": "ZRO",
-        "time": "2026-08-12T02:11:47.945650+09:00",
+        "time": "2026-08-12T02:28:22.285657+09:00",
         "kind": "ENTRY",
-        "gap_pct": 1.1583,
-        "spread_usd": 0.3694
+        "gap_pct": 1.1352,
+        "spread_usd": 0.3615
       },
       {
         "coin": "ZRO",
-        "time": "2026-08-12T02:11:34.980015+09:00",
+        "time": "2026-08-12T02:28:14.911881+09:00",
         "kind": "CLOSE",
-        "pnl_usd": 0.069
+        "pnl_usd": 0.1383
       },
       {
         "coin": "ZRO",
-        "time": "2026-08-12T02:11:16.231752+09:00",
+        "time": "2026-08-12T02:27:42.849033+09:00",
         "kind": "ENTRY",
-        "gap_pct": 1.1229,
-        "spread_usd": 0.3573
+        "gap_pct": 1.2036,
+        "spread_usd": 0.3849
       },
       {
-        "coin": "RE",
-        "time": "2026-08-12T02:10:06.629961+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 0.9115,
-        "spread_usd": 0.2848
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-12T02:09:22.407277+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 0.9007,
-        "spread_usd": 0.281
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-12T02:08:49.902709+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 0.9579,
-        "spread_usd": 0.3007
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-12T02:08:42.381956+09:00",
+        "coin": "ZRO",
+        "time": "2026-08-12T02:27:23.613982+09:00",
         "kind": "CLOSE",
-        "pnl_usd": 0.1874
+        "pnl_usd": 0.2858
       },
       {
-        "coin": "RE",
-        "time": "2026-08-12T02:07:28.950332+09:00",
+        "coin": "ZRO",
+        "time": "2026-08-12T02:27:10.835765+09:00",
         "kind": "ENTRY",
-        "gap_pct": 0.9685,
-        "spread_usd": 0.3044
+        "gap_pct": 1.1545,
+        "spread_usd": 0.3681
       },
       {
         "coin": "RE",
-        "time": "2026-08-12T02:07:21.635968+09:00",
+        "time": "2026-08-12T02:27:06.962395+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 0.9196,
+        "spread_usd": 0.2876
+      },
+      {
+        "coin": "RE",
+        "time": "2026-08-12T02:24:40.307342+09:00",
         "kind": "CLOSE",
-        "pnl_usd": 0.2137
+        "pnl_usd": 0.0974
+      },
+      {
+        "coin": "ZRO",
+        "time": "2026-08-12T02:23:01.229096+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 1.2346,
+        "spread_usd": 0.3955
+      },
+      {
+        "coin": "ZRO",
+        "time": "2026-08-12T02:22:40.054765+09:00",
+        "kind": "CLOSE",
+        "pnl_usd": 0.1148
+      },
+      {
+        "coin": "ZRO",
+        "time": "2026-08-12T02:22:25.734432+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 1.2593,
+        "spread_usd": 0.404
+      },
+      {
+        "coin": "ZRO",
+        "time": "2026-08-12T02:22:18.093026+09:00",
+        "kind": "CLOSE",
+        "pnl_usd": 0.1262
+      },
+      {
+        "coin": "ZRO",
+        "time": "2026-08-12T02:21:53.297167+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 1.2711,
+        "spread_usd": 0.408
       }
     ]
   }
