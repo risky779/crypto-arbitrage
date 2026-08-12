@@ -1,14 +1,14 @@
 const pnlData = {
-  "updated_at": "2026-08-12 15:06:04",
-  "usd_krw": 1409.0,
-  "total_asset_krw": 331099,
+  "updated_at": "2026-08-12 15:16:20",
+  "usd_krw": 1408.0,
+  "total_asset_krw": 330071,
   "seed": {
     "seed_krw": 470000,
     "seed_date": "2026-08-10",
-    "seed_pnl_krw": -138901,
-    "seed_yield_pct": -29.553,
+    "seed_pnl_krw": -139929,
+    "seed_yield_pct": -29.772,
     "days_since_seed": 2,
-    "avg_daily_yield_pct": -14.777,
+    "avg_daily_yield_pct": -14.886,
     "target_daily_yield_pct": 1.0
   },
   "asset_trend": [
@@ -22,17 +22,37 @@ const pnlData = {
     },
     {
       "date": "2026-08-12",
-      "total_krw": 331099
+      "total_krw": 330071
     }
   ],
   "perp_hedge_bot": {
     "label": "현선봇 · 현물+선물 숏헤지 (ZRO/RE)",
     "running": true,
-    "spot_krw": 49462,
-    "hedge_upnl_usd": 0.0697,
-    "realized_usd_alltime": 52.4198,
-    "realized_krw_alltime": 73859,
+    "spot_krw": 98288,
+    "hedge_upnl_usd": 0.234,
+    "realized_usd_alltime": 52.6874,
+    "realized_krw_alltime": 74184,
     "recent_events": [
+      {
+        "coin": "ZRO",
+        "time": "2026-08-12T15:12:59.918511+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 1.3401,
+        "spread_usd": 0.4315
+      },
+      {
+        "coin": "RE",
+        "time": "2026-08-12T15:12:54.923479+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 1.4314,
+        "spread_usd": 0.4626
+      },
+      {
+        "coin": "ZRO",
+        "time": "2026-08-12T15:12:51.797221+09:00",
+        "kind": "CLOSE",
+        "pnl_usd": 0.2676
+      },
       {
         "coin": "ZRO",
         "time": "2026-08-12T14:55:35.913579+09:00",
@@ -113,26 +133,6 @@ const pnlData = {
         "kind": "ENTRY",
         "gap_pct": 0.9401,
         "spread_usd": 0.2946
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-12T05:42:50.435270+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 1.2753,
-        "spread_usd": 0.4094
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-12T05:42:43.130230+09:00",
-        "kind": "CLOSE",
-        "pnl_usd": 0.6595
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-12T05:16:12.020024+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 0.9418,
-        "spread_usd": 0.2952
       }
     ]
   }
