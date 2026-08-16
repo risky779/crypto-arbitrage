@@ -1,14 +1,14 @@
 const pnlData = {
-  "updated_at": "2026-08-17 03:51:33",
-  "usd_krw": 1415.0,
-  "total_asset_krw": 315803,
+  "updated_at": "2026-08-17 04:01:49",
+  "usd_krw": 1414.0,
+  "total_asset_krw": 315963,
   "seed": {
     "seed_krw": 470000,
     "seed_date": "2026-08-10",
-    "seed_pnl_krw": -154197,
-    "seed_yield_pct": -32.808,
+    "seed_pnl_krw": -154037,
+    "seed_yield_pct": -32.774,
     "days_since_seed": 7,
-    "avg_daily_yield_pct": -4.687,
+    "avg_daily_yield_pct": -4.682,
     "target_daily_yield_pct": 1.0
   },
   "asset_trend": [
@@ -42,15 +42,15 @@ const pnlData = {
     },
     {
       "date": "2026-08-17",
-      "total_krw": 315803
+      "total_krw": 315963
     }
   ],
   "daily_pnl": [
     {
       "date": "2026-08-17",
       "realized_usd": 1.217,
-      "total_asset_krw": 315803,
-      "asset_change_pct": -1.155
+      "total_asset_krw": 315963,
+      "asset_change_pct": -1.104
     },
     {
       "date": "2026-08-16",
@@ -98,10 +98,10 @@ const pnlData = {
   "perp_hedge_bot": {
     "label": "현선봇 · 현물+선물 숏헤지 (ZRO/RE/CRV/INJ)",
     "running": true,
-    "spot_krw": 176780,
-    "hedge_upnl_usd": 1.8448,
+    "spot_krw": 176288,
+    "hedge_upnl_usd": 2.0564,
     "realized_usd_alltime": 64.5844,
-    "realized_krw_alltime": 91387,
+    "realized_krw_alltime": 91322,
     "recent_events": [
       {
         "coin": "CRV",
