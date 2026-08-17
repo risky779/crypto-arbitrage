@@ -1,14 +1,14 @@
 const pnlData = {
-  "updated_at": "2026-08-17 14:11:37",
-  "usd_krw": 1413.0,
-  "total_asset_krw": 310765,
+  "updated_at": "2026-08-17 14:21:54",
+  "usd_krw": 1412.0,
+  "total_asset_krw": 309068,
   "seed": {
     "seed_krw": 470000,
     "seed_date": "2026-08-10",
-    "seed_pnl_krw": -159235,
-    "seed_yield_pct": -33.88,
+    "seed_pnl_krw": -160932,
+    "seed_yield_pct": -34.241,
     "days_since_seed": 7,
-    "avg_daily_yield_pct": -4.84,
+    "avg_daily_yield_pct": -4.892,
     "target_daily_yield_pct": 1.0
   },
   "asset_trend": [
@@ -42,15 +42,15 @@ const pnlData = {
     },
     {
       "date": "2026-08-17",
-      "total_krw": 310765
+      "total_krw": 309068
     }
   ],
   "daily_pnl": [
     {
       "date": "2026-08-17",
-      "realized_usd": 3.0324,
-      "total_asset_krw": 310765,
-      "asset_change_pct": -2.731
+      "realized_usd": 2.7215,
+      "total_asset_krw": 309068,
+      "asset_change_pct": -3.263
     },
     {
       "date": "2026-08-16",
@@ -98,11 +98,38 @@ const pnlData = {
   "perp_hedge_bot": {
     "label": "현선봇 · 현물+선물 숏헤지 (ZRO/RE/CRV/INJ)",
     "running": true,
-    "spot_krw": 160475,
-    "hedge_upnl_usd": -0.3562,
-    "realized_usd_alltime": 66.3998,
-    "realized_krw_alltime": 93823,
+    "spot_krw": 148711,
+    "hedge_upnl_usd": -0.26,
+    "realized_usd_alltime": 66.0889,
+    "realized_krw_alltime": 93318,
     "recent_events": [
+      {
+        "coin": "RE",
+        "time": "2026-08-17T14:19:47.442973+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 1.3188,
+        "spread_usd": 0.0849
+      },
+      {
+        "coin": "CRV",
+        "time": "2026-08-17T14:16:02.379689+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 1.1496,
+        "spread_usd": 0.5235
+      },
+      {
+        "coin": "ZRO",
+        "time": "2026-08-17T14:15:57.779716+09:00",
+        "kind": "ENTRY",
+        "gap_pct": 1.4458,
+        "spread_usd": 0.4675
+      },
+      {
+        "coin": "CRV",
+        "time": "2026-08-17T14:15:54.783464+09:00",
+        "kind": "CLOSE",
+        "pnl_usd": -0.3109
+      },
       {
         "coin": "RE",
         "time": "2026-08-17T13:07:44.353187+09:00",
@@ -175,33 +202,6 @@ const pnlData = {
         "kind": "ENTRY",
         "gap_pct": 1.3274,
         "spread_usd": 0.0854
-      },
-      {
-        "coin": "CRV",
-        "time": "2026-08-17T07:02:44.817201+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 1.0435,
-        "spread_usd": 0.4716
-      },
-      {
-        "coin": "CRV",
-        "time": "2026-08-17T07:02:36.882904+09:00",
-        "kind": "CLOSE",
-        "pnl_usd": 0.4033
-      },
-      {
-        "coin": "RE",
-        "time": "2026-08-17T06:55:44.364122+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 1.3451,
-        "spread_usd": 0.0866
-      },
-      {
-        "coin": "CRV",
-        "time": "2026-08-17T06:46:45.602851+09:00",
-        "kind": "ENTRY",
-        "gap_pct": 1.1237,
-        "spread_usd": 0.5108
       }
     ]
   }
