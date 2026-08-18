@@ -116,6 +116,21 @@
     </div>
 
     <div class="card">
+      <h2><span class="dot" id="inv-dot"></span> <span id="inv-label">코인 투자봇</span></h2>
+      <div class="kv"><span class="k">누적 손익 (전체기간, 페이퍼)</span><span class="v" id="inv-realized">-</span></div>
+      <h3 style="font-size:0.78rem;color:var(--text-dim);margin:16px 0 8px;">봇별 현황</h3>
+      <table>
+        <thead><tr><th style="text-align:left;">코인</th><th>상태</th><th>누적손익</th><th>거래수</th></tr></thead>
+        <tbody id="inv-bots"></tbody>
+      </table>
+      <h3 style="font-size:0.78rem;color:var(--text-dim);margin:16px 0 8px;">최근 이벤트</h3>
+      <table>
+        <thead><tr><th>시각</th><th>코인</th><th>종류</th><th>가격/손익</th></tr></thead>
+        <tbody id="inv-events"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
       <h2>일별 손익 (총자산 기준)</h2>
       <table>
         <thead><tr><th>날짜</th><th>그날 실현손익</th><th>총자산</th><th>전일대비 증감률</th></tr></thead>
@@ -191,6 +206,44 @@
         const isClose = e.kind === 'CLOSE';
         const val = isClose ? fmtUSD(e.pnl_usd) : (e.gap_pct !== null && e.gap_pct !== undefined ? fmtPct(e.gap_pct) : '-');
         const valCls = isClose ? cls(e.pnl_usd) : 'neutral';
+        return '<tr><td class="time">' + shortTime(e.time) + '</td><td>' + e.coin + '</td>' +
+          '<td>' + (isClose ? '청산' : '진입') + '</td>' +
+          '<td class="' + valCls + '">' + val + '</td></tr>';
+      }).join('');
+    }
+  }
+
+  const inv = d.investment_bot;
+  if (inv) {
+    document.getElementById('inv-label').textContent = inv.label || '코인 투자봇';
+    document.getElementById('inv-dot').className = 'dot ' + (inv.running ? 'on' : 'off');
+    const r = document.getElementById('inv-realized');
+    r.textContent = fmtKRW(inv.realized_krw_alltime);
+    r.className = 'v ' + cls(inv.realized_krw_alltime);
+
+    const invBotsBody = document.getElementById('inv-bots');
+    const invBots = inv.bots || [];
+    if (invBots.length === 0) {
+      invBotsBody.innerHTML = '<tr><td colspan="4" class="empty">데이터 없음</td></tr>';
+    } else {
+      invBotsBody.innerHTML = invBots.map(b => {
+        const posText = b.position_open ? ('보유중 @' + fmtKRW(b.entry_price)) : '대기';
+        return '<tr><td style="text-align:left;">' + b.coin + '</td>' +
+          '<td class="neutral">' + posText + '</td>' +
+          '<td class="' + cls(b.paper_balance_krw) + '">' + fmtKRW(b.paper_balance_krw) + '</td>' +
+          '<td>' + b.trade_count + '</td></tr>';
+      }).join('');
+    }
+
+    const invEventsBody = document.getElementById('inv-events');
+    const invEvents = inv.recent_events || [];
+    if (invEvents.length === 0) {
+      invEventsBody.innerHTML = '<tr><td colspan="4" class="empty">이벤트 없음</td></tr>';
+    } else {
+      invEventsBody.innerHTML = invEvents.map(e => {
+        const isClose = e.kind === 'CLOSE';
+        const val = isClose ? fmtKRW(e.pnl_krw) : fmtKRW(e.price);
+        const valCls = isClose ? cls(e.pnl_krw) : 'neutral';
         return '<tr><td class="time">' + shortTime(e.time) + '</td><td>' + e.coin + '</td>' +
           '<td>' + (isClose ? '청산' : '진입') + '</td>' +
           '<td class="' + valCls + '">' + val + '</td></tr>';
