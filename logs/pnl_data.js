@@ -1,14 +1,14 @@
 const pnlData = {
-  "updated_at": "2026-08-19 00:51:07",
+  "updated_at": "2026-08-19 01:01:24",
   "usd_krw": 1404.0,
-  "total_asset_krw": 304502,
+  "total_asset_krw": 304643,
   "seed": {
     "seed_krw": 470000,
     "seed_date": "2026-08-10",
-    "seed_pnl_krw": -165498,
-    "seed_yield_pct": -35.212,
+    "seed_pnl_krw": -165357,
+    "seed_yield_pct": -35.182,
     "days_since_seed": 9,
-    "avg_daily_yield_pct": -3.912,
+    "avg_daily_yield_pct": -3.909,
     "target_daily_yield_pct": 1.0
   },
   "asset_trend": [
@@ -50,15 +50,15 @@ const pnlData = {
     },
     {
       "date": "2026-08-19",
-      "total_krw": 304502
+      "total_krw": 304643
     }
   ],
   "daily_pnl": [
     {
       "date": "2026-08-19",
       "realized_usd": 0.0,
-      "total_asset_krw": 304502,
-      "asset_change_pct": -0.237
+      "total_asset_krw": 304643,
+      "asset_change_pct": -0.19
     },
     {
       "date": "2026-08-18",
@@ -118,8 +118,8 @@ const pnlData = {
   "perp_hedge_bot": {
     "label": "현선봇 · 현물+선물 숏헤지 (ZRO/RE/CRV/INJ)",
     "running": true,
-    "spot_krw": 143724,
-    "hedge_upnl_usd": 0.6876,
+    "spot_krw": 144027,
+    "hedge_upnl_usd": 0.5516,
     "realized_usd_alltime": 68.7985,
     "realized_krw_alltime": 96593,
     "recent_events": [
@@ -230,8 +230,8 @@ const pnlData = {
       {
         "coin": "ZRO",
         "running": true,
-        "spot_krw": 97357,
-        "hedge_upnl_usd": 0.6952,
+        "spot_krw": 97580,
+        "hedge_upnl_usd": 0.6072,
         "realized_usd_alltime": 18.5038,
         "realized_krw_alltime": 25979,
         "trade_count": 113
@@ -239,8 +239,8 @@ const pnlData = {
       {
         "coin": "RE",
         "running": true,
-        "spot_krw": 46367,
-        "hedge_upnl_usd": -0.0076,
+        "spot_krw": 46447,
+        "hedge_upnl_usd": -0.0556,
         "realized_usd_alltime": 38.5555,
         "realized_krw_alltime": 54132,
         "trade_count": 159
