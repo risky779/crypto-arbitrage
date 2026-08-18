@@ -1,14 +1,14 @@
 const pnlData = {
-  "updated_at": "2026-08-18 15:28:19",
-  "usd_krw": 1407.0,
-  "total_asset_krw": 309096,
+  "updated_at": "2026-08-18 15:38:35",
+  "usd_krw": 1406.0,
+  "total_asset_krw": 308728,
   "seed": {
     "seed_krw": 470000,
     "seed_date": "2026-08-10",
-    "seed_pnl_krw": -160904,
-    "seed_yield_pct": -34.235,
+    "seed_pnl_krw": -161272,
+    "seed_yield_pct": -34.313,
     "days_since_seed": 8,
-    "avg_daily_yield_pct": -4.279,
+    "avg_daily_yield_pct": -4.289,
     "target_daily_yield_pct": 1.0
   },
   "asset_trend": [
@@ -46,15 +46,15 @@ const pnlData = {
     },
     {
       "date": "2026-08-18",
-      "total_krw": 309096
+      "total_krw": 308728
     }
   ],
   "daily_pnl": [
     {
       "date": "2026-08-18",
       "realized_usd": 0.9546,
-      "total_asset_krw": 309096,
-      "asset_change_pct": 0.301
+      "total_asset_krw": 308728,
+      "asset_change_pct": 0.182
     },
     {
       "date": "2026-08-17",
@@ -108,10 +108,10 @@ const pnlData = {
   "perp_hedge_bot": {
     "label": "현선봇 · 현물+선물 숏헤지 (ZRO/RE/CRV/INJ)",
     "running": true,
-    "spot_krw": 171341,
-    "hedge_upnl_usd": 2.6105,
+    "spot_krw": 171081,
+    "hedge_upnl_usd": 2.6709,
     "realized_usd_alltime": 69.4037,
-    "realized_krw_alltime": 97651,
+    "realized_krw_alltime": 97582,
     "recent_events": [
       {
         "coin": "RE",
@@ -219,19 +219,19 @@ const pnlData = {
       {
         "coin": "ZRO",
         "running": true,
-        "spot_krw": 95385,
-        "hedge_upnl_usd": 2.332,
+        "spot_krw": 95132,
+        "hedge_upnl_usd": 2.4464,
         "realized_usd_alltime": 18.5038,
-        "realized_krw_alltime": 26035,
+        "realized_krw_alltime": 26016,
         "trade_count": 113
       },
       {
         "coin": "RE",
         "running": true,
-        "spot_krw": 75956,
-        "hedge_upnl_usd": 0.2785,
+        "spot_krw": 75950,
+        "hedge_upnl_usd": 0.2245,
         "realized_usd_alltime": 38.1316,
-        "realized_krw_alltime": 53651,
+        "realized_krw_alltime": 53613,
         "trade_count": 156
       },
       {
@@ -240,7 +240,7 @@ const pnlData = {
         "spot_krw": 0,
         "hedge_upnl_usd": 0.0,
         "realized_usd_alltime": 11.7392,
-        "realized_krw_alltime": 16517,
+        "realized_krw_alltime": 16505,
         "trade_count": 32
       },
       {
@@ -249,9 +249,45 @@ const pnlData = {
         "spot_krw": 0,
         "hedge_upnl_usd": 0.0,
         "realized_usd_alltime": 1.0291,
-        "realized_krw_alltime": 1448,
+        "realized_krw_alltime": 1447,
         "trade_count": 2
       }
     ]
+  },
+  "investment_bot": {
+    "label": "코인 투자봇 · 변동성돌파 (페이퍼)",
+    "running": true,
+    "realized_krw_alltime": 0,
+    "bots": [
+      {
+        "coin": "BTC",
+        "position_open": false,
+        "entry_price": null,
+        "paper_balance_krw": 0,
+        "trade_count": 0
+      },
+      {
+        "coin": "ETH",
+        "position_open": false,
+        "entry_price": null,
+        "paper_balance_krw": 0,
+        "trade_count": 0
+      },
+      {
+        "coin": "XRP",
+        "position_open": false,
+        "entry_price": null,
+        "paper_balance_krw": 0,
+        "trade_count": 0
+      },
+      {
+        "coin": "SOL",
+        "position_open": false,
+        "entry_price": null,
+        "paper_balance_krw": 0,
+        "trade_count": 0
+      }
+    ],
+    "recent_events": []
   }
 };
