@@ -1,14 +1,14 @@
 const pnlData = {
-  "updated_at": "2026-08-19 14:06:53",
-  "usd_krw": 1398.0,
-  "total_asset_krw": 282913,
+  "updated_at": "2026-08-19 14:17:09",
+  "usd_krw": 1396.0,
+  "total_asset_krw": 282275,
   "seed": {
     "seed_krw": 470000,
     "seed_date": "2026-08-10",
-    "seed_pnl_krw": -187087,
-    "seed_yield_pct": -39.806,
+    "seed_pnl_krw": -187725,
+    "seed_yield_pct": -39.941,
     "days_since_seed": 9,
-    "avg_daily_yield_pct": -4.423,
+    "avg_daily_yield_pct": -4.438,
     "target_daily_yield_pct": 1.0
   },
   "asset_trend": [
@@ -50,15 +50,15 @@ const pnlData = {
     },
     {
       "date": "2026-08-19",
-      "total_krw": 282913
+      "total_krw": 282275
     }
   ],
   "daily_pnl": [
     {
       "date": "2026-08-19",
       "realized_usd": 0.2592,
-      "total_asset_krw": 282913,
-      "asset_change_pct": -7.31
+      "total_asset_krw": 282275,
+      "asset_change_pct": -7.519
     },
     {
       "date": "2026-08-18",
@@ -118,10 +118,10 @@ const pnlData = {
   "perp_hedge_bot": {
     "label": "현선봇 · 현물+선물 숏헤지 (ZRO/RE/CRV/INJ)",
     "running": true,
-    "spot_krw": 163686,
-    "hedge_upnl_usd": -0.1821,
+    "spot_krw": 164077,
+    "hedge_upnl_usd": -0.5523,
     "realized_usd_alltime": 69.0577,
-    "realized_krw_alltime": 96543,
+    "realized_krw_alltime": 96405,
     "recent_events": [
       {
         "coin": "RE",
@@ -230,19 +230,19 @@ const pnlData = {
       {
         "coin": "ZRO",
         "running": true,
-        "spot_krw": 99169,
-        "hedge_upnl_usd": -0.7832,
+        "spot_krw": 99531,
+        "hedge_upnl_usd": -1.1264,
         "realized_usd_alltime": 18.5038,
-        "realized_krw_alltime": 25868,
+        "realized_krw_alltime": 25831,
         "trade_count": 113
       },
       {
         "coin": "RE",
         "running": true,
-        "spot_krw": 64517,
-        "hedge_upnl_usd": 0.6011,
+        "spot_krw": 64547,
+        "hedge_upnl_usd": 0.5741,
         "realized_usd_alltime": 38.8147,
-        "realized_krw_alltime": 54263,
+        "realized_krw_alltime": 54185,
         "trade_count": 161
       },
       {
@@ -251,7 +251,7 @@ const pnlData = {
         "spot_krw": 0,
         "hedge_upnl_usd": 0.0,
         "realized_usd_alltime": 11.7392,
-        "realized_krw_alltime": 16411,
+        "realized_krw_alltime": 16388,
         "trade_count": 32
       },
       {
