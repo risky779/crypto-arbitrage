@@ -103,6 +103,9 @@
       <h2><span class="dot" id="ph-dot"></span> <span id="ph-label">현선봇</span></h2>
       <div class="kv"><span class="k">현물 보유가치</span><span class="v" id="ph-spot">-</span></div>
       <div class="kv"><span class="k">선물 미실현손익</span><span class="v" id="ph-upnl">-</span></div>
+      <div class="kv"><span class="k">실전 누적 실현손익</span><span class="v" id="ph-total-pnl">-</span></div>
+      <h3 style="font-size:0.78rem;color:var(--text-dim);margin:16px 0 8px;">실전 실현손익 추이</h3>
+      <div id="ph-pnl-chart" class="chart-card"></div>
       <h3 style="font-size:0.78rem;color:var(--text-dim);margin:16px 0 8px;">봇별 수익현황</h3>
       <table>
         <thead><tr><th style="text-align:left;">코인</th><th>현물가치</th><th>미실현</th><th>누적실현</th><th>거래수</th></tr></thead>
@@ -182,6 +185,9 @@
     const u = document.getElementById('ph-upnl');
     u.textContent = fmtUSD(ph.hedge_upnl_usd);
     u.className = 'v ' + cls(ph.hedge_upnl_usd);
+    const tp = document.getElementById('ph-total-pnl');
+    tp.textContent = fmtKRW(ph.total_pnl_krw) + ' (' + fmtUSD(ph.total_pnl_usd) + ', ' + ph.trade_count + '건)';
+    tp.className = 'v ' + cls(ph.total_pnl_krw);
 
     const botsBody = document.getElementById('ph-bots');
     const bots = ph.bots || [];
@@ -211,6 +217,73 @@
           '<td class="' + valCls + '">' + val + '</td></tr>';
       }).join('');
     }
+
+    (function renderPhPnlChart() {
+      const container = document.getElementById('ph-pnl-chart');
+      const trend = ph.pnl_trend || [];
+      if (trend.length < 2) {
+        container.innerHTML = '<div class="empty" style="padding:20px 0;">청산 데이터 축적 중</div>';
+        return;
+      }
+      const vals = trend.map(p => p.cum_pnl_krw);
+      const min = Math.min(...vals, 0), max = Math.max(...vals, 0);
+      const range = (max - min) || Math.abs(max) * 0.05 || 1;
+      const padMin = min - range * 0.15, padMax = max + range * 0.15;
+      const fullRange = padMax - padMin;
+
+      const W = 560, H = 140, padL = 46, padR = 10, padT = 12, padB = 20;
+      const plotW = W - padL - padR, plotH = H - padT - padB;
+      const xAt = i => padL + (trend.length === 1 ? plotW / 2 : (i / (trend.length - 1)) * plotW);
+      const yAt = v => padT + plotH - ((v - padMin) / fullRange) * plotH;
+
+      const linePts = vals.map((v, i) => xAt(i) + ',' + yAt(v)).join(' ');
+      const areaPts = linePts + ' ' + xAt(vals.length - 1) + ',' + (padT + plotH) + ' ' + xAt(0) + ',' + (padT + plotH);
+      const isUp = vals[vals.length - 1] >= vals[0];
+      const lineColor = isUp ? 'var(--green)' : 'var(--red)';
+
+      let gridSvg = '';
+      for (let s = 0; s <= 3; s++) {
+        const v = padMin + (fullRange * s / 3);
+        const y = yAt(v);
+        gridSvg += '<line class="grid-line" x1="' + padL + '" y1="' + y + '" x2="' + (W - padR) + '" y2="' + y + '" />';
+        gridSvg += '<text class="axis-label" x="' + (padL - 6) + '" y="' + (y + 3) + '" text-anchor="end">' + fmtKRWShort(v) + '</text>';
+      }
+      let xLabelsSvg = '';
+      const labelCount = Math.min(trend.length, 5);
+      for (let k = 0; k < labelCount; k++) {
+        const idx = labelCount === 1 ? 0 : Math.round(k * (trend.length - 1) / (labelCount - 1));
+        xLabelsSvg += '<text class="axis-label" x="' + xAt(idx) + '" y="' + (H - 2) + '" text-anchor="middle">' + shortTime(trend[idx].time).slice(0, 11) + '</text>';
+      }
+      let dotsSvg = '';
+      vals.forEach((v, i) => {
+        dotsSvg += '<circle cx="' + xAt(i) + '" cy="' + yAt(v) + '" r="2.5" fill="' + lineColor + '" />';
+        dotsSvg += '<circle class="hover-target" data-idx="' + i + '" cx="' + xAt(i) + '" cy="' + yAt(v) + '" r="9" fill="transparent" style="cursor:pointer;" />';
+      });
+
+      container.innerHTML =
+        '<svg viewBox="0 0 ' + W + ' ' + H + '" style="height:' + H + 'px;">' +
+          '<defs><linearGradient id="phGrad" x1="0" y1="0" x2="0" y2="1">' +
+            '<stop offset="0%" stop-color="' + lineColor + '" stop-opacity="0.25" />' +
+            '<stop offset="100%" stop-color="' + lineColor + '" stop-opacity="0" />' +
+          '</linearGradient></defs>' +
+          gridSvg +
+          '<polygon points="' + areaPts + '" fill="url(#phGrad)" />' +
+          '<polyline points="' + linePts + '" fill="none" stroke="' + lineColor + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" />' +
+          dotsSvg + xLabelsSvg +
+        '</svg>' +
+        '<div id="ph-pnl-tip" style="display:none;text-align:center;font-size:0.78rem;color:var(--text-dim);margin-top:2px;"></div>';
+
+      const tip = document.getElementById('ph-pnl-tip');
+      container.querySelectorAll('.hover-target').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          const i = +el.getAttribute('data-idx');
+          const t = trend[i];
+          tip.style.display = 'block';
+          tip.innerHTML = '<b style="color:var(--text);">' + shortTime(t.time) + '</b> · ' + t.coin + ' ' + fmtUSD(t.pnl_usd) + ' · 누적 ' + fmtKRW(t.cum_pnl_krw);
+        });
+        el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+      });
+    })();
   }
 
   const inv = d.investment_bot;
