@@ -103,12 +103,12 @@
       <h2><span class="dot" id="ph-dot"></span> <span id="ph-label">현선봇</span></h2>
       <div class="kv"><span class="k">현물 보유가치</span><span class="v" id="ph-spot">-</span></div>
       <div class="kv"><span class="k">선물 미실현손익</span><span class="v" id="ph-upnl">-</span></div>
-      <div class="kv"><span class="k">실전 누적 실현손익</span><span class="v" id="ph-total-pnl">-</span></div>
-      <h3 style="font-size:0.78rem;color:var(--text-dim);margin:16px 0 8px;">실전 실현손익 추이</h3>
+      <div class="kv"><span class="k">실전 누적 실현손익 (08-24 재가동 이후)</span><span class="v" id="ph-total-pnl">-</span></div>
+      <h3 style="font-size:0.78rem;color:var(--text-dim);margin:16px 0 8px;">실전 실현손익 추이 (08-24 재가동 이후)</h3>
       <div id="ph-pnl-chart" class="chart-card"></div>
-      <h3 style="font-size:0.78rem;color:var(--text-dim);margin:16px 0 8px;">봇별 수익현황</h3>
+      <h3 style="font-size:0.78rem;color:var(--text-dim);margin:16px 0 8px;">봇별 수익현황 (08-24 재가동 이후)</h3>
       <table>
-        <thead><tr><th style="text-align:left;">코인</th><th>현물가치</th><th>미실현</th><th>누적실현</th><th>거래수</th></tr></thead>
+        <thead><tr><th style="text-align:left;">코인</th><th>현물가치</th><th>미실현</th><th>실현손익</th><th>거래수</th></tr></thead>
         <tbody id="ph-bots"></tbody>
       </table>
       <h3 style="font-size:0.78rem;color:var(--text-dim);margin:16px 0 8px;">최근 이벤트</h3>
@@ -198,7 +198,7 @@
         return '<tr><td style="text-align:left;"><span class="dot ' + (b.running ? 'on' : 'off') + '" style="margin-right:6px;"></span>' + b.coin + '</td>' +
           '<td>' + fmtKRW(b.spot_krw) + '</td>' +
           '<td class="' + cls(b.hedge_upnl_usd) + '">' + fmtUSD(b.hedge_upnl_usd) + '</td>' +
-          '<td class="' + cls(b.realized_usd_alltime) + '">' + fmtUSD(b.realized_usd_alltime) + '</td>' +
+          '<td class="' + cls(b.realized_usd_session) + '">' + fmtUSD(b.realized_usd_session) + '</td>' +
           '<td>' + b.trade_count + '</td></tr>';
       }).join('');
     }
