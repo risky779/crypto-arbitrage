@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-08-26 22:14:35",
+  "updated_at": "2026-08-26 22:25:17",
   "live_bots": {
     "hedge_swing": {
       "cycles": 3,
@@ -18,26 +18,26 @@ const pnlData = {
       "total_krw": 590560
     }
   ],
-  "usd_krw": 1383.117513,
-  "total_asset_krw": 430223.0303020144,
+  "usd_krw": 1530.0,
+  "total_asset_krw": 445785.26008535706,
   "seed": {
-    "seed_krw": 916514.36272421,
+    "seed_krw": 919330.1,
     "seed_date": "2026-07-02",
     "days_since_seed": 55,
-    "seed_yield_pct": -53.05877924015976,
-    "seed_pnl_krw": -486291.33242219564,
-    "avg_daily_yield_pct": -5.3058779240159755
+    "seed_yield_pct": -51.509772160689934,
+    "seed_pnl_krw": -473544.8399146429,
+    "avg_daily_yield_pct": -5.150977216068993
   },
-  "seed_krw": 916514.36272421,
+  "seed_krw": 919330.1,
   "seeds": {
     "a": 780000.0,
     "b": 110000.0,
-    "c_krw": 26514.36272421,
+    "c_krw": 29330.100000000002,
     "c_usd": 19.17
   },
   "balances": {
-    "bithumb_krw": 179464.15856093002,
-    "okx_usd": 87.81289591335275,
+    "bithumb_krw": 179462.20843031,
+    "okx_usd": 87.81199225820066,
     "coinone_krw": 104185.9035,
     "okx_coinone_usd": null
   },
@@ -58,19 +58,19 @@ const pnlData = {
     "cash_carry": false
   },
   "summary": {
-    "total_profit_krw": -486291.33242219564,
-    "total_profit_usd": -351.5907562817446,
+    "total_profit_krw": -473544.8399146429,
+    "total_profit_usd": -309.5064313167601,
     "operating_days": 10,
     "total_trades": 271,
-    "avg_daily_yield": -5.3058779240159755,
-    "projected_monthly_yield": -159.17633772047927,
-    "tot_a_krw": -479080.28723406565,
-    "recorded_a_krw": 276202.3433172915,
-    "unrecorded_a_krw": -755282.6305513572,
-    "measured_asset_a_krw": 300919.71276593435,
-    "real_daily_a_krw": -2706.954532967473,
-    "yield_a": -61.42054964539303,
-    "avg_yield_a": -6.142054964539303,
+    "avg_daily_yield": -5.150977216068993,
+    "projected_monthly_yield": -154.5293164820698,
+    "tot_a_krw": -466185.44341464294,
+    "recorded_a_krw": 305534.11500000005,
+    "unrecorded_a_krw": -771719.5584146429,
+    "measured_asset_a_krw": 313814.55658535706,
+    "real_daily_a_krw": 10187.889286455233,
+    "yield_a": -59.76736454033884,
+    "avg_yield_a": -5.976736454033884,
     "tot_b_krw": -5814.0965,
     "recorded_b_krw": 0.0,
     "unrecorded_b_krw": -5814.0965,
@@ -78,7 +78,7 @@ const pnlData = {
     "real_daily_b_krw": 0.0,
     "yield_b": -5.285542272727273,
     "avg_yield_b": -0.5285542272727273,
-    "tot_c_krw": -1396.94868813,
+    "tot_c_krw": -1545.3,
     "tot_c_usd": -1.01,
     "yield_c": -5.268648930620761,
     "avg_yield_c": -0.5268648930620761
@@ -96,16 +96,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": 0.0,
       "total_usd": 0.3529,
-      "cum_a_krw": 488.10217033769993,
+      "cum_a_krw": 539.937,
       "cum_b_krw": 0.0,
       "cum_c_krw": 0.0,
-      "cum_total_krw": 488.10217033769993,
-      "asset_a_krw": 780488.1021703377,
+      "cum_total_krw": 539.937,
+      "asset_a_krw": 780539.937,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 26514.36272421,
-      "total_asset_krw": 917002.4648945477,
-      "yield_pct": 0.06257720132534614,
-      "month_to_date_yield_pct": 0.06257720132534614,
+      "asset_c_krw": 29330.100000000002,
+      "total_asset_krw": 919870.037,
+      "yield_pct": 0.0692226923076923,
+      "month_to_date_yield_pct": 0.0692226923076923,
       "target_met": false,
       "trades": 1,
       "live": 1,
@@ -117,16 +117,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": -1.01,
       "total_usd": 4.402299999999999,
-      "cum_a_krw": 7973.9490859476,
+      "cum_a_krw": 8820.756,
       "cum_b_krw": 0.0,
-      "cum_c_krw": -1396.94868813,
-      "cum_total_krw": 6577.0003978176,
-      "asset_a_krw": 787973.9490859476,
+      "cum_c_krw": -1545.3,
+      "cum_total_krw": 7275.456,
+      "asset_a_krw": 788820.756,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 25117.414036079997,
-      "total_asset_krw": 923091.3631220276,
-      "yield_pct": 0.9597239635397308,
-      "month_to_date_yield_pct": 1.0223011648650768,
+      "asset_c_krw": 27784.8,
+      "total_asset_krw": 926605.5560000001,
+      "yield_pct": 1.0616434615384613,
+      "month_to_date_yield_pct": 1.1308661538461537,
       "target_met": false,
       "trades": 6,
       "live": 6,
@@ -138,16 +138,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": 0.0,
       "total_usd": 0.3694,
-      "cum_a_krw": 8484.8726952498,
+      "cum_a_krw": 9385.938,
       "cum_b_krw": 0.0,
-      "cum_c_krw": -1396.94868813,
-      "cum_total_krw": 7087.9240071198,
-      "asset_a_krw": 788484.8726952499,
+      "cum_c_krw": -1545.3,
+      "cum_total_krw": 7840.638,
+      "asset_a_krw": 789385.938,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 25117.414036079997,
-      "total_asset_krw": 923602.2867313299,
-      "yield_pct": 0.06550302683361538,
-      "month_to_date_yield_pct": 1.0878041916986925,
+      "asset_c_krw": 27784.8,
+      "total_asset_krw": 927170.738,
+      "yield_pct": 0.07245923076923078,
+      "month_to_date_yield_pct": 1.2033253846153846,
       "target_met": false,
       "trades": 1,
       "live": 1,
@@ -159,16 +159,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": 0.0,
       "total_usd": 0.1876,
-      "cum_a_krw": 8744.345540688599,
+      "cum_a_krw": 9672.965999999999,
       "cum_b_krw": 0.0,
-      "cum_c_krw": -1396.94868813,
-      "cum_total_krw": 7347.3968525586,
-      "asset_a_krw": 788744.3455406886,
+      "cum_c_krw": -1545.3,
+      "cum_total_krw": 8127.665999999999,
+      "asset_a_krw": 789672.966,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 25117.414036079997,
-      "total_asset_krw": 923861.7595767686,
-      "yield_pct": 0.03326574941523077,
-      "month_to_date_yield_pct": 1.1210699411139229,
+      "asset_c_krw": 27784.8,
+      "total_asset_krw": 927457.7660000001,
+      "yield_pct": 0.03679846153846154,
+      "month_to_date_yield_pct": 1.240123846153846,
       "target_met": false,
       "trades": 1,
       "live": 1,
@@ -180,16 +180,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": 0.0,
       "total_usd": 0.5657,
-      "cum_a_krw": 9526.775117792698,
+      "cum_a_krw": 10538.487,
       "cum_b_krw": 0.0,
-      "cum_c_krw": -1396.94868813,
-      "cum_total_krw": 8129.8264296626985,
-      "asset_a_krw": 789526.7751177927,
+      "cum_c_krw": -1545.3,
+      "cum_total_krw": 8993.187,
+      "asset_a_krw": 790538.487,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 25117.414036079997,
-      "total_asset_krw": 924644.1891538727,
-      "yield_pct": 0.10031148424411537,
-      "month_to_date_yield_pct": 1.2213814253580382,
+      "asset_c_krw": 27784.8,
+      "total_asset_krw": 928323.287,
+      "yield_pct": 0.11096423076923077,
+      "month_to_date_yield_pct": 1.3510880769230769,
       "target_met": false,
       "trades": 1,
       "live": 1,
@@ -201,16 +201,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": 0.0,
       "total_usd": 0.8555,
-      "cum_a_krw": 10710.0321501642,
+      "cum_a_krw": 11847.401999999998,
       "cum_b_krw": 0.0,
-      "cum_c_krw": -1396.94868813,
-      "cum_total_krw": 9313.0834620342,
-      "asset_a_krw": 790710.0321501642,
+      "cum_c_krw": -1545.3,
+      "cum_total_krw": 10302.101999999999,
+      "asset_a_krw": 791847.402,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 25117.414036079997,
-      "total_asset_krw": 925827.4461862443,
-      "yield_pct": 0.15169961953480768,
-      "month_to_date_yield_pct": 1.3730810448928459,
+      "asset_c_krw": 27784.8,
+      "total_asset_krw": 929632.202,
+      "yield_pct": 0.16780961538461536,
+      "month_to_date_yield_pct": 1.518897692307692,
       "target_met": false,
       "trades": 2,
       "live": 2,
@@ -222,16 +222,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": 0.0,
       "total_usd": 21.8762,
-      "cum_a_krw": 40967.387488054796,
+      "cum_a_krw": 45317.988,
       "cum_b_krw": 0.0,
-      "cum_c_krw": -1396.94868813,
-      "cum_total_krw": 39570.43879992479,
-      "asset_a_krw": 820967.3874880548,
+      "cum_c_krw": -1545.3,
+      "cum_total_krw": 43772.687999999995,
+      "asset_a_krw": 825317.988,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 25117.414036079997,
-      "total_asset_krw": 956084.8015241348,
-      "yield_pct": 3.8791481202423843,
-      "month_to_date_yield_pct": 5.252229165135231,
+      "asset_c_krw": 27784.8,
+      "total_asset_krw": 963102.7880000001,
+      "yield_pct": 4.29110076923077,
+      "month_to_date_yield_pct": 5.809998461538461,
       "target_met": false,
       "trades": 35,
       "live": 35,
@@ -243,16 +243,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": 0.0,
       "total_usd": 90.18950000000001,
-      "cum_a_krw": 165710.06442676828,
+      "cum_a_krw": 183307.923,
       "cum_b_krw": 0.0,
-      "cum_c_krw": -1396.94868813,
-      "cum_total_krw": 164313.1157386383,
-      "asset_a_krw": 945710.0644267683,
+      "cum_c_krw": -1545.3,
+      "cum_total_krw": 181762.623,
+      "asset_a_krw": 963307.923,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 25117.414036079997,
-      "total_asset_krw": 1080827.4784628483,
-      "yield_pct": 15.992650889578655,
-      "month_to_date_yield_pct": 21.24488005471388,
+      "asset_c_krw": 27784.8,
+      "total_asset_krw": 1101092.723,
+      "yield_pct": 17.69101730769231,
+      "month_to_date_yield_pct": 23.501015769230772,
       "target_met": true,
       "trades": 85,
       "live": 85,
@@ -264,16 +264,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": 0.0,
       "total_usd": 78.45860000000003,
-      "cum_a_krw": 274227.52813223016,
+      "cum_a_krw": 303349.58100000006,
       "cum_b_krw": 0.0,
-      "cum_c_krw": -1396.94868813,
-      "cum_total_krw": 272830.57944410015,
-      "asset_a_krw": 1054227.52813223,
+      "cum_c_krw": -1545.3,
+      "cum_total_krw": 301804.2810000001,
+      "asset_a_krw": 1083349.581,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 25117.414036079997,
-      "total_asset_krw": 1189344.94216831,
-      "yield_pct": 13.912495346854081,
-      "month_to_date_yield_pct": 35.15737540156797,
+      "asset_c_krw": 27784.8,
+      "total_asset_krw": 1221134.381,
+      "yield_pct": 15.38995615384616,
+      "month_to_date_yield_pct": 38.89097192307693,
       "target_met": true,
       "trades": 130,
       "live": 130,
@@ -285,16 +285,16 @@ const pnlData = {
       "b_usd": 0.0,
       "c_usd": 0.0,
       "total_usd": 1.4278,
-      "cum_a_krw": 276202.3433172915,
+      "cum_a_krw": 305534.11500000005,
       "cum_b_krw": 0.0,
-      "cum_c_krw": -1396.94868813,
-      "cum_total_krw": 274805.3946291616,
-      "asset_a_krw": 1056202.3433172915,
+      "cum_c_krw": -1545.3,
+      "cum_total_krw": 303988.81500000006,
+      "asset_a_krw": 1085534.115,
       "asset_b_krw": 110000.0,
-      "asset_c_krw": 25117.414036079997,
-      "total_asset_krw": 1191319.7573533715,
-      "yield_pct": 0.25318143398223075,
-      "month_to_date_yield_pct": 35.410556835550196,
+      "asset_c_krw": 27784.8,
+      "total_asset_krw": 1223318.915,
+      "yield_pct": 0.28006846153846154,
+      "month_to_date_yield_pct": 39.17104038461539,
       "target_met": true,
       "trades": 9,
       "live": 9,
@@ -305,108 +305,108 @@ const pnlData = {
     "bithumb": [
       {
         "coin": "ATOM",
-        "bithumb_krw": 2140.0,
-        "okx_usdt": 1.558,
-        "okx_krw": 2154.897085254,
-        "raw_spread": 0.7,
+        "bithumb_krw": 2135.0,
+        "okx_usdt": 1.543,
+        "okx_krw": 2360.79,
+        "raw_spread": 10.58,
         "friction": 0.33,
-        "net_spread": 0.37,
+        "net_spread": 10.25,
         "target_spread": 1.0
       },
       {
         "coin": "DOGE",
         "bithumb_krw": 120.0,
-        "okx_usdt": 0.08591,
-        "okx_krw": 118.82362554183,
-        "raw_spread": -0.98,
+        "okx_usdt": 0.08546,
+        "okx_krw": 130.75379999999998,
+        "raw_spread": 8.96,
         "friction": 0.33,
-        "net_spread": -1.31,
+        "net_spread": 8.63,
         "target_spread": 1.0
       },
       {
         "coin": "ADA",
-        "bithumb_krw": 291.0,
-        "okx_usdt": 0.2086,
-        "okx_krw": 288.5183132118,
-        "raw_spread": -0.85,
+        "bithumb_krw": 289.0,
+        "okx_usdt": 0.2073,
+        "okx_krw": 317.16900000000004,
+        "raw_spread": 9.75,
         "friction": 0.33,
-        "net_spread": -1.18,
+        "net_spread": 9.42,
         "target_spread": 1.0
       },
       {
         "coin": "SOL",
-        "bithumb_krw": 134600.0,
-        "okx_usdt": 96.62,
-        "okx_krw": 133636.81410606,
-        "raw_spread": -0.72,
+        "bithumb_krw": 133800.0,
+        "okx_usdt": 96.03,
+        "okx_krw": 146925.9,
+        "raw_spread": 9.81,
         "friction": 0.33,
-        "net_spread": -1.05,
+        "net_spread": 9.48,
         "target_spread": 1.0
       },
       {
         "coin": "XRP",
-        "bithumb_krw": 1944.0,
-        "okx_usdt": 1.3968,
-        "okx_krw": 1931.9385421584,
-        "raw_spread": -0.62,
+        "bithumb_krw": 1933.0,
+        "okx_usdt": 1.387,
+        "okx_krw": 2122.11,
+        "raw_spread": 9.78,
         "friction": 0.33,
-        "net_spread": -0.95,
+        "net_spread": 9.45,
         "target_spread": 1.0
       },
       {
         "coin": "ENA",
-        "bithumb_krw": 197.0,
-        "okx_usdt": 0.14181,
-        "okx_krw": 196.13989451852999,
-        "raw_spread": -0.44,
+        "bithumb_krw": 194.0,
+        "okx_usdt": 0.13928,
+        "okx_krw": 213.09839999999997,
+        "raw_spread": 9.84,
         "friction": 0.33,
-        "net_spread": -0.77,
+        "net_spread": 9.51,
         "target_spread": 1.0
       }
     ],
     "coinone": [
       {
         "coin": "ATOM",
-        "coinone_krw": 2174.0,
-        "okx_usdt": 1.558,
-        "okx_krw": 2154.897085254,
-        "raw_spread": -0.88,
+        "coinone_krw": 2158.0,
+        "okx_usdt": 1.543,
+        "okx_krw": 2360.79,
+        "raw_spread": 9.4,
         "friction": 0.33,
-        "net_spread": -1.21,
+        "net_spread": 9.07,
         "target_spread": 1.2
       },
       {
         "coin": "DOGE",
-        "coinone_krw": 119.4,
-        "okx_usdt": 0.08591,
-        "okx_krw": 118.82362554183,
-        "raw_spread": -0.48,
+        "coinone_krw": 119.2,
+        "okx_usdt": 0.08546,
+        "okx_krw": 130.75379999999998,
+        "raw_spread": 9.69,
         "friction": 0.33,
-        "net_spread": -0.81,
+        "net_spread": 9.36,
         "target_spread": 1.2
       },
       {
         "coin": "ADA",
-        "coinone_krw": 289.9,
-        "okx_usdt": 0.2086,
-        "okx_krw": 288.5183132118,
-        "raw_spread": -0.48,
+        "coinone_krw": 288.8,
+        "okx_usdt": 0.2073,
+        "okx_krw": 317.16900000000004,
+        "raw_spread": 9.82,
         "friction": 0.33,
-        "net_spread": -0.81,
+        "net_spread": 9.49,
         "target_spread": 1.2
       },
       {
         "coin": "SOL",
-        "coinone_krw": 134400.0,
-        "okx_usdt": 96.62,
-        "okx_krw": 133636.81410606,
-        "raw_spread": -0.57,
+        "coinone_krw": 133900.0,
+        "okx_usdt": 96.03,
+        "okx_krw": 146925.9,
+        "raw_spread": 9.73,
         "friction": 0.33,
-        "net_spread": -0.9,
+        "net_spread": 9.4,
         "target_spread": 1.2
       }
     ],
-    "updated_at": "2026-08-26 22:14:37"
+    "updated_at": "2026-08-26 22:25:19"
   },
   "perp_hedge_bot": {
     "label": "\ud604\uc120\ubd07 (RE/ZRO/CRV/EDEN)",
@@ -512,8 +512,8 @@ const pnlData = {
     "measured": {
       "baseline_krw": 306310,
       "baseline_time": "2026-08-24T15:57:00+09:00",
-      "measured_total_krw": 300920,
-      "measured_pnl_krw": -5390,
+      "measured_total_krw": 313815,
+      "measured_pnl_krw": 7505,
       "trend": [
         {
           "time": "2026-08-24T15:58",
@@ -544,8 +544,8 @@ const pnlData = {
           "total_krw": 306938
         },
         {
-          "time": "2026-08-24T17:13",
-          "total_krw": 305958
+          "time": "2026-08-24T17:14",
+          "total_krw": 305621
         },
         {
           "time": "2026-08-24T17:24",
@@ -568,16 +568,16 @@ const pnlData = {
           "total_krw": 304636
         },
         {
-          "time": "2026-08-24T18:18",
-          "total_krw": 306362
+          "time": "2026-08-24T18:19",
+          "total_krw": 306450
         },
         {
-          "time": "2026-08-24T18:29",
-          "total_krw": 305635
+          "time": "2026-08-24T18:30",
+          "total_krw": 306199
         },
         {
-          "time": "2026-08-24T18:40",
-          "total_krw": 305128
+          "time": "2026-08-24T18:41",
+          "total_krw": 305300
         },
         {
           "time": "2026-08-24T18:51",
@@ -592,1060 +592,1056 @@ const pnlData = {
           "total_krw": 304720
         },
         {
-          "time": "2026-08-24T19:23",
-          "total_krw": 304660
+          "time": "2026-08-24T19:24",
+          "total_krw": 304031
         },
         {
-          "time": "2026-08-24T19:34",
-          "total_krw": 305941
+          "time": "2026-08-24T19:35",
+          "total_krw": 305839
         },
         {
-          "time": "2026-08-24T19:45",
-          "total_krw": 306050
+          "time": "2026-08-24T19:46",
+          "total_krw": 306068
         },
         {
-          "time": "2026-08-24T19:56",
-          "total_krw": 306637
+          "time": "2026-08-24T19:57",
+          "total_krw": 306667
         },
         {
-          "time": "2026-08-24T20:07",
-          "total_krw": 306907
+          "time": "2026-08-24T20:08",
+          "total_krw": 306760
         },
         {
           "time": "2026-08-24T20:18",
           "total_krw": 306662
         },
         {
-          "time": "2026-08-24T20:28",
-          "total_krw": 303619
+          "time": "2026-08-24T20:29",
+          "total_krw": 303206
         },
         {
-          "time": "2026-08-24T20:39",
-          "total_krw": 302861
+          "time": "2026-08-24T20:40",
+          "total_krw": 302629
         },
         {
-          "time": "2026-08-24T20:50",
-          "total_krw": 304313
-        },
-        {
-          "time": "2026-08-24T21:01",
-          "total_krw": 304119
-        },
-        {
-          "time": "2026-08-24T21:12",
-          "total_krw": 305617
-        },
-        {
-          "time": "2026-08-24T21:23",
-          "total_krw": 305697
-        },
-        {
-          "time": "2026-08-24T21:33",
-          "total_krw": 305702
-        },
-        {
-          "time": "2026-08-24T21:44",
-          "total_krw": 303576
-        },
-        {
-          "time": "2026-08-24T21:55",
-          "total_krw": 303382
-        },
-        {
-          "time": "2026-08-24T22:06",
-          "total_krw": 304456
-        },
-        {
-          "time": "2026-08-24T22:17",
-          "total_krw": 304398
-        },
-        {
-          "time": "2026-08-24T22:28",
-          "total_krw": 305214
-        },
-        {
-          "time": "2026-08-24T22:38",
-          "total_krw": 305571
-        },
-        {
-          "time": "2026-08-24T22:49",
-          "total_krw": 304977
-        },
-        {
-          "time": "2026-08-24T23:00",
-          "total_krw": 304823
-        },
-        {
-          "time": "2026-08-24T23:11",
-          "total_krw": 304677
-        },
-        {
-          "time": "2026-08-24T23:22",
-          "total_krw": 303956
-        },
-        {
-          "time": "2026-08-24T23:33",
-          "total_krw": 302729
-        },
-        {
-          "time": "2026-08-24T23:43",
-          "total_krw": 301600
-        },
-        {
-          "time": "2026-08-24T23:54",
-          "total_krw": 302566
-        },
-        {
-          "time": "2026-08-25T00:05",
-          "total_krw": 301819
-        },
-        {
-          "time": "2026-08-25T00:16",
-          "total_krw": 301804
-        },
-        {
-          "time": "2026-08-25T00:27",
-          "total_krw": 301770
-        },
-        {
-          "time": "2026-08-25T00:38",
-          "total_krw": 303792
-        },
-        {
-          "time": "2026-08-25T00:48",
-          "total_krw": 304399
-        },
-        {
-          "time": "2026-08-25T00:59",
-          "total_krw": 304434
-        },
-        {
-          "time": "2026-08-25T01:10",
-          "total_krw": 304103
-        },
-        {
-          "time": "2026-08-25T01:21",
-          "total_krw": 304019
-        },
-        {
-          "time": "2026-08-25T01:32",
-          "total_krw": 304019
-        },
-        {
-          "time": "2026-08-25T01:43",
+          "time": "2026-08-24T20:51",
           "total_krw": 304104
         },
         {
-          "time": "2026-08-25T01:53",
+          "time": "2026-08-24T21:02",
+          "total_krw": 304709
+        },
+        {
+          "time": "2026-08-24T21:13",
+          "total_krw": 305776
+        },
+        {
+          "time": "2026-08-24T21:24",
+          "total_krw": 305245
+        },
+        {
+          "time": "2026-08-24T21:34",
+          "total_krw": 304229
+        },
+        {
+          "time": "2026-08-24T21:45",
+          "total_krw": 304320
+        },
+        {
+          "time": "2026-08-24T21:56",
+          "total_krw": 303329
+        },
+        {
+          "time": "2026-08-24T22:07",
+          "total_krw": 304282
+        },
+        {
+          "time": "2026-08-24T22:18",
+          "total_krw": 304368
+        },
+        {
+          "time": "2026-08-24T22:29",
+          "total_krw": 305337
+        },
+        {
+          "time": "2026-08-24T22:40",
+          "total_krw": 305720
+        },
+        {
+          "time": "2026-08-24T22:51",
+          "total_krw": 305358
+        },
+        {
+          "time": "2026-08-24T23:01",
+          "total_krw": 304616
+        },
+        {
+          "time": "2026-08-24T23:12",
+          "total_krw": 305355
+        },
+        {
+          "time": "2026-08-24T23:23",
+          "total_krw": 303707
+        },
+        {
+          "time": "2026-08-24T23:34",
+          "total_krw": 301807
+        },
+        {
+          "time": "2026-08-24T23:45",
+          "total_krw": 301677
+        },
+        {
+          "time": "2026-08-24T23:56",
+          "total_krw": 302082
+        },
+        {
+          "time": "2026-08-25T00:07",
+          "total_krw": 301239
+        },
+        {
+          "time": "2026-08-25T00:18",
+          "total_krw": 301211
+        },
+        {
+          "time": "2026-08-25T00:28",
+          "total_krw": 301840
+        },
+        {
+          "time": "2026-08-25T00:39",
+          "total_krw": 303949
+        },
+        {
+          "time": "2026-08-25T00:50",
+          "total_krw": 304513
+        },
+        {
+          "time": "2026-08-25T01:01",
+          "total_krw": 304463
+        },
+        {
+          "time": "2026-08-25T01:12",
           "total_krw": 304103
         },
         {
-          "time": "2026-08-25T02:04",
-          "total_krw": 304358
+          "time": "2026-08-25T01:23",
+          "total_krw": 304019
         },
         {
-          "time": "2026-08-25T02:15",
+          "time": "2026-08-25T01:34",
+          "total_krw": 304105
+        },
+        {
+          "time": "2026-08-25T01:44",
+          "total_krw": 304104
+        },
+        {
+          "time": "2026-08-25T01:55",
+          "total_krw": 304183
+        },
+        {
+          "time": "2026-08-25T02:06",
           "total_krw": 304359
         },
         {
-          "time": "2026-08-25T02:26",
+          "time": "2026-08-25T02:17",
+          "total_krw": 304443
+        },
+        {
+          "time": "2026-08-25T02:28",
           "total_krw": 304525
         },
         {
-          "time": "2026-08-25T02:37",
-          "total_krw": 304521
+          "time": "2026-08-25T02:39",
+          "total_krw": 304522
         },
         {
-          "time": "2026-08-25T02:48",
-          "total_krw": 304434
+          "time": "2026-08-25T02:50",
+          "total_krw": 304436
         },
         {
-          "time": "2026-08-25T02:58",
-          "total_krw": 304525
+          "time": "2026-08-25T03:01",
+          "total_krw": 304438
         },
         {
-          "time": "2026-08-25T03:09",
+          "time": "2026-08-25T03:11",
+          "total_krw": 304441
+        },
+        {
+          "time": "2026-08-25T03:22",
           "total_krw": 304355
         },
         {
-          "time": "2026-08-25T03:20",
-          "total_krw": 304355
-        },
-        {
-          "time": "2026-08-25T03:31",
-          "total_krw": 304270
-        },
-        {
-          "time": "2026-08-25T03:42",
-          "total_krw": 304268
-        },
-        {
-          "time": "2026-08-25T03:53",
-          "total_krw": 304356
-        },
-        {
-          "time": "2026-08-25T04:03",
-          "total_krw": 304355
-        },
-        {
-          "time": "2026-08-25T04:14",
-          "total_krw": 304354
-        },
-        {
-          "time": "2026-08-25T04:25",
-          "total_krw": 304439
-        },
-        {
-          "time": "2026-08-25T04:36",
-          "total_krw": 304355
-        },
-        {
-          "time": "2026-08-25T04:47",
-          "total_krw": 304354
-        },
-        {
-          "time": "2026-08-25T04:58",
-          "total_krw": 304354
-        },
-        {
-          "time": "2026-08-25T05:08",
-          "total_krw": 304268
-        },
-        {
-          "time": "2026-08-25T05:19",
-          "total_krw": 304353
-        },
-        {
-          "time": "2026-08-25T05:30",
-          "total_krw": 304352
-        },
-        {
-          "time": "2026-08-25T05:41",
+          "time": "2026-08-25T03:33",
           "total_krw": 304271
         },
         {
-          "time": "2026-08-25T05:52",
+          "time": "2026-08-25T03:44",
+          "total_krw": 304267
+        },
+        {
+          "time": "2026-08-25T03:55",
+          "total_krw": 304267
+        },
+        {
+          "time": "2026-08-25T04:06",
+          "total_krw": 304353
+        },
+        {
+          "time": "2026-08-25T04:17",
+          "total_krw": 304439
+        },
+        {
+          "time": "2026-08-25T04:28",
+          "total_krw": 304354
+        },
+        {
+          "time": "2026-08-25T04:38",
+          "total_krw": 304442
+        },
+        {
+          "time": "2026-08-25T04:49",
+          "total_krw": 304355
+        },
+        {
+          "time": "2026-08-25T05:00",
+          "total_krw": 304354
+        },
+        {
+          "time": "2026-08-25T05:11",
+          "total_krw": 304268
+        },
+        {
+          "time": "2026-08-25T05:22",
+          "total_krw": 304352
+        },
+        {
+          "time": "2026-08-25T05:33",
+          "total_krw": 304354
+        },
+        {
+          "time": "2026-08-25T05:44",
+          "total_krw": 304271
+        },
+        {
+          "time": "2026-08-25T05:54",
           "total_krw": 304357
         },
         {
-          "time": "2026-08-25T06:03",
-          "total_krw": 304358
-        },
-        {
-          "time": "2026-08-25T06:13",
-          "total_krw": 304275
-        },
-        {
-          "time": "2026-08-25T06:24",
-          "total_krw": 304447
-        },
-        {
-          "time": "2026-08-25T06:35",
-          "total_krw": 304448
-        },
-        {
-          "time": "2026-08-25T06:46",
-          "total_krw": 304360
-        },
-        {
-          "time": "2026-08-25T06:57",
-          "total_krw": 304361
-        },
-        {
-          "time": "2026-08-25T07:08",
-          "total_krw": 304361
-        },
-        {
-          "time": "2026-08-25T07:18",
-          "total_krw": 304359
-        },
-        {
-          "time": "2026-08-25T07:29",
-          "total_krw": 304359
-        },
-        {
-          "time": "2026-08-25T07:40",
-          "total_krw": 304361
-        },
-        {
-          "time": "2026-08-25T07:51",
+          "time": "2026-08-25T06:05",
           "total_krw": 304273
         },
         {
-          "time": "2026-08-25T08:02",
-          "total_krw": 304358
+          "time": "2026-08-25T06:16",
+          "total_krw": 304275
         },
         {
-          "time": "2026-08-25T08:13",
-          "total_krw": 304213
+          "time": "2026-08-25T06:27",
+          "total_krw": 304361
         },
         {
-          "time": "2026-08-25T08:23",
-          "total_krw": 303233
+          "time": "2026-08-25T06:38",
+          "total_krw": 304359
         },
         {
-          "time": "2026-08-25T08:34",
-          "total_krw": 303632
-        },
-        {
-          "time": "2026-08-25T08:45",
-          "total_krw": 302482
-        },
-        {
-          "time": "2026-08-25T08:56",
-          "total_krw": 302336
-        },
-        {
-          "time": "2026-08-25T09:07",
-          "total_krw": 302420
-        },
-        {
-          "time": "2026-08-25T09:18",
-          "total_krw": 302406
-        },
-        {
-          "time": "2026-08-25T09:28",
-          "total_krw": 302560
-        },
-        {
-          "time": "2026-08-25T09:39",
-          "total_krw": 301487
-        },
-        {
-          "time": "2026-08-25T09:50",
-          "total_krw": 301605
-        },
-        {
-          "time": "2026-08-25T10:01",
-          "total_krw": 302574
-        },
-        {
-          "time": "2026-08-25T10:12",
-          "total_krw": 303695
-        },
-        {
-          "time": "2026-08-25T10:23",
-          "total_krw": 304253
-        },
-        {
-          "time": "2026-08-25T10:33",
-          "total_krw": 304235
-        },
-        {
-          "time": "2026-08-25T10:48",
-          "total_krw": 304150
-        },
-        {
-          "time": "2026-08-25T10:59",
-          "total_krw": 304638
-        },
-        {
-          "time": "2026-08-25T11:10",
-          "total_krw": 304452
-        },
-        {
-          "time": "2026-08-25T11:21",
-          "total_krw": 303867
-        },
-        {
-          "time": "2026-08-25T11:32",
-          "total_krw": 302793
-        },
-        {
-          "time": "2026-08-25T11:42",
-          "total_krw": 303254
-        },
-        {
-          "time": "2026-08-25T11:53",
-          "total_krw": 304486
-        },
-        {
-          "time": "2026-08-25T12:04",
-          "total_krw": 303985
-        },
-        {
-          "time": "2026-08-25T12:15",
-          "total_krw": 303753
-        },
-        {
-          "time": "2026-08-25T12:26",
-          "total_krw": 303930
-        },
-        {
-          "time": "2026-08-25T12:37",
-          "total_krw": 303959
-        },
-        {
-          "time": "2026-08-25T12:47",
-          "total_krw": 303747
-        },
-        {
-          "time": "2026-08-25T12:58",
-          "total_krw": 304510
-        },
-        {
-          "time": "2026-08-25T13:09",
-          "total_krw": 304962
-        },
-        {
-          "time": "2026-08-25T13:20",
-          "total_krw": 305077
-        },
-        {
-          "time": "2026-08-25T13:31",
-          "total_krw": 304133
-        },
-        {
-          "time": "2026-08-25T13:42",
-          "total_krw": 303505
-        },
-        {
-          "time": "2026-08-25T13:52",
-          "total_krw": 302998
-        },
-        {
-          "time": "2026-08-25T14:03",
-          "total_krw": 302635
-        },
-        {
-          "time": "2026-08-25T14:14",
-          "total_krw": 302873
-        },
-        {
-          "time": "2026-08-25T14:25",
-          "total_krw": 303044
-        },
-        {
-          "time": "2026-08-25T14:36",
-          "total_krw": 303192
-        },
-        {
-          "time": "2026-08-25T14:47",
-          "total_krw": 303375
-        },
-        {
-          "time": "2026-08-25T14:57",
-          "total_krw": 303603
-        },
-        {
-          "time": "2026-08-25T15:08",
-          "total_krw": 303387
-        },
-        {
-          "time": "2026-08-25T15:19",
-          "total_krw": 303517
-        },
-        {
-          "time": "2026-08-25T15:30",
-          "total_krw": 303821
-        },
-        {
-          "time": "2026-08-25T15:41",
-          "total_krw": 303991
-        },
-        {
-          "time": "2026-08-25T15:52",
-          "total_krw": 304424
-        },
-        {
-          "time": "2026-08-25T16:02",
-          "total_krw": 304187
-        },
-        {
-          "time": "2026-08-25T16:13",
-          "total_krw": 303822
-        },
-        {
-          "time": "2026-08-25T16:24",
-          "total_krw": 303843
-        },
-        {
-          "time": "2026-08-25T16:35",
-          "total_krw": 304114
-        },
-        {
-          "time": "2026-08-25T16:46",
-          "total_krw": 304101
-        },
-        {
-          "time": "2026-08-25T16:57",
-          "total_krw": 304883
-        },
-        {
-          "time": "2026-08-25T17:07",
-          "total_krw": 303833
-        },
-        {
-          "time": "2026-08-25T17:18",
-          "total_krw": 303614
-        },
-        {
-          "time": "2026-08-25T17:29",
-          "total_krw": 303527
-        },
-        {
-          "time": "2026-08-25T17:40",
-          "total_krw": 303596
-        },
-        {
-          "time": "2026-08-25T17:51",
-          "total_krw": 303945
-        },
-        {
-          "time": "2026-08-25T18:02",
-          "total_krw": 303562
-        },
-        {
-          "time": "2026-08-25T18:12",
-          "total_krw": 304265
-        },
-        {
-          "time": "2026-08-25T18:23",
-          "total_krw": 302549
-        },
-        {
-          "time": "2026-08-25T18:34",
-          "total_krw": 302814
-        },
-        {
-          "time": "2026-08-25T18:45",
-          "total_krw": 302781
-        },
-        {
-          "time": "2026-08-25T18:56",
-          "total_krw": 303501
-        },
-        {
-          "time": "2026-08-25T19:07",
-          "total_krw": 303414
-        },
-        {
-          "time": "2026-08-25T19:17",
-          "total_krw": 303657
-        },
-        {
-          "time": "2026-08-25T19:28",
-          "total_krw": 303320
-        },
-        {
-          "time": "2026-08-25T19:39",
-          "total_krw": 303509
-        },
-        {
-          "time": "2026-08-25T19:50",
-          "total_krw": 303335
-        },
-        {
-          "time": "2026-08-25T20:01",
-          "total_krw": 303482
-        },
-        {
-          "time": "2026-08-25T20:12",
-          "total_krw": 303598
-        },
-        {
-          "time": "2026-08-25T20:22",
-          "total_krw": 303409
-        },
-        {
-          "time": "2026-08-25T20:33",
-          "total_krw": 303494
-        },
-        {
-          "time": "2026-08-25T20:44",
-          "total_krw": 303802
-        },
-        {
-          "time": "2026-08-25T20:55",
-          "total_krw": 303991
-        },
-        {
-          "time": "2026-08-25T21:06",
-          "total_krw": 303852
-        },
-        {
-          "time": "2026-08-25T21:17",
-          "total_krw": 303703
-        },
-        {
-          "time": "2026-08-25T21:27",
-          "total_krw": 304141
-        },
-        {
-          "time": "2026-08-25T21:38",
-          "total_krw": 303555
-        },
-        {
-          "time": "2026-08-25T21:49",
-          "total_krw": 303559
-        },
-        {
-          "time": "2026-08-25T22:00",
-          "total_krw": 303446
-        },
-        {
-          "time": "2026-08-25T22:11",
-          "total_krw": 304191
-        },
-        {
-          "time": "2026-08-25T22:22",
-          "total_krw": 304662
-        },
-        {
-          "time": "2026-08-25T22:32",
-          "total_krw": 304728
-        },
-        {
-          "time": "2026-08-25T22:43",
-          "total_krw": 304960
-        },
-        {
-          "time": "2026-08-25T22:54",
-          "total_krw": 305346
-        },
-        {
-          "time": "2026-08-25T23:05",
-          "total_krw": 304965
-        },
-        {
-          "time": "2026-08-25T23:16",
-          "total_krw": 304377
-        },
-        {
-          "time": "2026-08-25T23:27",
-          "total_krw": 304335
-        },
-        {
-          "time": "2026-08-25T23:37",
-          "total_krw": 304706
-        },
-        {
-          "time": "2026-08-25T23:48",
-          "total_krw": 304621
-        },
-        {
-          "time": "2026-08-25T23:59",
-          "total_krw": 303858
-        },
-        {
-          "time": "2026-08-26T00:10",
-          "total_krw": 303857
-        },
-        {
-          "time": "2026-08-26T00:21",
-          "total_krw": 304178
-        },
-        {
-          "time": "2026-08-26T00:32",
-          "total_krw": 304191
-        },
-        {
-          "time": "2026-08-26T00:42",
-          "total_krw": 303989
-        },
-        {
-          "time": "2026-08-26T00:53",
-          "total_krw": 304210
-        },
-        {
-          "time": "2026-08-26T01:04",
-          "total_krw": 304102
-        },
-        {
-          "time": "2026-08-26T01:15",
-          "total_krw": 304363
-        },
-        {
-          "time": "2026-08-26T01:26",
-          "total_krw": 304462
-        },
-        {
-          "time": "2026-08-26T01:37",
-          "total_krw": 304412
-        },
-        {
-          "time": "2026-08-26T01:47",
-          "total_krw": 304300
-        },
-        {
-          "time": "2026-08-26T01:58",
-          "total_krw": 304747
-        },
-        {
-          "time": "2026-08-26T02:09",
-          "total_krw": 304977
-        },
-        {
-          "time": "2026-08-26T02:20",
-          "total_krw": 305145
-        },
-        {
-          "time": "2026-08-26T02:31",
-          "total_krw": 305273
-        },
-        {
-          "time": "2026-08-26T02:42",
-          "total_krw": 303997
-        },
-        {
-          "time": "2026-08-26T02:52",
-          "total_krw": 304239
-        },
-        {
-          "time": "2026-08-26T03:03",
-          "total_krw": 303486
-        },
-        {
-          "time": "2026-08-26T03:14",
-          "total_krw": 304122
-        },
-        {
-          "time": "2026-08-26T03:25",
-          "total_krw": 304301
-        },
-        {
-          "time": "2026-08-26T03:36",
-          "total_krw": 304211
-        },
-        {
-          "time": "2026-08-26T03:47",
-          "total_krw": 303208
-        },
-        {
-          "time": "2026-08-26T03:57",
-          "total_krw": 303657
-        },
-        {
-          "time": "2026-08-26T04:08",
-          "total_krw": 303088
-        },
-        {
-          "time": "2026-08-26T04:19",
-          "total_krw": 302760
-        },
-        {
-          "time": "2026-08-26T04:30",
-          "total_krw": 303492
-        },
-        {
-          "time": "2026-08-26T04:41",
-          "total_krw": 303553
-        },
-        {
-          "time": "2026-08-26T04:52",
-          "total_krw": 302906
-        },
-        {
-          "time": "2026-08-26T05:02",
-          "total_krw": 302666
-        },
-        {
-          "time": "2026-08-26T05:13",
-          "total_krw": 302932
-        },
-        {
-          "time": "2026-08-26T05:24",
-          "total_krw": 302016
-        },
-        {
-          "time": "2026-08-26T05:35",
-          "total_krw": 302716
-        },
-        {
-          "time": "2026-08-26T05:46",
-          "total_krw": 303381
-        },
-        {
-          "time": "2026-08-26T05:57",
+          "time": "2026-08-25T06:49",
           "total_krw": 304274
         },
         {
-          "time": "2026-08-26T06:07",
-          "total_krw": 304396
+          "time": "2026-08-25T07:00",
+          "total_krw": 304275
         },
         {
-          "time": "2026-08-26T06:18",
-          "total_krw": 303299
+          "time": "2026-08-25T07:11",
+          "total_krw": 304448
         },
         {
-          "time": "2026-08-26T06:29",
-          "total_krw": 303419
+          "time": "2026-08-25T07:21",
+          "total_krw": 304360
         },
         {
-          "time": "2026-08-26T06:40",
-          "total_krw": 302821
+          "time": "2026-08-25T07:32",
+          "total_krw": 304445
         },
         {
-          "time": "2026-08-26T06:51",
-          "total_krw": 303091
+          "time": "2026-08-25T07:43",
+          "total_krw": 304359
         },
         {
-          "time": "2026-08-26T07:02",
-          "total_krw": 302168
+          "time": "2026-08-25T07:54",
+          "total_krw": 304360
         },
         {
-          "time": "2026-08-26T07:12",
-          "total_krw": 301878
+          "time": "2026-08-25T08:05",
+          "total_krw": 304357
         },
         {
-          "time": "2026-08-26T07:23",
-          "total_krw": 302404
+          "time": "2026-08-25T08:16",
+          "total_krw": 303808
         },
         {
-          "time": "2026-08-26T07:34",
-          "total_krw": 302342
+          "time": "2026-08-25T08:27",
+          "total_krw": 303488
         },
         {
-          "time": "2026-08-26T07:45",
-          "total_krw": 302772
+          "time": "2026-08-25T08:38",
+          "total_krw": 302191
         },
         {
-          "time": "2026-08-26T07:56",
-          "total_krw": 302348
+          "time": "2026-08-25T08:48",
+          "total_krw": 303046
         },
         {
-          "time": "2026-08-26T08:07",
-          "total_krw": 302715
+          "time": "2026-08-25T08:59",
+          "total_krw": 302481
         },
         {
-          "time": "2026-08-26T08:17",
-          "total_krw": 302670
+          "time": "2026-08-25T09:10",
+          "total_krw": 302933
         },
         {
-          "time": "2026-08-26T08:28",
+          "time": "2026-08-25T09:21",
+          "total_krw": 302349
+        },
+        {
+          "time": "2026-08-25T09:32",
+          "total_krw": 301101
+        },
+        {
+          "time": "2026-08-25T09:43",
+          "total_krw": 301116
+        },
+        {
+          "time": "2026-08-25T09:54",
+          "total_krw": 301441
+        },
+        {
+          "time": "2026-08-25T10:05",
+          "total_krw": 302130
+        },
+        {
+          "time": "2026-08-25T10:15",
+          "total_krw": 303135
+        },
+        {
+          "time": "2026-08-25T10:26",
+          "total_krw": 304321
+        },
+        {
+          "time": "2026-08-25T10:41",
+          "total_krw": 304239
+        },
+        {
+          "time": "2026-08-25T10:52",
+          "total_krw": 304620
+        },
+        {
+          "time": "2026-08-25T11:03",
+          "total_krw": 304550
+        },
+        {
+          "time": "2026-08-25T11:14",
+          "total_krw": 304632
+        },
+        {
+          "time": "2026-08-25T11:25",
+          "total_krw": 303402
+        },
+        {
+          "time": "2026-08-25T11:35",
+          "total_krw": 303277
+        },
+        {
+          "time": "2026-08-25T11:46",
+          "total_krw": 303705
+        },
+        {
+          "time": "2026-08-25T11:57",
+          "total_krw": 304210
+        },
+        {
+          "time": "2026-08-25T12:08",
+          "total_krw": 302940
+        },
+        {
+          "time": "2026-08-25T12:19",
+          "total_krw": 303417
+        },
+        {
+          "time": "2026-08-25T12:30",
+          "total_krw": 304091
+        },
+        {
+          "time": "2026-08-25T12:41",
+          "total_krw": 303801
+        },
+        {
+          "time": "2026-08-25T12:52",
+          "total_krw": 304633
+        },
+        {
+          "time": "2026-08-25T13:02",
+          "total_krw": 304656
+        },
+        {
+          "time": "2026-08-25T13:13",
+          "total_krw": 304966
+        },
+        {
+          "time": "2026-08-25T13:24",
+          "total_krw": 304592
+        },
+        {
+          "time": "2026-08-25T13:35",
+          "total_krw": 303843
+        },
+        {
+          "time": "2026-08-25T13:46",
+          "total_krw": 303247
+        },
+        {
+          "time": "2026-08-25T13:57",
+          "total_krw": 303196
+        },
+        {
+          "time": "2026-08-25T14:08",
+          "total_krw": 302801
+        },
+        {
+          "time": "2026-08-25T14:19",
+          "total_krw": 302902
+        },
+        {
+          "time": "2026-08-25T14:29",
+          "total_krw": 303190
+        },
+        {
+          "time": "2026-08-25T14:40",
+          "total_krw": 303391
+        },
+        {
+          "time": "2026-08-25T14:51",
+          "total_krw": 303232
+        },
+        {
+          "time": "2026-08-25T15:02",
+          "total_krw": 303473
+        },
+        {
+          "time": "2026-08-25T15:13",
+          "total_krw": 303644
+        },
+        {
+          "time": "2026-08-25T15:24",
+          "total_krw": 303487
+        },
+        {
+          "time": "2026-08-25T15:35",
+          "total_krw": 303698
+        },
+        {
+          "time": "2026-08-25T15:45",
+          "total_krw": 303948
+        },
+        {
+          "time": "2026-08-25T15:56",
+          "total_krw": 304802
+        },
+        {
+          "time": "2026-08-25T16:07",
+          "total_krw": 304199
+        },
+        {
+          "time": "2026-08-25T16:18",
+          "total_krw": 303843
+        },
+        {
+          "time": "2026-08-25T16:29",
+          "total_krw": 303935
+        },
+        {
+          "time": "2026-08-25T16:40",
+          "total_krw": 304374
+        },
+        {
+          "time": "2026-08-25T16:51",
+          "total_krw": 305959
+        },
+        {
+          "time": "2026-08-25T17:02",
+          "total_krw": 304856
+        },
+        {
+          "time": "2026-08-25T17:12",
+          "total_krw": 303811
+        },
+        {
+          "time": "2026-08-25T17:23",
+          "total_krw": 303408
+        },
+        {
+          "time": "2026-08-25T17:34",
+          "total_krw": 303613
+        },
+        {
+          "time": "2026-08-25T17:45",
+          "total_krw": 303128
+        },
+        {
+          "time": "2026-08-25T17:56",
+          "total_krw": 303910
+        },
+        {
+          "time": "2026-08-25T18:07",
+          "total_krw": 304087
+        },
+        {
+          "time": "2026-08-25T18:18",
+          "total_krw": 302932
+        },
+        {
+          "time": "2026-08-25T18:29",
+          "total_krw": 302839
+        },
+        {
+          "time": "2026-08-25T18:39",
+          "total_krw": 303076
+        },
+        {
+          "time": "2026-08-25T18:50",
+          "total_krw": 303161
+        },
+        {
+          "time": "2026-08-25T19:01",
+          "total_krw": 303413
+        },
+        {
+          "time": "2026-08-25T19:12",
+          "total_krw": 303416
+        },
+        {
+          "time": "2026-08-25T19:23",
+          "total_krw": 303509
+        },
+        {
+          "time": "2026-08-25T19:34",
+          "total_krw": 303365
+        },
+        {
+          "time": "2026-08-25T19:45",
+          "total_krw": 303452
+        },
+        {
+          "time": "2026-08-25T19:55",
+          "total_krw": 303190
+        },
+        {
+          "time": "2026-08-25T20:06",
+          "total_krw": 303598
+        },
+        {
+          "time": "2026-08-25T20:17",
+          "total_krw": 303320
+        },
+        {
+          "time": "2026-08-25T20:28",
+          "total_krw": 303609
+        },
+        {
+          "time": "2026-08-25T20:39",
+          "total_krw": 303394
+        },
+        {
+          "time": "2026-08-25T20:50",
+          "total_krw": 303773
+        },
+        {
+          "time": "2026-08-25T21:01",
+          "total_krw": 303579
+        },
+        {
+          "time": "2026-08-25T21:12",
+          "total_krw": 303585
+        },
+        {
+          "time": "2026-08-25T21:22",
+          "total_krw": 304023
+        },
+        {
+          "time": "2026-08-25T21:33",
+          "total_krw": 303880
+        },
+        {
+          "time": "2026-08-25T21:44",
+          "total_krw": 303556
+        },
+        {
+          "time": "2026-08-25T21:55",
+          "total_krw": 303447
+        },
+        {
+          "time": "2026-08-25T22:06",
+          "total_krw": 303606
+        },
+        {
+          "time": "2026-08-25T22:17",
+          "total_krw": 304702
+        },
+        {
+          "time": "2026-08-25T22:28",
+          "total_krw": 304797
+        },
+        {
+          "time": "2026-08-25T22:39",
+          "total_krw": 304482
+        },
+        {
+          "time": "2026-08-25T22:49",
+          "total_krw": 305423
+        },
+        {
+          "time": "2026-08-25T23:00",
+          "total_krw": 305194
+        },
+        {
+          "time": "2026-08-25T23:11",
+          "total_krw": 304496
+        },
+        {
+          "time": "2026-08-25T23:22",
+          "total_krw": 304405
+        },
+        {
+          "time": "2026-08-25T23:33",
+          "total_krw": 304366
+        },
+        {
+          "time": "2026-08-25T23:44",
+          "total_krw": 304868
+        },
+        {
+          "time": "2026-08-25T23:55",
+          "total_krw": 303858
+        },
+        {
+          "time": "2026-08-26T00:05",
+          "total_krw": 303857
+        },
+        {
+          "time": "2026-08-26T00:16",
+          "total_krw": 303880
+        },
+        {
+          "time": "2026-08-26T00:27",
+          "total_krw": 304144
+        },
+        {
+          "time": "2026-08-26T00:38",
+          "total_krw": 304058
+        },
+        {
+          "time": "2026-08-26T00:49",
+          "total_krw": 304173
+        },
+        {
+          "time": "2026-08-26T01:00",
+          "total_krw": 304187
+        },
+        {
+          "time": "2026-08-26T01:11",
+          "total_krw": 304149
+        },
+        {
+          "time": "2026-08-26T01:22",
+          "total_krw": 304430
+        },
+        {
+          "time": "2026-08-26T01:32",
+          "total_krw": 304234
+        },
+        {
+          "time": "2026-08-26T01:43",
+          "total_krw": 304351
+        },
+        {
+          "time": "2026-08-26T01:54",
+          "total_krw": 304470
+        },
+        {
+          "time": "2026-08-26T02:05",
+          "total_krw": 304606
+        },
+        {
+          "time": "2026-08-26T02:16",
+          "total_krw": 304829
+        },
+        {
+          "time": "2026-08-26T02:27",
+          "total_krw": 304823
+        },
+        {
+          "time": "2026-08-26T02:38",
+          "total_krw": 304597
+        },
+        {
+          "time": "2026-08-26T02:49",
+          "total_krw": 303663
+        },
+        {
+          "time": "2026-08-26T02:59",
+          "total_krw": 303907
+        },
+        {
+          "time": "2026-08-26T03:10",
+          "total_krw": 304182
+        },
+        {
+          "time": "2026-08-26T03:21",
+          "total_krw": 304392
+        },
+        {
+          "time": "2026-08-26T03:32",
+          "total_krw": 304333
+        },
+        {
+          "time": "2026-08-26T03:43",
+          "total_krw": 303229
+        },
+        {
+          "time": "2026-08-26T03:54",
+          "total_krw": 303598
+        },
+        {
+          "time": "2026-08-26T04:05",
+          "total_krw": 303748
+        },
+        {
+          "time": "2026-08-26T04:16",
+          "total_krw": 303049
+        },
+        {
+          "time": "2026-08-26T04:26",
+          "total_krw": 303110
+        },
+        {
+          "time": "2026-08-26T04:37",
+          "total_krw": 303402
+        },
+        {
+          "time": "2026-08-26T04:48",
+          "total_krw": 302905
+        },
+        {
+          "time": "2026-08-26T04:59",
+          "total_krw": 302790
+        },
+        {
+          "time": "2026-08-26T05:10",
+          "total_krw": 302871
+        },
+        {
+          "time": "2026-08-26T05:21",
+          "total_krw": 302533
+        },
+        {
+          "time": "2026-08-26T05:32",
+          "total_krw": 302960
+        },
+        {
+          "time": "2026-08-26T05:42",
+          "total_krw": 303380
+        },
+        {
+          "time": "2026-08-26T05:53",
+          "total_krw": 303885
+        },
+        {
+          "time": "2026-08-26T06:04",
+          "total_krw": 304457
+        },
+        {
+          "time": "2026-08-26T06:15",
+          "total_krw": 303937
+        },
+        {
+          "time": "2026-08-26T06:26",
+          "total_krw": 303325
+        },
+        {
+          "time": "2026-08-26T06:37",
+          "total_krw": 302793
+        },
+        {
+          "time": "2026-08-26T06:48",
+          "total_krw": 303065
+        },
+        {
+          "time": "2026-08-26T06:59",
+          "total_krw": 302878
+        },
+        {
+          "time": "2026-08-26T07:09",
+          "total_krw": 301846
+        },
+        {
+          "time": "2026-08-26T07:20",
+          "total_krw": 301785
+        },
+        {
+          "time": "2026-08-26T07:31",
+          "total_krw": 303074
+        },
+        {
+          "time": "2026-08-26T07:42",
+          "total_krw": 302499
+        },
+        {
+          "time": "2026-08-26T07:53",
+          "total_krw": 302441
+        },
+        {
+          "time": "2026-08-26T08:04",
+          "total_krw": 302346
+        },
+        {
+          "time": "2026-08-26T08:15",
+          "total_krw": 303038
+        },
+        {
+          "time": "2026-08-26T08:26",
           "total_krw": 302571
         },
         {
-          "time": "2026-08-26T08:39",
-          "total_krw": 303060
+          "time": "2026-08-26T08:36",
+          "total_krw": 302908
         },
         {
-          "time": "2026-08-26T08:50",
-          "total_krw": 303852
+          "time": "2026-08-26T08:47",
+          "total_krw": 303364
         },
         {
-          "time": "2026-08-26T09:01",
-          "total_krw": 302553
+          "time": "2026-08-26T08:58",
+          "total_krw": 303883
         },
         {
-          "time": "2026-08-26T09:12",
-          "total_krw": 302701
+          "time": "2026-08-26T09:09",
+          "total_krw": 302634
         },
         {
-          "time": "2026-08-26T09:22",
-          "total_krw": 302785
+          "time": "2026-08-26T09:20",
+          "total_krw": 302796
         },
         {
-          "time": "2026-08-26T09:33",
-          "total_krw": 302339
+          "time": "2026-08-26T09:31",
+          "total_krw": 302184
         },
         {
-          "time": "2026-08-26T09:44",
-          "total_krw": 302426
+          "time": "2026-08-26T09:42",
+          "total_krw": 302606
         },
         {
-          "time": "2026-08-26T09:55",
-          "total_krw": 301637
+          "time": "2026-08-26T09:52",
+          "total_krw": 301910
         },
         {
-          "time": "2026-08-26T10:06",
-          "total_krw": 301030
+          "time": "2026-08-26T10:03",
+          "total_krw": 301176
         },
         {
-          "time": "2026-08-26T10:17",
-          "total_krw": 301217
+          "time": "2026-08-26T10:14",
+          "total_krw": 301155
         },
         {
-          "time": "2026-08-26T10:27",
-          "total_krw": 301831
+          "time": "2026-08-26T10:25",
+          "total_krw": 301808
         },
         {
-          "time": "2026-08-26T10:38",
-          "total_krw": 300811
+          "time": "2026-08-26T10:36",
+          "total_krw": 300941
         },
         {
-          "time": "2026-08-26T10:49",
-          "total_krw": 300747
+          "time": "2026-08-26T10:47",
+          "total_krw": 301172
         },
         {
-          "time": "2026-08-26T11:00",
-          "total_krw": 301015
+          "time": "2026-08-26T10:58",
+          "total_krw": 300926
         },
         {
-          "time": "2026-08-26T11:11",
-          "total_krw": 300488
+          "time": "2026-08-26T11:09",
+          "total_krw": 300858
         },
         {
-          "time": "2026-08-26T11:22",
-          "total_krw": 301672
+          "time": "2026-08-26T11:19",
+          "total_krw": 301760
         },
         {
-          "time": "2026-08-26T11:32",
-          "total_krw": 301584
+          "time": "2026-08-26T11:30",
+          "total_krw": 301673
         },
         {
-          "time": "2026-08-26T11:43",
-          "total_krw": 301761
+          "time": "2026-08-26T11:41",
+          "total_krw": 301673
         },
         {
-          "time": "2026-08-26T11:54",
-          "total_krw": 301848
+          "time": "2026-08-26T11:52",
+          "total_krw": 301760
         },
         {
-          "time": "2026-08-26T12:05",
-          "total_krw": 301935
-        },
-        {
-          "time": "2026-08-26T12:16",
-          "total_krw": 302021
-        },
-        {
-          "time": "2026-08-26T12:27",
-          "total_krw": 302024
-        },
-        {
-          "time": "2026-08-26T12:37",
-          "total_krw": 301936
-        },
-        {
-          "time": "2026-08-26T12:48",
-          "total_krw": 302022
-        },
-        {
-          "time": "2026-08-26T12:59",
-          "total_krw": 302024
-        },
-        {
-          "time": "2026-08-26T13:10",
-          "total_krw": 301854
-        },
-        {
-          "time": "2026-08-26T13:21",
-          "total_krw": 301938
-        },
-        {
-          "time": "2026-08-26T13:32",
-          "total_krw": 301853
-        },
-        {
-          "time": "2026-08-26T13:42",
-          "total_krw": 301851
-        },
-        {
-          "time": "2026-08-26T13:53",
-          "total_krw": 301935
-        },
-        {
-          "time": "2026-08-26T14:04",
-          "total_krw": 301934
-        },
-        {
-          "time": "2026-08-26T14:15",
-          "total_krw": 302021
-        },
-        {
-          "time": "2026-08-26T14:26",
-          "total_krw": 301936
-        },
-        {
-          "time": "2026-08-26T14:37",
-          "total_krw": 301937
-        },
-        {
-          "time": "2026-08-26T14:47",
-          "total_krw": 301938
-        },
-        {
-          "time": "2026-08-26T14:58",
-          "total_krw": 301936
-        },
-        {
-          "time": "2026-08-26T15:09",
+          "time": "2026-08-26T12:03",
           "total_krw": 301849
         },
         {
-          "time": "2026-08-26T15:20",
+          "time": "2026-08-26T12:14",
+          "total_krw": 302021
+        },
+        {
+          "time": "2026-08-26T12:25",
+          "total_krw": 302025
+        },
+        {
+          "time": "2026-08-26T12:36",
+          "total_krw": 301849
+        },
+        {
+          "time": "2026-08-26T12:46",
+          "total_krw": 302022
+        },
+        {
+          "time": "2026-08-26T12:57",
+          "total_krw": 302025
+        },
+        {
+          "time": "2026-08-26T13:08",
+          "total_krw": 301940
+        },
+        {
+          "time": "2026-08-26T13:19",
+          "total_krw": 301851
+        },
+        {
+          "time": "2026-08-26T13:30",
+          "total_krw": 301941
+        },
+        {
+          "time": "2026-08-26T13:41",
+          "total_krw": 301851
+        },
+        {
+          "time": "2026-08-26T13:52",
+          "total_krw": 301936
+        },
+        {
+          "time": "2026-08-26T14:02",
+          "total_krw": 302023
+        },
+        {
+          "time": "2026-08-26T14:13",
+          "total_krw": 302021
+        },
+        {
+          "time": "2026-08-26T14:24",
+          "total_krw": 301936
+        },
+        {
+          "time": "2026-08-26T14:35",
+          "total_krw": 301850
+        },
+        {
+          "time": "2026-08-26T14:46",
+          "total_krw": 301849
+        },
+        {
+          "time": "2026-08-26T14:57",
+          "total_krw": 301936
+        },
+        {
+          "time": "2026-08-26T15:08",
+          "total_krw": 301849
+        },
+        {
+          "time": "2026-08-26T15:19",
           "total_krw": 301935
         },
         {
-          "time": "2026-08-26T15:31",
-          "total_krw": 301934
+          "time": "2026-08-26T15:29",
+          "total_krw": 301935
         },
         {
-          "time": "2026-08-26T15:42",
-          "total_krw": 301934
+          "time": "2026-08-26T15:40",
+          "total_krw": 302021
         },
         {
-          "time": "2026-08-26T15:52",
-          "total_krw": 301847
+          "time": "2026-08-26T15:51",
+          "total_krw": 301936
         },
         {
-          "time": "2026-08-26T16:03",
-          "total_krw": 301847
+          "time": "2026-08-26T16:02",
+          "total_krw": 301935
         },
         {
-          "time": "2026-08-26T16:16",
-          "total_krw": 301794
+          "time": "2026-08-26T16:15",
+          "total_krw": 301974
         },
         {
-          "time": "2026-08-26T16:27",
-          "total_krw": 301824
+          "time": "2026-08-26T16:26",
+          "total_krw": 301915
         },
         {
-          "time": "2026-08-26T16:38",
-          "total_krw": 301815
+          "time": "2026-08-26T16:37",
+          "total_krw": 302060
         },
         {
-          "time": "2026-08-26T16:49",
-          "total_krw": 301698
+          "time": "2026-08-26T16:48",
+          "total_krw": 301846
         },
         {
-          "time": "2026-08-26T16:59",
-          "total_krw": 301557
+          "time": "2026-08-26T16:58",
+          "total_krw": 301499
         },
         {
-          "time": "2026-08-26T17:10",
-          "total_krw": 301632
+          "time": "2026-08-26T17:09",
+          "total_krw": 301670
         },
         {
-          "time": "2026-08-26T17:21",
-          "total_krw": 301393
+          "time": "2026-08-26T17:20",
+          "total_krw": 301549
         },
         {
-          "time": "2026-08-26T17:32",
-          "total_krw": 301516
+          "time": "2026-08-26T17:31",
+          "total_krw": 301975
         },
         {
-          "time": "2026-08-26T17:43",
-          "total_krw": 301793
+          "time": "2026-08-26T17:42",
+          "total_krw": 301607
         },
         {
-          "time": "2026-08-26T17:54",
-          "total_krw": 302732
+          "time": "2026-08-26T17:53",
+          "total_krw": 302671
         },
         {
           "time": "2026-08-26T18:04",
           "total_krw": 301614
         },
         {
-          "time": "2026-08-26T18:15",
+          "time": "2026-08-26T18:14",
           "total_krw": 301704
         },
         {
-          "time": "2026-08-26T18:26",
+          "time": "2026-08-26T18:25",
           "total_krw": 301786
         },
         {
-          "time": "2026-08-26T18:37",
+          "time": "2026-08-26T18:36",
           "total_krw": 301787
         },
         {
-          "time": "2026-08-26T18:48",
-          "total_krw": 301699
+          "time": "2026-08-26T18:47",
+          "total_krw": 301700
         },
         {
-          "time": "2026-08-26T18:59",
-          "total_krw": 301700
+          "time": "2026-08-26T18:58",
+          "total_krw": 301701
         },
         {
           "time": "2026-08-26T19:09",
@@ -1660,15 +1656,15 @@ const pnlData = {
           "total_krw": 301706
         },
         {
-          "time": "2026-08-26T19:42",
+          "time": "2026-08-26T19:41",
           "total_krw": 301619
         },
         {
-          "time": "2026-08-26T19:53",
-          "total_krw": 301444
+          "time": "2026-08-26T19:52",
+          "total_krw": 301532
         },
         {
-          "time": "2026-08-26T20:04",
+          "time": "2026-08-26T20:03",
           "total_krw": 301444
         },
         {
@@ -1692,7 +1688,7 @@ const pnlData = {
           "total_krw": 301530
         },
         {
-          "time": "2026-08-26T21:09",
+          "time": "2026-08-26T21:08",
           "total_krw": 301528
         },
         {
@@ -1716,8 +1712,12 @@ const pnlData = {
           "total_krw": 301616
         },
         {
-          "time": "2026-08-26T22:14:14.731462",
-          "total_krw": 300920
+          "time": "2026-08-26T22:14",
+          "total_krw": 301701
+        },
+        {
+          "time": "2026-08-26T22:24:55.834094",
+          "total_krw": 313815
         }
       ]
     },
@@ -1727,214 +1727,214 @@ const pnlData = {
         "coin": "CRV",
         "pnl_usd": 0.7714,
         "cum_pnl_usd": 0.7714,
-        "cum_pnl_krw": 1067
+        "cum_pnl_krw": 1180
       },
       {
         "time": "2026-08-24T16:44:53.127980+09:00",
         "coin": "RE",
         "pnl_usd": 0.1827,
         "cum_pnl_usd": 0.9541,
-        "cum_pnl_krw": 1320
+        "cum_pnl_krw": 1460
       },
       {
         "time": "2026-08-24T17:58:19.265949+09:00",
         "coin": "ZRO",
         "pnl_usd": 0.3213,
         "cum_pnl_usd": 1.2754,
-        "cum_pnl_krw": 1764
+        "cum_pnl_krw": 1951
       },
       {
         "time": "2026-08-24T18:20:38.722317+09:00",
         "coin": "CRV",
         "pnl_usd": 0.445,
         "cum_pnl_usd": 1.7204,
-        "cum_pnl_krw": 2380
+        "cum_pnl_krw": 2632
       },
       {
         "time": "2026-08-24T19:33:27.885904+09:00",
         "coin": "ZRO",
         "pnl_usd": 0.1276,
         "cum_pnl_usd": 1.848,
-        "cum_pnl_krw": 2556
+        "cum_pnl_krw": 2827
       },
       {
         "time": "2026-08-24T20:20:57.413083+09:00",
         "coin": "CRV",
         "pnl_usd": -0.0566,
         "cum_pnl_usd": 1.7914,
-        "cum_pnl_krw": 2478
+        "cum_pnl_krw": 2741
       },
       {
         "time": "2026-08-24T22:21:20.286179+09:00",
         "coin": "CRV",
         "pnl_usd": 0.0888,
         "cum_pnl_usd": 1.8802,
-        "cum_pnl_krw": 2601
+        "cum_pnl_krw": 2877
       },
       {
         "time": "2026-08-24T22:22:38.189536+09:00",
         "coin": "RE",
         "pnl_usd": 0.0707,
         "cum_pnl_usd": 1.9509,
-        "cum_pnl_krw": 2698
+        "cum_pnl_krw": 2985
       },
       {
         "time": "2026-08-24T22:26:34.185409+09:00",
         "coin": "ZRO",
         "pnl_usd": 0.2546,
         "cum_pnl_usd": 2.2055,
-        "cum_pnl_krw": 3050
+        "cum_pnl_krw": 3374
       },
       {
         "time": "2026-08-24T22:43:08.284738+09:00",
         "coin": "RE",
         "pnl_usd": -0.0006,
         "cum_pnl_usd": 2.2049,
-        "cum_pnl_krw": 3050
+        "cum_pnl_krw": 3373
       },
       {
         "time": "2026-08-25T00:19:33.329644+09:00",
         "coin": "ZRO",
         "pnl_usd": 0.0111,
         "cum_pnl_usd": 2.216,
-        "cum_pnl_krw": 3065
+        "cum_pnl_krw": 3390
       },
       {
         "time": "2026-08-25T00:44:08.531300+09:00",
         "coin": "CRV",
         "pnl_usd": 0.1647,
         "cum_pnl_usd": 2.3807,
-        "cum_pnl_krw": 3293
+        "cum_pnl_krw": 3642
       },
       {
         "time": "2026-08-25T01:01:32.158984+09:00",
         "coin": "RE",
         "pnl_usd": -0.0223,
         "cum_pnl_usd": 2.3584,
-        "cum_pnl_krw": 3262
+        "cum_pnl_krw": 3608
       },
       {
         "time": "2026-08-25T10:19:42.057656+09:00",
         "coin": "CRV",
         "pnl_usd": 0.0733,
         "cum_pnl_usd": 2.4317,
-        "cum_pnl_krw": 3363
+        "cum_pnl_krw": 3721
       },
       {
         "time": "2026-08-25T11:22:31.174556+09:00",
         "coin": "CRV",
         "pnl_usd": 0.2859,
         "cum_pnl_usd": 2.7176,
-        "cum_pnl_krw": 3759
+        "cum_pnl_krw": 4158
       },
       {
         "time": "2026-08-25T12:43:26.425119+09:00",
         "coin": "RE",
         "pnl_usd": 0.1991,
         "cum_pnl_usd": 2.9167,
-        "cum_pnl_krw": 4034
+        "cum_pnl_krw": 4463
       },
       {
         "time": "2026-08-25T13:32:59.507265+09:00",
         "coin": "CRV",
         "pnl_usd": 0.2737,
         "cum_pnl_usd": 3.1904,
-        "cum_pnl_krw": 4413
+        "cum_pnl_krw": 4881
       },
       {
         "time": "2026-08-25T15:36:35.322641+09:00",
         "coin": "CRV",
         "pnl_usd": 0.048,
         "cum_pnl_usd": 3.2384,
-        "cum_pnl_krw": 4479
+        "cum_pnl_krw": 4955
       },
       {
         "time": "2026-08-25T16:17:35.912815+09:00",
         "coin": "CRV",
         "pnl_usd": 0.1386,
         "cum_pnl_usd": 3.377,
-        "cum_pnl_krw": 4671
+        "cum_pnl_krw": 5167
       },
       {
         "time": "2026-08-25T18:54:18.384339+09:00",
         "coin": "CRV",
         "pnl_usd": -0.2299,
         "cum_pnl_usd": 3.1471,
-        "cum_pnl_krw": 4353
+        "cum_pnl_krw": 4815
       },
       {
         "time": "2026-08-25T21:33:50.320635+09:00",
         "coin": "CRV",
         "pnl_usd": 0.0877,
         "cum_pnl_usd": 3.2348,
-        "cum_pnl_krw": 4474
+        "cum_pnl_krw": 4949
       },
       {
         "time": "2026-08-25T23:53:18.539971+09:00",
         "coin": "CRV",
         "pnl_usd": 0.2168,
         "cum_pnl_usd": 3.4516,
-        "cum_pnl_krw": 4774
+        "cum_pnl_krw": 5281
       },
       {
         "time": "2026-08-26T02:22:20.574576+09:00",
         "coin": "RE",
         "pnl_usd": -0.1439,
         "cum_pnl_usd": 3.3077,
-        "cum_pnl_krw": 4575
+        "cum_pnl_krw": 5061
       },
       {
         "time": "2026-08-26T03:43:04.537221+09:00",
         "coin": "CRV",
         "pnl_usd": 0.1356,
         "cum_pnl_usd": 3.4433,
-        "cum_pnl_krw": 4762
+        "cum_pnl_krw": 5268
       },
       {
         "time": "2026-08-26T04:07:25.783688+09:00",
         "coin": "CRV",
         "pnl_usd": 0.4186,
         "cum_pnl_usd": 3.8619,
-        "cum_pnl_krw": 5341
+        "cum_pnl_krw": 5909
       },
       {
         "time": "2026-08-26T04:42:42.937506+09:00",
         "coin": "CRV",
         "pnl_usd": 0.4594,
         "cum_pnl_usd": 4.3213,
-        "cum_pnl_krw": 5977
+        "cum_pnl_krw": 6612
       },
       {
         "time": "2026-08-26T06:53:37.243727+09:00",
         "coin": "CRV",
         "pnl_usd": 0.3529,
         "cum_pnl_usd": 4.6742,
-        "cum_pnl_krw": 6465
+        "cum_pnl_krw": 7152
       },
       {
         "time": "2026-08-26T09:01:19.002061+09:00",
         "coin": "CRV",
         "pnl_usd": 0.2528,
         "cum_pnl_usd": 4.927,
-        "cum_pnl_krw": 6815
+        "cum_pnl_krw": 7538
       },
       {
         "time": "2026-08-26T11:13:20.141631+09:00",
         "coin": "CRV",
         "pnl_usd": -0.1445,
         "cum_pnl_usd": 4.7825,
-        "cum_pnl_krw": 6615
+        "cum_pnl_krw": 7317
       },
       {
         "time": "2026-08-26T17:59:28.044125+09:00",
         "coin": "CRV",
         "pnl_usd": 0.1983,
         "cum_pnl_usd": 4.9808,
-        "cum_pnl_krw": 6889
+        "cum_pnl_krw": 7621
       }
     ],
     "total_pnl_usd": 4.9808,
-    "total_pnl_krw": 6889,
+    "total_pnl_krw": 7621,
     "trade_count": 30
   }
 };
