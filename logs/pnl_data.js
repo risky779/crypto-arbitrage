@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-09-21 09:37:03",
+  "updated_at": "2026-09-21 10:37:31",
   "live_bots": {
     "hedge_swing": {
       "cycles": 3,
@@ -19,14 +19,14 @@ const pnlData = {
     }
   ],
   "usd_krw": 1386.016611,
-  "total_asset_krw": 426830.24499881885,
+  "total_asset_krw": 426878.99121583474,
   "seed": {
     "seed_krw": 916569.93843287,
     "seed_date": "2026-07-02",
     "days_since_seed": 81,
-    "seed_yield_pct": -53.43178658809132,
-    "seed_pnl_krw": -489739.6934340511,
-    "avg_daily_yield_pct": -5.343178658809132
+    "seed_yield_pct": -53.426468257763005,
+    "seed_pnl_krw": -489690.9472170352,
+    "avg_daily_yield_pct": -5.342646825776301
   },
   "seed_krw": 916569.93843287,
   "seeds": {
@@ -36,8 +36,8 @@ const pnlData = {
     "c_usd": 19.17
   },
   "balances": {
-    "bithumb_krw": 174640.69461389893,
-    "okx_usd": 89.54806590637602,
+    "bithumb_krw": 174667.8637113469,
+    "okx_usd": 89.56363362713545,
     "coinone_krw": 102904.3819,
     "okx_coinone_usd": null
   },
@@ -58,19 +58,19 @@ const pnlData = {
     "cash_carry": false
   },
   "summary": {
-    "total_profit_krw": -489739.6934340511,
-    "total_profit_usd": -353.3433073942078,
+    "total_profit_krw": -489690.9472170352,
+    "total_profit_usd": -353.3081373849676,
     "operating_days": 10,
     "total_trades": 271,
-    "avg_daily_yield": -5.343178658809132,
-    "projected_monthly_yield": -160.29535976427394,
-    "tot_a_krw": -481244.1985569411,
+    "avg_daily_yield": -5.342646825776301,
+    "projected_monthly_yield": -160.27940477328903,
+    "tot_a_krw": -481195.4523399252,
     "recorded_a_krw": 276781.2801419505,
-    "unrecorded_a_krw": -758025.4786988916,
-    "measured_asset_a_krw": 298755.8014430589,
-    "real_daily_a_krw": -189.91021081141662,
-    "yield_a": -61.697974173966806,
-    "avg_yield_a": -6.169797417396681,
+    "unrecorded_a_krw": -757976.7324818757,
+    "measured_asset_a_krw": 298804.5476600748,
+    "real_daily_a_krw": -141.16399379551876,
+    "yield_a": -61.69172465896477,
+    "avg_yield_a": -6.1691724658964775,
     "tot_b_krw": -7095.618100000007,
     "recorded_b_krw": 0.0,
     "unrecorded_b_krw": -7095.618100000007,
@@ -305,108 +305,108 @@ const pnlData = {
     "bithumb": [
       {
         "coin": "ATOM",
-        "bithumb_krw": 2430.0,
-        "okx_usdt": 1.78,
-        "okx_krw": 2467.10956758,
-        "raw_spread": 1.53,
+        "bithumb_krw": 2400.0,
+        "okx_usdt": 1.756,
+        "okx_krw": 2433.845168916,
+        "raw_spread": 1.41,
         "friction": 0.33,
-        "net_spread": 1.2,
+        "net_spread": 1.08,
         "target_spread": 1.0
       },
       {
         "coin": "DOGE",
-        "bithumb_krw": 121.0,
-        "okx_usdt": 0.08873,
-        "okx_krw": 122.98125389403,
-        "raw_spread": 1.64,
+        "bithumb_krw": 122.0,
+        "okx_usdt": 0.08859,
+        "okx_krw": 122.78721156849001,
+        "raw_spread": 0.65,
         "friction": 0.33,
-        "net_spread": 1.31,
+        "net_spread": 0.32,
         "target_spread": 1.0
       },
       {
         "coin": "ADA",
-        "bithumb_krw": 316.0,
-        "okx_usdt": 0.2316,
-        "okx_krw": 321.00144710760003,
-        "raw_spread": 1.58,
+        "bithumb_krw": 315.0,
+        "okx_usdt": 0.2301,
+        "okx_krw": 318.9224221911,
+        "raw_spread": 1.25,
         "friction": 0.33,
-        "net_spread": 1.25,
+        "net_spread": 0.92,
         "target_spread": 1.0
       },
       {
         "coin": "SOL",
-        "bithumb_krw": 153700.0,
-        "okx_usdt": 112.67,
-        "okx_krw": 156162.49156137,
-        "raw_spread": 1.6,
+        "bithumb_krw": 153300.0,
+        "okx_usdt": 112.12,
+        "okx_krw": 155400.18242532,
+        "raw_spread": 1.37,
         "friction": 0.33,
-        "net_spread": 1.27,
+        "net_spread": 1.04,
         "target_spread": 1.0
       },
       {
         "coin": "XRP",
-        "bithumb_krw": 1949.0,
-        "okx_usdt": 1.4286,
-        "okx_krw": 1980.0633304746002,
-        "raw_spread": 1.59,
+        "bithumb_krw": 1946.0,
+        "okx_usdt": 1.4229,
+        "okx_krw": 1972.1630357919,
+        "raw_spread": 1.34,
         "friction": 0.33,
-        "net_spread": 1.26,
+        "net_spread": 1.01,
         "target_spread": 1.0
       },
       {
         "coin": "ENA",
-        "bithumb_krw": 302.0,
-        "okx_usdt": 0.2215,
-        "okx_krw": 307.0026793365,
-        "raw_spread": 1.66,
+        "bithumb_krw": 296.0,
+        "okx_usdt": 0.21661,
+        "okx_krw": 300.22505810871,
+        "raw_spread": 1.43,
         "friction": 0.33,
-        "net_spread": 1.33,
+        "net_spread": 1.1,
         "target_spread": 1.0
       }
     ],
     "coinone": [
       {
         "coin": "ATOM",
-        "coinone_krw": 2428.0,
-        "okx_usdt": 1.78,
-        "okx_krw": 2467.10956758,
-        "raw_spread": 1.61,
+        "coinone_krw": 2403.0,
+        "okx_usdt": 1.756,
+        "okx_krw": 2433.845168916,
+        "raw_spread": 1.28,
         "friction": 0.33,
-        "net_spread": 1.28,
+        "net_spread": 0.95,
         "target_spread": 1.2
       },
       {
         "coin": "DOGE",
-        "coinone_krw": 121.0,
-        "okx_usdt": 0.08873,
-        "okx_krw": 122.98125389403,
-        "raw_spread": 1.64,
+        "coinone_krw": 121.2,
+        "okx_usdt": 0.08859,
+        "okx_krw": 122.78721156849001,
+        "raw_spread": 1.31,
         "friction": 0.33,
-        "net_spread": 1.31,
+        "net_spread": 0.98,
         "target_spread": 1.2
       },
       {
         "coin": "ADA",
-        "coinone_krw": 316.0,
-        "okx_usdt": 0.2316,
-        "okx_krw": 321.00144710760003,
-        "raw_spread": 1.58,
+        "coinone_krw": 314.5,
+        "okx_usdt": 0.2301,
+        "okx_krw": 318.9224221911,
+        "raw_spread": 1.41,
         "friction": 0.33,
-        "net_spread": 1.25,
+        "net_spread": 1.08,
         "target_spread": 1.2
       },
       {
         "coin": "SOL",
-        "coinone_krw": 153700.0,
-        "okx_usdt": 112.67,
-        "okx_krw": 156162.49156137,
-        "raw_spread": 1.6,
+        "coinone_krw": 153300.0,
+        "okx_usdt": 112.12,
+        "okx_krw": 155400.18242532,
+        "raw_spread": 1.37,
         "friction": 0.33,
-        "net_spread": 1.27,
+        "net_spread": 1.04,
         "target_spread": 1.2
       }
     ],
-    "updated_at": "2026-09-21 09:37:04"
+    "updated_at": "2026-09-21 10:37:32"
   },
   "perp_hedge_bot": {
     "label": "\ud604\uc120\ubd07 (RE/ZRO/CRV/EDEN)",
@@ -512,8 +512,8 @@ const pnlData = {
     "measured": {
       "baseline_krw": 306310,
       "baseline_time": "2026-08-24T15:57:00+09:00",
-      "measured_total_krw": 298756,
-      "measured_pnl_krw": -7554,
+      "measured_total_krw": 298805,
+      "measured_pnl_krw": -7505,
       "trend": [
         {
           "time": "2026-08-24T15:58",
@@ -1716,8 +1716,8 @@ const pnlData = {
           "total_krw": 298685
         },
         {
-          "time": "2026-09-21T09:36:49.615831",
-          "total_krw": 298756
+          "time": "2026-09-21T10:37:17.322658",
+          "total_krw": 298805
         }
       ]
     },
