@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-11-04 17:04:51",
+  "updated_at": "2026-11-04 18:05:11",
   "live_bots": {
     "hedge_swing": {
       "cycles": 3,
@@ -305,22 +305,22 @@ const pnlData = {
     "bithumb": [
       {
         "coin": "ATOM",
-        "bithumb_krw": 1913.0,
-        "okx_usdt": 1.426,
-        "okx_krw": 1916.4456017219998,
-        "raw_spread": 0.18,
+        "bithumb_krw": 1912.0,
+        "okx_usdt": 1.423,
+        "okx_krw": 1912.413808731,
+        "raw_spread": 0.02,
         "friction": 0.33,
-        "net_spread": -0.15,
+        "net_spread": -0.31,
         "target_spread": 1.0
       },
       {
         "coin": "DOGE",
-        "bithumb_krw": 100.0,
-        "okx_usdt": 0.07515,
-        "okx_krw": 100.99641442454998,
-        "raw_spread": 1.0,
+        "bithumb_krw": 101.0,
+        "okx_usdt": 0.07508,
+        "okx_krw": 100.90233925476,
+        "raw_spread": -0.1,
         "friction": 0.33,
-        "net_spread": 0.67,
+        "net_spread": -0.43,
         "target_spread": 1.0
       },
       {
@@ -335,51 +335,51 @@ const pnlData = {
       },
       {
         "coin": "SOL",
-        "bithumb_krw": 125400.0,
-        "okx_usdt": 93.4,
-        "okx_krw": 125523.1551198,
-        "raw_spread": 0.1,
+        "bithumb_krw": 125200.0,
+        "okx_usdt": 93.15,
+        "okx_krw": 125187.17237055,
+        "raw_spread": -0.01,
         "friction": 0.33,
-        "net_spread": -0.23,
+        "net_spread": -0.34,
         "target_spread": 1.0
       },
       {
         "coin": "XRP",
-        "bithumb_krw": 1714.0,
-        "okx_usdt": 1.2772,
-        "okx_krw": 1716.4686693683998,
-        "raw_spread": 0.14,
+        "bithumb_krw": 1718.0,
+        "okx_usdt": 1.2795,
+        "okx_krw": 1719.5597106615,
+        "raw_spread": 0.09,
         "friction": 0.33,
-        "net_spread": -0.19,
+        "net_spread": -0.24,
         "target_spread": 1.0
       },
       {
         "coin": "ENA",
-        "bithumb_krw": 244.0,
-        "okx_usdt": 0.18172,
-        "okx_krw": 244.21914077483999,
-        "raw_spread": 0.09,
+        "bithumb_krw": 243.0,
+        "okx_usdt": 0.181,
+        "okx_krw": 243.25151045699997,
+        "raw_spread": 0.1,
         "friction": 0.33,
-        "net_spread": -0.24,
+        "net_spread": -0.23,
         "target_spread": 1.0
       }
     ],
     "coinone": [
       {
         "coin": "ATOM",
-        "coinone_krw": 1915.0,
-        "okx_usdt": 1.426,
-        "okx_krw": 1916.4456017219998,
-        "raw_spread": 0.08,
+        "coinone_krw": 1916.0,
+        "okx_usdt": 1.423,
+        "okx_krw": 1912.413808731,
+        "raw_spread": -0.19,
         "friction": 0.33,
-        "net_spread": -0.25,
+        "net_spread": -0.52,
         "target_spread": 1.2
       },
       {
         "coin": "DOGE",
-        "coinone_krw": 100.9,
-        "okx_usdt": 0.07515,
-        "okx_krw": 100.99641442454998,
+        "coinone_krw": 100.8,
+        "okx_usdt": 0.07508,
+        "okx_krw": 100.90233925476,
         "raw_spread": 0.1,
         "friction": 0.33,
         "net_spread": -0.23,
@@ -387,26 +387,26 @@ const pnlData = {
       },
       {
         "coin": "ADA",
-        "coinone_krw": 256.8,
+        "coinone_krw": 257.3,
         "okx_usdt": 0.1915,
         "okx_krw": 257.3627859255,
-        "raw_spread": 0.22,
-        "friction": 0.33,
-        "net_spread": -0.11,
-        "target_spread": 1.2
-      },
-      {
-        "coin": "SOL",
-        "coinone_krw": 125500.0,
-        "okx_usdt": 93.4,
-        "okx_krw": 125523.1551198,
         "raw_spread": 0.02,
         "friction": 0.33,
         "net_spread": -0.31,
         "target_spread": 1.2
+      },
+      {
+        "coin": "SOL",
+        "coinone_krw": 125200.0,
+        "okx_usdt": 93.15,
+        "okx_krw": 125187.17237055,
+        "raw_spread": -0.01,
+        "friction": 0.33,
+        "net_spread": -0.34,
+        "target_spread": 1.2
       }
     ],
-    "updated_at": "2026-11-04 17:04:52"
+    "updated_at": "2026-11-04 18:05:12"
   },
   "perp_hedge_bot": {
     "label": "\ud604\uc120\ubd07 (RE/ZRO/CRV/EDEN)",
