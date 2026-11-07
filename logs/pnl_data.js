@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-11-07 17:28:25",
+  "updated_at": "2026-11-07 18:28:43",
   "live_bots": {
     "hedge_swing": {
       "cycles": 3,
@@ -305,62 +305,62 @@ const pnlData = {
     "bithumb": [
       {
         "coin": "ATOM",
-        "bithumb_krw": 1893.0,
+        "bithumb_krw": 1892.0,
         "okx_usdt": 1.389,
         "okx_krw": 1884.42239451,
-        "raw_spread": -0.45,
+        "raw_spread": -0.4,
         "friction": 0.33,
-        "net_spread": -0.78,
+        "net_spread": -0.73,
         "target_spread": 1.0
       },
       {
         "coin": "DOGE",
-        "bithumb_krw": 98.28,
-        "okx_usdt": 0.07211,
-        "okx_krw": 97.8298767949,
-        "raw_spread": -0.46,
+        "bithumb_krw": 98.1,
+        "okx_usdt": 0.07202,
+        "okx_krw": 97.7077759918,
+        "raw_spread": -0.4,
         "friction": 0.33,
-        "net_spread": -0.79,
+        "net_spread": -0.73,
         "target_spread": 1.0
       },
       {
         "coin": "ADA",
         "bithumb_krw": 251.0,
-        "okx_usdt": 0.1846,
-        "okx_krw": 250.44231391399998,
-        "raw_spread": -0.22,
+        "okx_usdt": 0.1838,
+        "okx_krw": 249.356973442,
+        "raw_spread": -0.65,
         "friction": 0.33,
-        "net_spread": -0.55,
+        "net_spread": -0.98,
         "target_spread": 1.0
       },
       {
         "coin": "SOL",
-        "bithumb_krw": 122900.0,
-        "okx_usdt": 90.18,
-        "okx_krw": 122345.00470620001,
-        "raw_spread": -0.45,
+        "bithumb_krw": 122800.0,
+        "okx_usdt": 90.13,
+        "okx_krw": 122277.1709267,
+        "raw_spread": -0.43,
         "friction": 0.33,
-        "net_spread": -0.78,
+        "net_spread": -0.76,
         "target_spread": 1.0
       },
       {
         "coin": "XRP",
-        "bithumb_krw": 1604.0,
-        "okx_usdt": 1.1779,
-        "okx_krw": 1598.028177461,
-        "raw_spread": -0.37,
+        "bithumb_krw": 1600.0,
+        "okx_usdt": 1.1733,
+        "okx_krw": 1591.7874697470002,
+        "raw_spread": -0.51,
         "friction": 0.33,
-        "net_spread": -0.7,
+        "net_spread": -0.84,
         "target_spread": 1.0
       },
       {
         "coin": "ENA",
-        "bithumb_krw": 224.0,
-        "okx_usdt": 0.16428,
-        "okx_krw": 222.87466592520002,
-        "raw_spread": -0.5,
+        "bithumb_krw": 222.0,
+        "okx_usdt": 0.16312,
+        "okx_krw": 221.3009222408,
+        "raw_spread": -0.31,
         "friction": 0.33,
-        "net_spread": -0.83,
+        "net_spread": -0.64,
         "target_spread": 1.0
       }
     ],
@@ -377,36 +377,36 @@ const pnlData = {
       },
       {
         "coin": "DOGE",
-        "coinone_krw": 98.35,
-        "okx_usdt": 0.07211,
-        "okx_krw": 97.8298767949,
-        "raw_spread": -0.53,
+        "coinone_krw": 98.15,
+        "okx_usdt": 0.07202,
+        "okx_krw": 97.7077759918,
+        "raw_spread": -0.45,
         "friction": 0.33,
-        "net_spread": -0.86,
+        "net_spread": -0.78,
         "target_spread": 1.2
       },
       {
         "coin": "ADA",
-        "coinone_krw": 251.8,
-        "okx_usdt": 0.1846,
-        "okx_krw": 250.44231391399998,
-        "raw_spread": -0.54,
+        "coinone_krw": 250.8,
+        "okx_usdt": 0.1838,
+        "okx_krw": 249.356973442,
+        "raw_spread": -0.58,
         "friction": 0.33,
-        "net_spread": -0.87,
+        "net_spread": -0.91,
         "target_spread": 1.2
       },
       {
         "coin": "SOL",
-        "coinone_krw": 123000.0,
-        "okx_usdt": 90.18,
-        "okx_krw": 122345.00470620001,
-        "raw_spread": -0.53,
+        "coinone_krw": 122800.0,
+        "okx_usdt": 90.13,
+        "okx_krw": 122277.1709267,
+        "raw_spread": -0.43,
         "friction": 0.33,
-        "net_spread": -0.86,
+        "net_spread": -0.76,
         "target_spread": 1.2
       }
     ],
-    "updated_at": "2026-11-07 17:28:26"
+    "updated_at": "2026-11-07 18:28:45"
   },
   "perp_hedge_bot": {
     "label": "\ud604\uc120\ubd07 (RE/ZRO/CRV/EDEN)",
