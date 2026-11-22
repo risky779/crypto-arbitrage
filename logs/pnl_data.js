@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-11-23 05:29:45",
+  "updated_at": "2026-11-23 06:30:09",
   "live_bots": {
     "hedge_swing": {
       "cycles": 3,
@@ -304,7 +304,7 @@ const pnlData = {
   "spreads": {
     "bithumb": [],
     "coinone": [],
-    "updated_at": "2026-11-23 05:29:46"
+    "updated_at": "2026-11-23 06:30:11"
   },
   "perp_hedge_bot": {
     "label": "\ud604\uc120\ubd07 (RE/ZRO/CRV/EDEN)",
