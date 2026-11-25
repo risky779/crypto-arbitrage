@@ -1,5 +1,5 @@
 const pnlData = {
-  "updated_at": "2026-11-26 00:51:54",
+  "updated_at": "2026-11-26 01:52:13",
   "live_bots": {
     "hedge_swing": {
       "cycles": 3,
@@ -305,22 +305,22 @@ const pnlData = {
     "bithumb": [
       {
         "coin": "ATOM",
-        "bithumb_krw": 1630.0,
-        "okx_usdt": 1.214,
-        "okx_krw": 1630.453615638,
-        "raw_spread": 0.03,
+        "bithumb_krw": 1642.0,
+        "okx_usdt": 1.219,
+        "okx_krw": 1637.1688282230002,
+        "raw_spread": -0.29,
         "friction": 0.33,
-        "net_spread": -0.3,
+        "net_spread": -0.62,
         "target_spread": 1.0
       },
       {
         "coin": "DOGE",
         "bithumb_krw": 72.9,
-        "okx_usdt": 0.05349,
-        "okx_krw": 71.83934423433001,
-        "raw_spread": -1.45,
+        "okx_usdt": 0.05334,
+        "okx_krw": 71.63788785678,
+        "raw_spread": -1.73,
         "friction": 0.33,
-        "net_spread": -1.78,
+        "net_spread": -2.06,
         "target_spread": 1.0
       },
       {
@@ -335,78 +335,78 @@ const pnlData = {
       },
       {
         "coin": "SOL",
-        "bithumb_krw": 92150.0,
-        "okx_usdt": 67.62,
-        "okx_krw": 90816.53499954002,
-        "raw_spread": -1.45,
+        "bithumb_krw": 92100.0,
+        "okx_usdt": 67.49,
+        "okx_krw": 90641.93947232999,
+        "raw_spread": -1.58,
         "friction": 0.33,
-        "net_spread": -1.78,
+        "net_spread": -1.91,
         "target_spread": 1.0
       },
       {
         "coin": "XRP",
-        "bithumb_krw": 1234.0,
-        "okx_usdt": 0.9057,
-        "okx_krw": 1216.3936076469,
-        "raw_spread": -1.43,
+        "bithumb_krw": 1230.0,
+        "okx_usdt": 0.9021,
+        "okx_krw": 1211.5586545857002,
+        "raw_spread": -1.5,
         "friction": 0.33,
-        "net_spread": -1.76,
+        "net_spread": -1.83,
         "target_spread": 1.0
       },
       {
         "coin": "ENA",
         "bithumb_krw": 127.0,
-        "okx_usdt": 0.09279,
-        "okx_krw": 124.62091515243,
-        "raw_spread": -1.87,
+        "okx_usdt": 0.09275,
+        "okx_krw": 124.56719345175,
+        "raw_spread": -1.92,
         "friction": 0.33,
-        "net_spread": -2.2,
+        "net_spread": -2.25,
         "target_spread": 1.0
       }
     ],
     "coinone": [
       {
         "coin": "ATOM",
-        "coinone_krw": 1653.0,
-        "okx_usdt": 1.214,
-        "okx_krw": 1630.453615638,
-        "raw_spread": -1.36,
+        "coinone_krw": 1660.0,
+        "okx_usdt": 1.219,
+        "okx_krw": 1637.1688282230002,
+        "raw_spread": -1.38,
         "friction": 0.33,
-        "net_spread": -1.69,
+        "net_spread": -1.71,
         "target_spread": 1.2
       },
       {
         "coin": "DOGE",
-        "coinone_krw": 72.9,
-        "okx_usdt": 0.05349,
-        "okx_krw": 71.83934423433001,
-        "raw_spread": -1.45,
+        "coinone_krw": 72.8,
+        "okx_usdt": 0.05334,
+        "okx_krw": 71.63788785678,
+        "raw_spread": -1.6,
         "friction": 0.33,
-        "net_spread": -1.78,
+        "net_spread": -1.93,
         "target_spread": 1.2
       },
       {
         "coin": "ADA",
-        "coinone_krw": 189.4,
+        "coinone_krw": 189.9,
         "okx_usdt": 0.1392,
         "okx_krw": 186.9515183664,
-        "raw_spread": -1.29,
+        "raw_spread": -1.55,
         "friction": 0.33,
-        "net_spread": -1.62,
+        "net_spread": -1.88,
         "target_spread": 1.2
       },
       {
         "coin": "SOL",
-        "coinone_krw": 92200.0,
-        "okx_usdt": 67.62,
-        "okx_krw": 90816.53499954002,
-        "raw_spread": -1.5,
+        "coinone_krw": 92150.0,
+        "okx_usdt": 67.49,
+        "okx_krw": 90641.93947232999,
+        "raw_spread": -1.64,
         "friction": 0.33,
-        "net_spread": -1.83,
+        "net_spread": -1.97,
         "target_spread": 1.2
       }
     ],
-    "updated_at": "2026-11-26 00:51:55"
+    "updated_at": "2026-11-26 01:52:14"
   },
   "perp_hedge_bot": {
     "label": "\ud604\uc120\ubd07 (RE/ZRO/CRV/EDEN)",
